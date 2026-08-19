@@ -1,0 +1,16 @@
+{
+  "name": "The W and the M — Double Bottom & Top Mastery",
+  "short_name": "W and M",
+  "description": "Arnie's baby-steps course for finding and trading double bottoms and double tops on the 2-minute M2K chart.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0A1525",
+  "theme_color": "#0A1525",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0A1525"/>
+  <rect x="18" y="18" width="476" height="476" rx="80" fill="none" stroke="#FBBF24" stroke-width="10" opacity=".45"/>
+  <!-- the W -->
+  <path d="M96 150 L168 372 L256 244 L344 372 L416 150"
+        fill="none" stroke="#FBBF24" stroke-width="34"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- the two lows -->
+  <circle cx="168" cy="372" r="26" fill="#22D3EE"/>
+  <circle cx="344" cy="372" r="26" fill="#22D3EE"/>
+  <!-- the neckline -->
+  <line x1="86" y1="244" x2="426" y2="244" stroke="#A3E635" stroke-width="9" stroke-dasharray="24 18" opacity=".85"/>
+</svg>
