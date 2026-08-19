@@ -13,3 +13,15 @@
   for = "/sw.js"
   [headers.values]
     Cache-Control = "no-cache"
+
+# The shell must always revalidate, or a returning visitor keeps an old
+# index.html that still points at the previous ?v= script URLs.
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

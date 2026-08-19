@@ -79,7 +79,11 @@ generalist playbook built on retired R-multiple / 0.75R-breakeven doctrine. Arni
 this problem had never been built; that repo is not the same thing and was deliberately left
 alone rather than modified or replaced.
 
-**Held for his go:** Netlify deploy, per global rule 9 (verify → summarise → ask → wait).
+**Shipped 2026-08-19** after his explicit go (global rule 9: verify → summarise → ask → wait).
+GitHub → Netlify auto-build, site created via the API against GitHub App installation 77160536
+so it is properly repo-linked. Live at https://double-bottom-mastery.netlify.app, `.url`
+shortcut created in the Working Apps folder. **Gallery card in `arnies-app-showcase`
+deliberately NOT pushed** — that repo is on the ask-first list (global rule 12).
 
 **Post-launch addition (same day):** Chapter 1 now cites his OWN 116-trade record — the
 2026-08-18 research measured his initial risk at 49–51 ticks across 111 trades (the ATM
