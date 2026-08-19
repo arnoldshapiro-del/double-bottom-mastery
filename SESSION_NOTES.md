@@ -80,3 +80,9 @@ this problem had never been built; that repo is not the same thing and was delib
 alone rather than modified or replaced.
 
 **Held for his go:** Netlify deploy, per global rule 9 (verify → summarise → ask → wait).
+
+**Post-launch addition (same day):** Chapter 1 now cites his OWN 116-trade record — the
+2026-08-18 research measured his initial risk at 49–51 ticks across 111 trades (the ATM
+default, not structure), with 52 of 116 stops widened after entry. Uni's is ~12. Two
+independent analyses a day apart found the same single cause, which turns the chapter from a
+hypothesis into a measured fact. See memory `double-bottom-the-stop-is-the-method`.

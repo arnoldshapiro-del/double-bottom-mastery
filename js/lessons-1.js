@@ -22,6 +22,11 @@
       '<p>You almost certainly took <b>Uni\'s entry</b> — in at the low, before anything was confirmed — and paired it with <b>a textbook\'s stop</b>, somewhere well below the pattern.</p>' +
       '<p>That combination is the worst of both worlds, and it loses money even when your pattern-reading is fine. Uni is not making a different <i>call</i> than you. She is making the same call with <b>one-fifth of the risk distance</b>, and that single difference is what turns a losing method into a winning one.</p></div>',
 
+      '<div class="callout good"><div class="ct">And this is not me guessing — your own records already said so</div>' +
+      '<p>The research done on <b>your 116 recorded M2K trades</b> on 2026-08-18 measured your actual stop distance. Across <b>111 of them, your initial risk sat between 49 and 51 ticks.</b> That is the platform\'s default stop, not a stop chosen from the chart.</p>' +
+      '<p><b>Uni\'s is about 12.</b> You were running a stop four times wider than the entry could carry — and 52 of those 116 trades had the stop widened <i>further</i> after entry.</p>' +
+      '<p>Two separate pieces of work, a day apart, from completely different directions, landed on the same single cause. That is about as close to proof as this gets.</p></div>',
+
       '<h2>The number nobody tells you</h2>',
       '<p>Thomas Bulkowski has run the largest published study of chart patterns there is — thousands of double bottoms across 1,326 stocks going back to 1991. Here is the finding that matters most, and it is almost never quoted:</p>',
 
