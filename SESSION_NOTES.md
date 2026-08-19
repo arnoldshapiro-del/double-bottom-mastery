@@ -82,8 +82,52 @@ alone rather than modified or replaced.
 **Shipped 2026-08-19** after his explicit go (global rule 9: verify → summarise → ask → wait).
 GitHub → Netlify auto-build, site created via the API against GitHub App installation 77160536
 so it is properly repo-linked. Live at https://double-bottom-mastery.netlify.app, `.url`
-shortcut created in the Working Apps folder. **Gallery card in `arnies-app-showcase`
-deliberately NOT pushed** — that repo is on the ask-first list (global rule 12).
+shortcut created in the Working Apps folder. **Gallery card in `arnies-app-showcase`: asked
+first (that repo is on the ask-first list, global rule 12), he said yes, card added and pushed
+— gallery went 159 → 160 cards, trading 32 → 33.** He said no to putting the session's Q&A on
+the live Trend Check page, so that stayed a Desktop-only file.
+
+---
+
+## Wrap-up summary — 2026-08-19
+
+**What we did.** Researched double bottoms and tops five ways in parallel, then found Uni's
+own source PDFs already on the machine and built them into a 17-chapter course. Shipped live.
+
+**What's working.** Everything. 17 chapters, 20 animated charts, the M2K calculator, the
+10-scenario drill, Narrator, PWA, dark/light, mobile. Verified on the production URL rather
+than a preview: all chapters render, every asset returns 200, zero JS errors.
+
+**What's next (nothing is blocking).**
+- Arnie does ~15 drill calls, then takes the pattern to Sim101 on M2K and logs the trades.
+- Gallery card in `arnies-app-showcase`: **done** — asked first per rule 12, he said yes.
+  Screenshot gotcha worth keeping: the naive `#anatomy` shot caught the chart mid-animation and
+  looked broken, so the shipped shot clicks "Show all" and scrolls the figure clear of the
+  sticky top bar first. Do that for any app whose charts animate in.
+- After ~50 logged trades, revisit Chapter 14's scale-out advice using his own numbers
+  instead of somebody else's backtest.
+
+**Important decisions.**
+- Built a NEW repo rather than extending `double-top-bottom-teaching` (April 2026). That app
+  is a 33-tab generalist playbook built on retired R-multiple / 0.75R-breakeven doctrine, and
+  double bottoms are only 2 of its tabs. It was deliberately left untouched.
+- The course's spine is the diagnosis, not a pattern tutorial: he took Uni's early entry with
+  a ~50-tick stop when that entry only survives at ~12. Corroborated by his own 116-trade
+  record, so Chapter 1 states it as measured fact rather than hedging.
+- Every Bulkowski statistic is labelled "daily stock charts" and every chart is labelled a
+  teaching example. Two likely-fabricated SEO statistics surfaced by the research were
+  rejected rather than used.
+
+**Problems encountered.**
+- **The stale-cache trap cost the most time.** Three fixes appeared not to work when the
+  browser and the service worker were simply serving old JS. Fixed permanently with `?v=` on
+  every script tag, a bumped SW cache name, and a `must-revalidate` header on the shell.
+  **Bump the script version AND the SW cache on every future `js/` change.**
+- `IntersectionObserver` never fires in a hidden Browser pane — a harness artifact that looks
+  exactly like a broken feature. Confirmed via `document.hidden`.
+- Light mode initially rendered raw dark-theme annotation colours; fixed with `LIGHT_MAP`.
+- A shell command whose *prose* contained a banned CLI phrase tripped the branch-guard hook
+  twice. Write prose with the file tools, not heredocs, when it quotes forbidden commands.
 
 **Post-launch addition (same day):** Chapter 1 now cites his OWN 116-trade record — the
 2026-08-18 research measured his initial risk at 49–51 ticks across 111 trades (the ATM
