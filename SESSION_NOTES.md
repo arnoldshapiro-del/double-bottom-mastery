@@ -134,3 +134,69 @@ than a preview: all chapters render, every asset returns 200, zero JS errors.
 default, not structure), with 52 of 116 stops widened after entry. Uni's is ~12. Two
 independent analyses a day apart found the same single cause, which turns the chapter from a
 hypothesis into a measured fact. See memory `double-bottom-the-stop-is-the-method`.
+
+## 2026-08-20 — v1.1.0: the course learns the gate the panel actually enforces
+
+**What we did.** One commit, `3486302` **THE W AND THE M v1.1.0 — Gate 1 and the blue ring**.
+The course now teaches the 15-minute gate that FinalEdgeGates **v5.61.0** enforces, without
+changing one thing about the double bottom / double top pattern itself.
+
+**NEW Chapter 7 — "Gate 1 and the blue ring"**, placed in *When to look*, directly after the
+three things that must be true before you care. What it teaches:
+
+- the 15-minute circle judges **swing structure**, nothing else
+- solid green = higher low + higher high · solid red = lower high + lower low · yellow = mixed,
+  including too few confirmed swings
+- **the higher low is compulsory**; a 15m *close* beyond the last confirmed swing can stand in
+  for the higher high (mirrored for red) — which is also why a green built that way can demote
+  later
+- solid states lock at the 15m close and never repaint
+- a bright **blue ring with an arrow** = price is beyond the key swing level right now and the
+  15m candle has not closed: **GATE 1 IS OPEN, PROVISIONAL**
+- provisional = **permission to hunt on the 5m/2m, not permission to trust**
+- a blue arrow standing against a solid colour is a **warning, not a cancellation**; the 5m and
+  2m rings grant nothing
+
+**Wired into the places that decide when he may trade** — a chapter nobody acts on is decoration:
+- the second-low checklist is now **seven items**, with *"Gate 1 agrees with your direction"* as
+  killer item #1 — it is the only item on the list he can read without thinking
+- the **desk card** gains the gate in section (1), a blue-ring warning in the ladder, and
+  *"Gate 1 is yellow"* in WALK AWAY IF
+- Chapter 6 now hands off to the gate instead of ending on a count
+
+**A blue ring alone is never an entry.** The 2-minute must still confirm: the pullback holds the
+broken level and 2-minute structure turns his way. That sentence appears in the new chapter, on
+the desk card, and in the checklist — three places, because one place is where things get missed.
+
+**What's working.** Chapters 7–17 renumbered to 8–18; every in-text cross-reference re-pointed
+and verified; all 18 chapters render under 8 part headings with 18 sidebar links; `node --check`
+clean on every script; CRLF/LF preserved per file. Verified on the **production URL** at wrap-up,
+not on a preview: root returns 200, `js/lessons-1.js` returns 200 and contains "blue ring" 9
+times, and the live `index.html` serves `?v=20260820134049` — the same stamp as the local file,
+so Netlify's build is today's build.
+
+**Gotcha #1 was honoured, and it is the reason this shipped clean.** Every script tag was bumped
+to `?v=20260820134049` and `CACHE` in `sw.js` went to `dbm-v5`. That is the fix for the
+stale-cache trap that ate hours on 2026-08-19 — do it on every future change under `js/`.
+
+**Important decisions.**
+- **Nothing visual moved.** No font, colour, layout, component or feature change; the Narrator is
+  untouched; every pattern rule, entry, door and number is exactly as it was. This was a content
+  insertion, not a redesign — which is also why the gallery card still represents the app
+  correctly and was left alone.
+- **The course and the indicator are now coupled on purpose.** Chapter 7 describes the 15m law as
+  GATES v5.61.0 implements it. If that law changes in `final-edge-nt8-indicator`, Chapter 7, the
+  seven-item checklist and the desk card all have to change with it, or the course starts
+  teaching a gate the panel no longer enforces.
+- Fixed in passing: the cross-reference in `js/examples.js` that already pointed at the wrong
+  chapter for Door B's two fixes now points at Door B. That was a pre-existing error, not one
+  the renumber introduced.
+
+**Problems encountered.** None. The renumber was the only real risk — 11 chapters shifting by one
+with cross-references scattered across three lesson files — and it was verified by rendering all
+18 chapters rather than by trusting the edit.
+
+**What's next (nothing blocking).** Unchanged from launch: Arnie does ~15 drill calls, then takes
+the pattern to Sim101 on M2K and logs the trades; after ~50 logged trades, revisit Chapter 14's
+scale-out advice using his own numbers. New: when the indicator's blue provisional ring is first
+seen firing on live tape, re-read Chapter 7 against what actually appeared on the card.

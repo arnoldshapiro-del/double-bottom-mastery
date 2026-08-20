@@ -55,6 +55,15 @@ server needed** — open `index.html`. Deploy = GitHub → Netlify auto-build (g
 - Trade management follows **Plan A as written** (memory `plan-a-trading-like-uni`): stops by
   structure never by R, the two-stage stop sequence, no 5-minute guard number, BE+3 retired.
 
+- **Chapter 7 mirrors the indicator, not a textbook.** "Gate 1 and the blue ring" describes the
+  15-minute law exactly as `final-edge-nt8-indicator` **GATES v5.61.0** enforces it: the 15m circle
+  judges swing structure (higher low compulsory; a 15m close beyond the last confirmed swing can
+  stand in for the higher high), solid states lock at the close, and a **blue ring means that
+  circle’s own candle has not closed — Gate 1 is open PROVISIONALLY**, which is permission to hunt,
+  not permission to trust. The 5m and 2m rings grant nothing. **If that law changes in the indicator
+  repo, this chapter, the seven-item checklist and the desk card must all change with it**, or the
+  course starts teaching a gate the panel no longer enforces.
+
 ## Not in scope
 
 This is a *teaching* app. It places no orders, connects to no broker, and reads no live data.
