@@ -41,7 +41,7 @@
         { at: 6,  text: "<b>Point 0 — the decline.</b> A W is a <i>reversal</i>. If there was no real decline first, there is nothing to reverse and no pattern here." },
         { at: 13, text: "<b>Point 1 — the first low (L1).</b> Heavy volume, wide bars, a long tail. Sellers finally overdid it. This is the price level everything else gets measured against." },
         { at: 21, text: "<b>Point 2 — the middle peak (MP).</b> Buyers took control, briefly. This peak is the <b>neckline</b>. It is the level that confirms the pattern, and it is Uni's first profit target." },
-        { at: 32, text: "<b>Point 3 — the second low (L2).</b> Price came back — but look at the bars and the volume. Quieter. Smaller. That is the whole tell, and Chapter 7 is about nothing else." },
+        { at: 32, text: "<b>Point 3 — the second low (L2).</b> Price came back — but look at the bars and the volume. Quieter. Smaller. That is the whole tell, and Chapter 8 is about nothing else." },
         { at: 37, text: "<b>Point 4 — the break.</b> A 2-minute <i>close</i> above the middle peak. Now the W is confirmed. Before this close it was only a candidate." }
       ],
       annotations: [
@@ -298,7 +298,7 @@
         { type: "trade", entry: 2346.4, stop: 2340.0, target: 2352.0, targetLabel: "MEASURED MOVE", fromI: 31, showAt: 33 },
         { type: "measured", lowPrice: 2340.1, neckPrice: 2346.0, fromI: 31, label: "5.9 pts projected up", color: VIOLET, showAt: 40 }
       ],
-      caption: "<b>Door B is the honest, textbook entry — and its arithmetic is brutal.</b> You get a much higher chance of being right, because you only trade patterns that actually confirmed. But you paid for that proof with the entire lower half of the move, and your stop is now five times wider. <b>Door B only works if you do NOT put the stop under the second low</b> — Chapter 9 shows the two ways to fix it."
+      caption: "<b>Door B is the honest, textbook entry — and its arithmetic is brutal.</b> You get a much higher chance of being right, because you only trade patterns that actually confirmed. But you paid for that proof with the entire lower half of the move, and your stop is now five times wider. <b>Door B only works if you do NOT put the stop under the second low</b> — Chapter 12 shows the two ways to fix it."
     };
   };
 
@@ -533,7 +533,7 @@
         { type: "zone", y1: 2343.0, y2: 2345.4, fromI: 19, toI: 24, color: "rgba(251,146,60,.14)", label: "no turn has happened yet", textColor: ORANGE, showAt: 22 },
         { type: "arrow", i: 24, price: 2343.6, toI: 30, toPrice: 2338.6, text: "no second low — ever", color: RED, showAt: 30 }
       ],
-      caption: "<b>If you fix one thing, fix this one.</b> Bulkowski measured that on daily stock charts, <b>44–50% of apparent double bottoms never confirm at all</b> — they simply never close above the middle peak. Anticipating the second low means taking that entire failure rate onto your account, on every trade. There is a way to survive entering early — it is the tiny stop — and that is the whole subject of Chapter 10."
+      caption: "<b>If you fix one thing, fix this one.</b> Bulkowski measured that on daily stock charts, <b>44–50% of apparent double bottoms never confirm at all</b> — they simply never close above the middle peak. Anticipating the second low means taking that entire failure rate onto your account, on every trade. There is a way to survive entering early — it is the tiny stop — and that is the whole subject of Chapter 11."
     };
   };
 

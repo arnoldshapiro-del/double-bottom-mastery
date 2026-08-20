@@ -143,7 +143,7 @@
 
   /* revised date stamp */
   var rev = document.getElementById("rev-date");
-  if (rev) rev.textContent = "2026-08-19";
+  if (rev) rev.textContent = "2026-08-20";
 
   /* service worker */
   if ("serviceWorker" in navigator) {

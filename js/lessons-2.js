@@ -12,10 +12,10 @@
      CH 7 — THE DECELERATION TELL
      ========================================================== */
   L.push({
-    id: "decel", part: "When to look", n: 7,
+    id: "decel", part: "When to look", n: 8,
     title: "The tell — quiet in, loud out",
     render: function () { return [
-      '<div class="eyebrow">Chapter 7 · When to look</div>',
+      '<div class="eyebrow">Chapter 8 · When to look</div>',
       '<h1>The tell — quiet in, loud out</h1>',
       '<p class="lead">If you only take one idea from this whole course, take this one. Two charts can have the identical shape and opposite outcomes, and the thing that separates them is not the shape at all. It is <b>how much force it took to get back down to the low</b>.</p>',
 
@@ -58,29 +58,30 @@
      CH 8 — THE SECOND-LOW CHECKLIST
      ========================================================== */
   L.push({
-    id: "checklist", part: "The moment", n: 8,
+    id: "checklist", part: "The moment", n: 9,
     title: "The second-low checklist",
     render: function () { return [
-      '<div class="eyebrow">Chapter 8 · The moment</div>',
+      '<div class="eyebrow">Chapter 9 · The moment</div>',
       '<h1>The second-low checklist</h1>',
-      '<p class="lead">You have said "it looks like a bottom is forming." Now price is at the shelf and you have about four minutes to decide. This is the list — six items, ten seconds each.</p>',
+      '<p class="lead">You have said "it looks like a bottom is forming." Now price is at the shelf and you have about four minutes to decide. This is the list — seven items, ten seconds each.</p>',
 
       '<div class="callout"><div class="ct">Use it the right way round</div>' +
       '<p>Airline and surgical checklist research is clear on this: for something you already know how to do, the checklist is a <b>DO-CONFIRM</b>, not a READ-DO. You make the call first — that is the skill this course is building — and <i>then</i> you run the list as a catch-net.</p>' +
       '<p>The design rules those researchers landed on: <b>5–9 items, one screen, under a minute, killer items first.</b> That is what this is.</p></div>',
 
-      '<h2>The six</h2>',
+      '<h2>The seven</h2>',
       '<table class="tbl"><thead><tr><th style="width:34px">#</th><th>Check</th><th>Pass looks like</th></tr></thead><tbody>' +
-      '<tr><td class="n"><b style="color:var(--red)">1</b></td><td><b>Not one-timeframing.</b> <span class="pill r">killer item</span></td><td>The last ten bars show two-sided action, not every high lower than the last.</td></tr>' +
-      '<tr><td class="n"><b style="color:var(--red)">2</b></td><td><b>The clock is clean.</b> <span class="pill r">killer item</span></td><td>Not 11:30–1:30. No scheduled number due inside your hold. Not two minutes before FOMC.</td></tr>' +
-      '<tr><td class="n"><b>3</b></td><td><b>There was a real decline into L1</b>, and the shelf sits on a level that matters.</td><td>You can name the level out loud.</td></tr>' +
-      '<tr><td class="n"><b>4</b></td><td><b>The pattern is tall enough to pay.</b></td><td>Shelf-to-middle-peak is at least <b>3× the average 2-minute bar</b>. On M2K that usually means <b>4 points or more</b>.</td></tr>' +
-      '<tr><td class="n"><b>5</b></td><td><b>The approach decelerated.</b></td><td>Smaller bars, lighter volume, more time than the first drop took.</td></tr>' +
-      '<tr><td class="n"><b>6</b></td><td><b>There is a low candle to work off.</b></td><td>A bar with a tail underneath that closed off its low — something to put an order above and a stop below.</td></tr>' +
+      '<tr><td class="n"><b style="color:var(--red)">1</b></td><td><b>Gate 1 agrees with your direction.</b> <span class="pill r">killer item</span></td><td>Solid green (or blue ▲) for a W. Solid red (or blue ▼) for an M. Yellow is a no.</td></tr>' +
+      '<tr><td class="n"><b style="color:var(--red)">2</b></td><td><b>Not one-timeframing.</b> <span class="pill r">killer item</span></td><td>The last ten bars show two-sided action, not every high lower than the last.</td></tr>' +
+      '<tr><td class="n"><b style="color:var(--red)">3</b></td><td><b>The clock is clean.</b> <span class="pill r">killer item</span></td><td>Not 11:30–1:30. No scheduled number due inside your hold. Not two minutes before FOMC.</td></tr>' +
+      '<tr><td class="n"><b>4</b></td><td><b>There was a real decline into L1</b>, and the shelf sits on a level that matters.</td><td>You can name the level out loud.</td></tr>' +
+      '<tr><td class="n"><b>5</b></td><td><b>The pattern is tall enough to pay.</b></td><td>Shelf-to-middle-peak is at least <b>3× the average 2-minute bar</b>. On M2K that usually means <b>4 points or more</b>.</td></tr>' +
+      '<tr><td class="n"><b>6</b></td><td><b>The approach decelerated.</b></td><td>Smaller bars, lighter volume, more time than the first drop took.</td></tr>' +
+      '<tr><td class="n"><b>7</b></td><td><b>There is a low candle to work off.</b></td><td>A bar with a tail underneath that closed off its low — something to put an order above and a stop below.</td></tr>' +
       '</tbody></table>',
 
-      '<div class="callout bad"><div class="ct">Any "no" on 1 or 2 and you are done</div>' +
-      '<p>Those two are the killer items — the ones that, when skipped, produce the worst outcomes. They are also the two that are easiest to check and easiest to skip when you are excited. No exceptions, no "but this one looks really good."</p></div>',
+      '<div class="callout bad"><div class="ct">Any "no" on 1, 2 or 3 and you are done</div>' +
+      '<p>Those three are the killer items — the ones that, when skipped, produce the worst outcomes. They are also the three that are quickest to check and easiest to skip when you are excited. Gate 1 is first because it is the only one you can read without thinking. No exceptions, no "but this one looks really good."</p></div>',
 
       '<h2>How tall is tall enough? Do the measurement.</h2>',
       '<p>There is no published rule for minimum pattern size on a 2-minute futures chart — I looked, and the honest answer is nobody has studied it. So here is a working rule built from things that <i>are</i> established, and you should treat it as a rule of thumb rather than a law:</p>',
@@ -93,7 +94,7 @@
       '<ul class="clean check">' +
       '<li><b>A hammer / long lower tail</b> — price went down, got rejected, closed near the top of its range.</li>' +
       '<li><b>A bullish engulfing bar</b> — a green bar whose body swallows the previous red one.</li>' +
-      '<li><b>An undercut and reclaim</b> — it poked below the shelf and closed back above it. This is the best one, and it is Chapter 9.</li>' +
+      '<li><b>An undercut and reclaim</b> — it poked below the shelf and closed back above it. This is the best one, and it is Chapter 10.</li>' +
       '<li><b>A stall</b> — two or three tiny bars in a row that simply refuse to go lower. That is absorption.</li>' +
       '</ul>',
       '<p class="srcs">On the confirmation question generally, the measured evidence is consistent: a hammer taken <i>with</i> confirmation (waiting for a break of its high) tests around 60% versus roughly 41–52% for the raw unconfirmed candle; bullish engulfing tests around 63% confirmed versus 47% unconfirmed. Waiting for one bar of proof is worth real money — which is exactly what the entry in the next chapter is.</p>'
@@ -104,10 +105,10 @@
      CH 9 — THE UNDERCUT AND RECLAIM
      ========================================================== */
   L.push({
-    id: "undercut", part: "The moment", n: 9,
+    id: "undercut", part: "The moment", n: 10,
     title: "The undercut and reclaim",
     render: function () { return [
-      '<div class="eyebrow">Chapter 9 · The moment</div>',
+      '<div class="eyebrow">Chapter 10 · The moment</div>',
       '<h1>The undercut and reclaim</h1>',
       '<p class="lead">Here is the version that makes you the most money and feels the worst while it happens. Price breaks the first low — the thing you were told invalidates the pattern — and then immediately takes it back. Learn to want this instead of fearing it.</p>',
 
@@ -151,10 +152,10 @@
      CH 10 — DOOR A: UNI'S ENTRY
      ========================================================== */
   L.push({
-    id: "doora", part: "The two doors", n: 10,
+    id: "doora", part: "The two doors", n: 11,
     title: "Door A — Uni's entry, at the low",
     render: function () { return [
-      '<div class="eyebrow">Chapter 10 · The two doors</div>',
+      '<div class="eyebrow">Chapter 11 · The two doors</div>',
       '<h1>Door A — Uni\'s entry, at the low</h1>',
       '<p class="lead">This is the entry you watched her take. Here it is as a mechanical rule you can place in NinjaTrader, in her own words, translated onto your 2-minute chart.</p>',
 
@@ -175,7 +176,7 @@
 
       '<div class="callout uni"><div class="ct">Why "2 ticks above the high" and not "buy the low"</div>' +
       '<p>Because a buy-stop above the bar makes the market prove something before it takes your money. If price never trades above that candle\'s high, the low was not in and you were never involved.</p>' +
-      '<p>Uni never buys a falling price. Neither does Raschke. Neither should you. The whole art is in choosing <b>which bar</b> to put the order above — and that is what Chapters 7 and 8 were for.</p></div>',
+      '<p>Uni never buys a falling price. Neither does Raschke. Neither should you. The whole art is in choosing <b>which bar</b> to put the order above — and that is what Chapters 8 and 9 were for.</p></div>',
 
       '<h2>The one thing that makes this work</h2>',
       '<p>Say it again because it is the thesis of the whole course: <b>you are entering before the pattern is confirmed, so roughly half of these will not work.</b> You are not avoiding that. You are surviving it, by being wrong for twelve ticks and right for forty-eight.</p>',
@@ -184,7 +185,7 @@
       '<div class="callout warn"><div class="ct">The cost nobody mentions: commissions</div>' +
       '<p>A tight stop means more contracts for the same dollar risk. More contracts means <b>more commission on every single trade</b> — it scales exactly in step.</p>' +
       '<p>At roughly <b>$1.90 round-turn</b> per M2K contract, on a $100 risk budget: a 20-tick stop gives you 10 contracts and about $19 of commission. A 4-tick stop gives you 50 contracts and about <b>$95</b> of commission — <b>95% of your risk budget, gone to fees before the trade even moves.</b></p>' +
-      '<p>Slippage does the same thing. One tick of slippage on 10 contracts is $5. On 50 contracts it is $25. <b>There is a floor on how tight you can usefully go</b>, and the calculator in Chapter 12 shows you exactly where yours is.</p></div>',
+      '<p>Slippage does the same thing. One tick of slippage on 10 contracts is $5. On 50 contracts it is $25. <b>There is a floor on how tight you can usefully go</b>, and the calculator in Chapter 13 shows you exactly where yours is.</p></div>',
 
       '<h2>Getting stopped out, and going again</h2>',
       '<p>You will get stopped out of good setups with a stop this tight. That is the deal. The discipline that goes with it:</p>',
@@ -201,10 +202,10 @@
      CH 11 — DOOR B
      ========================================================== */
   L.push({
-    id: "doorb", part: "The two doors", n: 11,
+    id: "doorb", part: "The two doors", n: 12,
     title: "Door B — the close above the middle of the W",
     render: function () { return [
-      '<div class="eyebrow">Chapter 11 · The two doors</div>',
+      '<div class="eyebrow">Chapter 12 · The two doors</div>',
       '<h1>Door B — the close above the middle of the W</h1>',
       '<p class="lead">You said you are willing to try this one again. Good — but not the way it is usually taught, because the standard version has arithmetic that cannot work. Here is what is wrong with it and the two ways to fix it.</p>',
 
@@ -264,16 +265,16 @@
      CH 12 — THE CALCULATOR
      ========================================================== */
   L.push({
-    id: "calc", part: "The two doors", n: 12,
+    id: "calc", part: "The two doors", n: 13,
     title: "The calculator — your real M2K numbers",
     render: function () { return [
-      '<div class="eyebrow">Chapter 12 · The two doors</div>',
+      '<div class="eyebrow">Chapter 13 · The two doors</div>',
       '<h1>The calculator — your real M2K numbers</h1>',
       '<p class="lead">Stop taking my word for it. Move the sliders and watch the two doors trade places. Everything here is real M2K arithmetic: 0.10-point ticks, $0.50 a tick, $5.00 a point, and commissions that actually get charged.</p>',
       { calc: true },
       '<div class="callout"><div class="ct">Three things to go and try right now</div>' +
       '<ul class="clean" style="margin:8px 0 0">' +
-      '<li><b>Drag the pattern height down to 3 points.</b> Watch both doors collapse. That is why Chapter 8 has a minimum size rule.</li>' +
+      '<li><b>Drag the pattern height down to 3 points.</b> Watch both doors collapse. That is why Chapter 9 has a minimum size rule.</li>' +
       '<li><b>Drag Door A\'s stop from 28 ticks down to 8.</b> Watch the contracts pile up — and then watch the commission line eat the whole trade. That is the floor.</li>' +
       '<li><b>Set Door B\'s stop to "under the second low."</b> Watch the break-even win rate go over 50%. That is the trade that disappointed you, shown as arithmetic.</li>' +
       '</ul></div>',

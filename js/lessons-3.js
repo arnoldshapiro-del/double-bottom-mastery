@@ -12,10 +12,10 @@
      CH 13 — THE FAILURE GALLERY
      ========================================================== */
   L.push({
-    id: "fails", part: "What goes wrong", n: 13,
+    id: "fails", part: "What goes wrong", n: 14,
     title: "The failure gallery — six ways this kills you",
     render: function () { return [
-      '<div class="eyebrow">Chapter 13 · What goes wrong</div>',
+      '<div class="eyebrow">Chapter 14 · What goes wrong</div>',
       '<h1>The failure gallery</h1>',
       '<p class="lead">You asked to be shown what can go wrong so you know when <b>not</b> to enter. This is that chapter, and it is the most important one in the course. Six failures, each animated, each with the tell that would have kept you out.</p>',
 
@@ -77,10 +77,10 @@
      CH 14 — MANAGING IT
      ========================================================== */
   L.push({
-    id: "manage", part: "Managing it", n: 14,
+    id: "manage", part: "Managing it", n: 15,
     title: "Stops, targets, and the 70% retest",
     render: function () { return [
-      '<div class="eyebrow">Chapter 14 · Managing it</div>',
+      '<div class="eyebrow">Chapter 15 · Managing it</div>',
       '<h1>Stops, targets, and the 70% retest</h1>',
       '<p class="lead">You are in. Now what. This chapter follows your existing Plan A rules — because they are already right — and adds the double-bottom-specific pieces.</p>',
 
@@ -133,10 +133,10 @@
      CH 15 — THE DRILL
      ========================================================== */
   L.push({
-    id: "drill", part: "Practice", n: 15,
+    id: "drill", part: "Practice", n: 16,
     title: "The drill — call it before you see it",
     render: function () { return [
-      '<div class="eyebrow">Chapter 15 · Practice</div>',
+      '<div class="eyebrow">Chapter 16 · Practice</div>',
       '<h1>The drill — call it before you see it</h1>',
       '<p class="lead">Reading about this will not teach you to see it. This will. The chart stops at the moment of decision and you have to call it — and only then does it show you what happened.</p>',
 
@@ -160,16 +160,17 @@
      CH 16 — THE CARD
      ========================================================== */
   L.push({
-    id: "card", part: "Practice", n: 16,
+    id: "card", part: "Practice", n: 17,
     title: "The card — print this and put it on the desk",
     render: function () { return [
-      '<div class="eyebrow">Chapter 16 · Practice</div>',
+      '<div class="eyebrow">Chapter 17 · Practice</div>',
       '<h1>The card</h1>',
       '<p class="lead">Everything in this course, on one screen, in the order you actually need it. Print it. It is designed to be run in under a minute, after you have already made the call.</p>',
 
       '<div class="card" style="border-color:var(--gold);border-width:2px">' +
       '<h2 style="margin-top:0">① BEFORE YOU LOOK — the gate</h2>' +
       '<ul class="clean check">' +
+      '<li><b>Gate 1 agrees.</b> Solid green or blue ▲ for a W; solid red or blue ▼ for an M. <span class="pill r">killer item</span></li>' +
       '<li><b>Not one-timeframing.</b> Last ten bars show two-sided action. <span class="pill r">killer item</span></li>' +
       '<li><b>Clock is clean.</b> Not 11:30–1:30. Nothing scheduled inside the hold. <span class="pill r">killer item</span></li>' +
       '<li><b>There was a real decline</b> for this to reverse.</li>' +
@@ -195,6 +196,7 @@
 
       '<h2>④ AFTER — the ladder</h2>' +
       '<ul class="clean">' +
+      '<li>A blue ring alone is not an entry — the 2-minute must still confirm.</li>' +
       '<li>Before target 1: <b>the stop does not move.</b></li>' +
       '<li>Target 1 pays → one move up under the previous completed 2-min swing. <b>Not a trail.</b></li>' +
       '<li>Target 2 pays → runners past entry, and <b>now</b> the trail is on.</li>' +
@@ -204,6 +206,7 @@
 
       '<h2 style="color:var(--red)">⑤ WALK AWAY IF</h2>' +
       '<ul class="clean cross">' +
+      '<li><b>Gate 1 is yellow</b> — or blue pointing the wrong way for your direction.</li>' +
       '<li>Every high is lower than the last one.</li>' +
       '<li>The approach to the second low is getting <b>louder</b>.</li>' +
       '<li>The whole pattern is two candles tall.</li>' +
@@ -229,10 +232,10 @@
      CH 17 — HOW TO ACTUALLY LEARN THIS
      ========================================================== */
   L.push({
-    id: "learn", part: "Practice", n: 17,
+    id: "learn", part: "Practice", n: 18,
     title: "How to actually learn this — and how long it takes",
     render: function () { return [
-      '<div class="eyebrow">Chapter 17 · Practice</div>',
+      '<div class="eyebrow">Chapter 18 · Practice</div>',
       '<h1>How to actually learn this</h1>',
       '<p class="lead">You said you are determined. Good — but determination pointed at the wrong practice does not work, and I would rather tell you the real timeline than sell you a fast one.</p>',
 
@@ -267,7 +270,7 @@
       '</tbody></table>',
 
       '<div class="callout bad"><div class="ct">Go back over the losing trades you already have</div>' +
-      '<p>You have twenty or thirty of these in the past. If you can find them, score each one against the card in Chapter 16 — did it one-timeframe? Was the second low quieter? Where was the stop? Was the pattern tall enough?</p>' +
+      '<p>You have twenty or thirty of these in the past. If you can find them, score each one against the card in Chapter 17 — did it one-timeframe? Was the second low quieter? Where was the stop? Was the pattern tall enough?</p>' +
       '<p>Whichever box was empty most often is your actual problem, and it will be more useful than any general ranking I could give you. My money is on the stop.</p></div>',
 
       '<h2>The last thing</h2>',

@@ -74,10 +74,10 @@
       '<h2>What you are going to learn, in order</h2>',
       '<ul class="clean">' +
       '<li><b>Chapters 2–4 · See it.</b> The four points of the W, the M, and why the <i>shape</i> of a low tells you how good it is.</li>' +
-      '<li><b>Chapters 5–7 · When to start looking.</b> Uni\'s Weight of the Evidence, the three things that must be true before you even care, and the one tell that separates a real second low from a fake one.</li>' +
-      '<li><b>Chapters 8–12 · The moment, and the two doors.</b> The checklist at the second low, the undercut-and-reclaim, both entries, and a calculator with your real M2K numbers.</li>' +
-      '<li><b>Chapter 13 · What goes wrong.</b> Six ways this trade kills you, each one animated, each one with the early warning sign.</li>' +
-      '<li><b>Chapters 14–17 · Managing it and practising it.</b> Stops, targets, the 70% retest, a drill that makes you call the chart before it shows you the answer, and a card for the desk.</li>' +
+      '<li><b>Chapters 5–8 · When to start looking.</b> Uni\'s Weight of the Evidence, the three things that must be true before you even care, Gate 1 and the blue ring, and the one tell that separates a real second low from a fake one.</li>' +
+      '<li><b>Chapters 9–13 · The moment, and the two doors.</b> The checklist at the second low, the undercut-and-reclaim, both entries, and a calculator with your real M2K numbers.</li>' +
+      '<li><b>Chapter 14 · What goes wrong.</b> Six ways this trade kills you, each one animated, each one with the early warning sign.</li>' +
+      '<li><b>Chapters 15–18 · Managing it and practising it.</b> Stops, targets, the 70% retest, a drill that makes you call the chart before it shows you the answer, and a card for the desk.</li>' +
       '</ul>',
 
       '<p class="srcs"><b>A word about the charts in this course.</b> They are drawn bar by bar to teach one idea each, in real M2K price territory with real M2K mechanics — 0.10-point ticks, $0.50 a tick, $5.00 a point. They are illustrations, not recordings of specific sessions, and every chart says so in its corner. Where I quote a statistic I say where it came from and whether it transfers to your 2-minute chart.</p>'
@@ -273,7 +273,7 @@
       '<div class="callout good"><div class="ct">Say it like Uni says it</div>' +
       '<p>When all three are true, you have earned the sentence <b>"it looks like a bottom is forming."</b> Out loud, in those words:</p>' +
       '<p style="font-size:1.05rem"><b>"There was a real decline. Today is not one-timeframing. And this low is sitting on <span style="color:var(--cyan)">[the level]</span>."</b></p>' +
-      '<p>That sentence is not a trade. It is permission to start watching. The trade is still three chapters away — and the whole point is that you now have something to watch <i>for</i> instead of something to hope for.</p></div>',
+      '<p>That sentence is not a trade. It is permission to start watching. The trade is still several chapters away — and the whole point is that you now have something to watch <i>for</i> instead of something to hope for.</p><p>One thing is still missing, and the panel supplies it: <b>Gate 1</b>, the 15-minute circle, which decides whether the bigger chart will let you trade this direction at all. That is the next chapter.</p></div>',
 
       '<h2>And one check on the clock</h2>',
       '<p>Time of day changes the odds more than most people admit. In US Eastern time:</p>',
@@ -284,6 +284,74 @@
       '<tr><td class="n">14:00–15:00</td><td>Repositioning, direction usually visible. Decent. (FOMC days: 2:00pm is a different world — stand aside.)</td></tr>' +
       '<tr><td class="n">15:00–16:00</td><td>Power hour. Second-highest volume, and genuinely reversal-prone.</td></tr>' +
       '</tbody></table>'
+    ]; }
+  });
+
+  /* ==========================================================
+     CH 7 — GATE 1 AND THE BLUE RING
+     ========================================================== */
+  L.push({
+    id: "gate1", part: "When to look", n: 7,
+    title: "Gate 1 and the blue ring",
+    render: function () { return [
+      '<div class="eyebrow">Chapter 7 · When to look</div>',
+      '<h1>Gate 1 and the blue ring</h1>',
+      '<p class="lead">The last chapter gave you three checks you run with your own eyes. This one is run for you. The 15-minute circle on your panel is <b>Gate 1</b>, and it answers one question: which direction is the 15-minute chart currently willing to let you trade? Read it in a glance and you stop taking Ws into a market that is still going down.</p>',
+
+      '<h2>It judges structure — nothing else</h2>',
+      '<p>The 15-minute circle looks at <b>swing highs and swing lows</b>. Not an average, not VWAP, not where price happens to be sitting this second. Just the shape the 15-minute chart has been making.</p>',
+      '<p>And a swing is not real the moment it prints. A high becomes a <b>confirmed</b> swing high only once <b>two candles have closed to its right</b> without taking it out. Same for a low. That is the same idea as the low candle you are about to meet in the entry chapters: make the market prove the turn before you call it one.</p>',
+
+      '<h2>The three solid colours</h2>',
+      '<table class="tbl"><thead><tr><th style="width:120px">Circle</th><th>What it means</th><th>What you may do</th></tr></thead><tbody>' +
+      '<tr><td><b style="color:var(--green)">SOLID GREEN</b></td><td>The 15-minute chart is making a <b>higher low</b> and a <b>higher high</b>. An uptrend, confirmed.</td><td><span class="pill g">longs only</span> Ws are live. Ms are not.</td></tr>' +
+      '<tr><td><b style="color:var(--red)">SOLID RED</b></td><td>A <b>lower high</b> and a <b>lower low</b>. A downtrend, confirmed.</td><td><span class="pill r">shorts only</span> Ms are live. Ws are not.</td></tr>' +
+      '<tr><td><b style="color:var(--gold)">YELLOW</b></td><td>Mixed. A higher high with a lower low is still mixed — that is expansion, not trend. So is not having enough confirmed swings yet.</td><td><span class="pill a">stand down</span> No W, no M.</td></tr>' +
+      '</tbody></table>',
+
+      '<div class="callout"><div class="ct">The one refinement worth knowing</div>' +
+      '<p>The <b>higher low is compulsory</b> for green. The higher high has a second route: a 15-minute candle that <b>closes above</b> the last confirmed swing high counts in its place — that is a break of structure, and it is how a trend that runs without pausing still gets recognised. Mirror it exactly for red: the lower high is compulsory, and a 15-minute close below the last confirmed swing low can stand in for the lower low.</p>' +
+      '<p>Which is why a green built on a break can be taken away again. If price later closes back under that swing low, the higher low is gone, and the circle demotes.</p></div>',
+
+      '<div class="callout good"><div class="ct">Solid means finished</div>' +
+      '<p>A solid colour is stamped at a <b>completed 15-minute close</b> or at the moment a new swing confirms, and then it is locked. It never quietly changes its mind about a candle that already printed. If the circle was green at 10:15, it was green at 10:15 — you can go back and check, and the panel will not have rewritten history to make itself look clever.</p></div>',
+
+      '<h2>The blue ring — the part that is new</h2>',
+      '<p>Here is the problem the blue ring solves. The 15-minute candle takes fifteen minutes. If the gate only ever changed at the close, you would spend up to fourteen of those minutes looking at a colour that the market had already stopped agreeing with.</p>',
+      '<p>So: when price is trading <b>beyond the swing level that matters right now</b>, and a close at that price <i>would</i> change the colour, the circle grows a <b>bright blue ring with an arrow in it</b>.</p>',
+      '<table class="tbl"><thead><tr><th style="width:120px">Ring</th><th>What is happening</th><th>Gate 1 says</th></tr></thead><tbody>' +
+      '<tr><td><b style="color:var(--cyan)">BLUE ▲</b></td><td>Price is above the last confirmed 15-minute swing high right now, and the candle has not closed.</td><td><b>OPEN — PROVISIONAL</b> for longs</td></tr>' +
+      '<tr><td><b style="color:var(--cyan)">BLUE ▼</b></td><td>Price is below the last confirmed 15-minute swing low right now, and the candle has not closed.</td><td><b>OPEN — PROVISIONAL</b> for shorts</td></tr>' +
+      '</tbody></table>',
+      '<p>Blue is deliberately hard to confuse with anything else on the panel, because it is not a verdict. <b>Blue means the candle is not finished.</b> That is all it has ever meant, on any of the three circles.</p>',
+
+      '<div class="callout warn"><div class="ct">What "provisional" is actually buying you</div>' +
+      '<p><b>It is permission to hunt, not permission to trust.</b> A blue ring lets you drop to the 5-minute and the 2-minute and start looking for the entry — which is the difference between being ready when the setup arrives and reading about it afterwards.</p>' +
+      '<p>What it does <b>not</b> do is prove the trend. At the 15-minute close the panel recomputes, and the ring resolves one of two ways: it locks into the new solid colour, or it vanishes and the old colour stands. A poke that would not change anything does not even raise a ring — the panel only shows you blue when something is genuinely at stake.</p></div>',
+
+      '<h2>A blue arrow against a solid colour is a warning, not a cancellation</h2>',
+      '<p>You will sometimes see a filled green circle wearing a blue rim with a <b>down</b> arrow. That is price currently under the swing low that green was built on. It is worth knowing about — the trend may be breaking as you watch — but it does <b>not</b> shut the gate before the close. The confirmed colour governs until its candle finishes. Treat the rim as a reason to tighten up and stop adding, not as a reason to abandon a trade that is working.</p>',
+
+      '<div class="callout bad"><div class="ct">The 5-minute and 2-minute rings grant you nothing</div>' +
+      '<p>All three circles use the same blue for the same reason — their own candle has not closed. But only the 15-minute one opens anything. A blue ring on the 5-minute or the 2-minute is information and nothing more: it cannot open a gate, and it never has been able to.</p></div>',
+
+      '<h2>So when may you actually take the trade?</h2>',
+      '<p>Put the gate and the pattern together and the whole rule fits in four lines:</p>',
+      '<ul class="clean check">' +
+      '<li><b>A W (double bottom)</b> needs Gate 1 <b>solid green</b>, or a <b>blue ▲</b> whose close would make it green.</li>' +
+      '<li><b>An M (double top)</b> needs Gate 1 <b>solid red</b>, or a <b>blue ▼</b> whose close would make it red.</li>' +
+      '<li><b>The 2-minute still has to confirm.</b> The pullback holds the level that was broken, and 2-minute structure turns your way. Nothing in this chapter replaces that.</li>' +
+      '<li><b>Yellow means no.</b> Not "smaller", not "carefully". No.</li>' +
+      '</ul>',
+
+      '<div class="callout bad"><div class="ct">A blue ring on its own is not an entry</div>' +
+      '<p>This is the one way to misuse the ring, so it gets its own box. Blue tells you the door is unlatched. It does not tell you to walk through it. If you buy the blue arrow with no 2-minute confirmation, you have gone back to buying a falling price with a story attached — which is the exact habit this whole course exists to break.</p>' +
+      '<p>The order still goes above a low candle. The stop still goes under it. The gate only decides whether you were allowed to be looking.</p></div>',
+
+      '<div class="callout good"><div class="ct">Say it like this, out loud</div>' +
+      '<p>Add one line to the sentence you learned in the last chapter:</p>' +
+      '<p style="font-size:1.05rem"><b>"There was a real decline. Today is not one-timeframing. This low is sitting on <span style="color:var(--cyan)">[the level]</span>. And Gate 1 is <span style="color:var(--cyan)">[green / blue up, provisional]</span>."</b></p>' +
+      '<p>If the fourth clause will not come out of your mouth, you do not have a trade yet. You have a chart you like.</p></div>'
     ]; }
   });
 
