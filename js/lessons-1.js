@@ -20,11 +20,11 @@
 
       '<div class="callout bad"><div class="ct">The short answer</div>' +
       '<p>You almost certainly took <b>Uni\'s entry</b> — in at the low, before anything was confirmed — and paired it with <b>a textbook\'s stop</b>, somewhere well below the pattern.</p>' +
-      '<p>That combination is the worst of both worlds, and it loses money even when your pattern-reading is fine. Uni is not making a different <i>call</i> than you. She is making the same call with <b>one-fifth of the risk distance</b>, and that single difference is what turns a losing method into a winning one.</p></div>',
+      '<p>That combination is the worst of both worlds, and it loses money even when your pattern-reading is fine. Uni is not making a different <i>call</i> than you. She is making the same call with <b>roughly half the risk distance</b> — her stop comes off the candle, yours came off the platform\'s default — and that single difference is what flips the arithmetic.</p></div>',
 
       '<div class="callout good"><div class="ct">And this is not me guessing — your own records already said so</div>' +
       '<p>The research done on <b>your 116 recorded M2K trades</b> on 2026-08-18 measured your actual stop distance. Across <b>111 of them, your initial risk sat between 49 and 51 ticks.</b> That is the platform\'s default stop, not a stop chosen from the chart.</p>' +
-      '<p><b>Uni\'s is about 12.</b> You were running a stop four times wider than the entry could carry — and 52 of those 116 trades had the stop widened <i>further</i> after entry.</p>' +
+      '<p><b>A stop taken from the candle itself, in your morning window, measures about 28 ticks.</b> So you were carrying roughly twice the risk the setup actually called for — and 52 of those 116 trades had the stop widened <i>further</i> after entry.</p>' +
       '<p>Two separate pieces of work, a day apart, from completely different directions, landed on the same single cause. That is about as close to proof as this gets.</p></div>',
 
       '<h2>The number nobody tells you</h2>',
@@ -42,29 +42,30 @@
       '<p>Say the pattern is 6 points tall — a normal M2K W on the 2-minute. Here is what each door actually costs you.</p>',
 
       '<div class="calc-out">' +
-      '<div class="door a"><h4>Door A — in at the low (Uni)</h4><div class="sub">the way she does it</div>' +
-      '<div class="dstat"><span>Stop distance</span><span>12 ticks</span></div>' +
-      '<div class="dstat"><span>Risk per contract</span><span>$6.00</span></div>' +
-      '<div class="dstat"><span>First target (middle peak)</span><span>48 ticks</span></div>' +
-      '<div class="dstat hero"><span>Reward : risk</span><span>4 : 1</span></div>' +
-      '<div class="dstat"><span>Win rate needed to break even</span><span>20%</span></div></div>' +
+      '<div class="door a"><h4>Stop under the candle</h4><div class="sub">the way Uni does it</div>' +
+      '<div class="dstat"><span>Stop distance</span><span>28 ticks</span></div>' +
+      '<div class="dstat"><span>Risk per contract</span><span>$14.00</span></div>' +
+      '<div class="dstat"><span>First target (middle peak)</span><span>38 ticks</span></div>' +
+      '<div class="dstat hero"><span>Reward : risk</span><span>1.36 : 1</span></div>' +
+      '<div class="dstat"><span>Win rate needed to break even</span><span>42%</span></div></div>' +
 
-      '<div class="door b" style="border-color:rgba(244,63,94,.5)"><h4 style="color:var(--red)">Door A — with a textbook stop</h4><div class="sub">what you were probably doing</div>' +
-      '<div class="dstat"><span>Stop distance</span><span>60 ticks</span></div>' +
-      '<div class="dstat"><span>Risk per contract</span><span>$30.00</span></div>' +
-      '<div class="dstat"><span>First target (middle peak)</span><span>48 ticks</span></div>' +
-      '<div class="dstat hero warnv"><span>Reward : risk</span><span>0.8 : 1</span></div>' +
-      '<div class="dstat"><span>Win rate needed to break even</span><span>56%</span></div></div>' +
-      '</div>',
+      '<div class="door b" style="border-color:rgba(244,63,94,.5)"><h4 style="color:var(--red)">The platform\'s default stop</h4><div class="sub">what you were actually doing</div>' +
+      '<div class="dstat"><span>Stop distance</span><span>50 ticks</span></div>' +
+      '<div class="dstat"><span>Risk per contract</span><span>$25.00</span></div>' +
+      '<div class="dstat"><span>First target (middle peak)</span><span>38 ticks</span></div>' +
+      '<div class="dstat hero warnv"><span>Reward : risk</span><span>0.76 : 1</span></div>' +
+      '<div class="dstat"><span>Win rate needed to break even</span><span>57%</span></div></div>' +
+      '</div>' +
+      '<p class="srcs"><b>These are measured, not illustrated.</b> The 28 and the 38 are the median stop and median first-target distance across every double bottom found in your own recorded 2-minute bars during your morning window. The 50 is your ATM\'s default, measured across 111 of your trades. Nothing here is a drawn example.</p>',
 
       '<div class="callout"><div class="ct">This is the whole thing</div>' +
-      '<p>Same entry. Same chart. Same skill. But the left column needs to be right <b>1 time in 5</b>, and the right column needs to be right <b>more than half the time</b> — against a pattern that only confirms about half the time.</p>' +
+      '<p>Same entry. Same chart. Same skill. But the left column needs to be right <b>42% of the time</b>, and the right column needs to be right <b>57%</b> — against a pattern that only confirms about half the time. That gap is the whole difference between a method that can work and one that cannot.</p>' +
       '<p>The right-hand column cannot win. Not because you read the chart badly, but because the arithmetic was impossible before you clicked the mouse.</p></div>',
 
       '<h2>The tiny stop is not a bonus. It is the whole point.</h2>',
       '<p>Here is the part that took me a while to see, and it reframes everything:</p>',
-      '<p>Entering at the low means you accept the ~50% of patterns that never confirm. You cannot avoid them — by definition you got in before the proof existed. So the only way that entry survives is if being wrong is <b>cheap</b>. Twelve ticks cheap. Six dollars a contract cheap.</p>',
-      '<p>When it is that cheap, half your trades stopping out barely matters, because the ones that work pay four to one just to reach the first target. That is the machine. <b>The small stop is not a perk of entering early — it is the thing that makes entering early legal at all.</b></p>',
+      '<p>Entering at the low means you accept the ~50% of patterns that never confirm. You cannot avoid them — by definition you got in before the proof existed. So the only way that entry survives is if being wrong is <b>cheap relative to the move you are chasing</b> — which is not the same as cheap in ticks. On your morning chart that means about 28 ticks of risk against a 38-tick first target, not some fixed small number.</p>',
+      '<p>Get that ratio right and half your trades stopping out is survivable. Get it wrong — by letting the platform pick your stop — and no amount of chart-reading rescues it. That is the machine. <b>The small stop is not a perk of entering early — it is the thing that makes entering early legal at all.</b></p>',
 
       '<div class="callout good"><div class="ct">And the other honest possibility</div>' +
       '<p>Twenty to thirty trades is a small sample. Traders who study this properly say you need <b>50–100 trades</b> before a win rate means anything. So some of that 80% was probably bad luck.</p>' +

@@ -245,8 +245,8 @@
         { at: 16, text: "<b>Middle peak: 2346.0.</b> Draw that line too. It is going to be your first target." },
         { at: 26, text: "<b>There it is — the low candle.</b> It made the second low at 2340.2 and its high is 2341.0. Quiet volume, small body, a tail underneath. That candle is now the whole trade." },
         { at: 27, text: "<b>The order:</b> a buy-stop <b>2 ticks above that candle's high</b> — 2341.2. You do not predict. You do not buy the low. You let price come and take you in." },
-        { at: 28, text: "<b>Filled.</b> Stop goes 2 ticks under the low candle: 2340.0. Your risk is <b>12 ticks — $6 a contract.</b> That is the whole reason this entry exists." },
-        { at: 33, text: "<b>First target is the middle peak, 2346.0.</b> That is 48 ticks. You are risking 12 to make 48 — <b>4 to 1</b> — just to reach the level where the other kind of trader is only now getting in." }
+        { at: 28, text: "<b>Filled.</b> Stop goes 2 ticks under the low candle: 2340.0. In this drawn example the risk is <b>12 ticks</b>. On your own morning bars the candle is bigger and it usually measures nearer <b>28</b>. The rule is the stop coming off the candle, never a fixed number." },
+        { at: 33, text: "<b>First target is the middle peak, 2346.0.</b> That is 48 ticks in this drawing. On your own recorded bars a typical morning base risks 28 to make 38 — about <b>1.4 to 1</b> — and that is still the best ratio of the whole trading day." }
       ],
       annotations: [
         { type: "level", price: 2340.1, label: "L1 shelf", color: CYAN, style: "dash", showAt: 8 },
@@ -256,7 +256,7 @@
         { type: "pivot", i: iL2, side: "low", label: "the LOW CANDLE", color: LIME, showAt: 26 },
         { type: "note", i: iL2 + 2, price: 2338.6, text: "↑ everything hangs off this one bar", color: LIME, showAt: 26 },
         { type: "trade", entry: 2341.2, stop: 2340.0, target: 2346.0, targetLabel: "TARGET 1", fromI: 26, showAt: 28 },
-        { type: "note", i: 31, price: 2343.9, text: "risk 12 ticks · reward 48 ticks", color: VIOLET, showAt: 29 }
+        { type: "note", i: 31, price: 2343.9, text: "this example: risk 12 · reward 48", color: VIOLET, showAt: 29 }
       ],
       caption: "<b>This is Uni's own rule, moved onto a 2-minute chart.</b> Her Bull Flag rule set says <i>\"trade 20 cents above the high of the low day\"</i> — on a daily chart. On the 2-minute, the low <i>day</i> becomes the low <i>candle</i>, and 20 cents becomes 2 ticks. Her rule #15 says the first profit target is <i>\"the initial previous high\"</i> — on a W, that is the middle peak. Linda Raschke published the identical logic in 1995 as <b>Turtle Soup</b>: a buy-stop just above the old low, so the trade only triggers if the new low is already failing."
     };
@@ -604,8 +604,8 @@
         { at: 14, text: "<b>1 — A real decline into a real low.</b> Climax volume at 2342.0. Draw the shelf." },
         { at: 22, text: "<b>2 — Middle peak at 2348.4.</b> Draw it. That is the neckline, and it is target one." },
         { at: 32, text: "<b>3 — The quiet return.</b> Six bars, dry volume, a small undercut of the shelf and a tail. Sellers are done." },
-        { at: 34, text: "<b>4 — ENTRY.</b> 2 ticks above the low candle's high: 2342.6. Stop 2 ticks under the low: 2341.4. Risk 12 ticks." },
-        { at: 40, text: "<b>5 — TARGET 1 pays at the neckline, 2348.4.</b> 58 ticks on 12 ticks of risk. Take the first piece off here — this is Uni's rule #15, the previous high is the first target." },
+        { at: 34, text: "<b>4 — ENTRY.</b> 2 ticks above the low candle's high: 2342.6. Stop 2 ticks under the low: 2341.4 &mdash; 12 ticks in this drawing." },
+        { at: 40, text: "<b>5 — TARGET 1 pays at the neckline, 2348.4.</b> 58 ticks on 12 ticks of risk in this example. Take the first piece off here — this is Uni's rule #15, the previous high is the first target." },
         { at: 44, text: "<b>6 — The retest.</b> Uni: <i>\"70% of breakouts will test the breakout level.\"</i> This pullback is normal — and it is the second-chance entry for anyone who missed the first one." },
         { at: 51, text: "<b>7 — The measured move.</b> Pattern height 6.4 points added to the neckline: 2354.8. The runners work up to there." }
       ],
@@ -621,7 +621,7 @@
         { type: "note", i: 44, price: 2345.4, text: "the 70% retest", color: VIOLET, showAt: 44 },
         { type: "measured", lowPrice: 2341.9, neckPrice: 2348.4, fromI: 40, label: "measured move 2354.8", color: VIOLET, showAt: 51 }
       ],
-      caption: "<b>Risk 12 ticks. First target 58 ticks. Measured move 122 ticks.</b> On M2K that is $6 of risk a contract to make $29 at target one and $61 if the runners reach the measured move. This is the trade you watched Uni take — and the reason it looked easy is that she never had much at stake."
+      caption: "<b>In this example: risk 12 ticks, first target 58, measured move 122.</b> Your own bars run smaller &mdash; median 28 risk against a 38-tick first target. On M2K that is $6 of risk a contract to make $29 at target one and $61 if the runners reach the measured move. This is the trade you watched Uni take — and the reason it looked easy is that she never had much at stake."
     };
   };
 

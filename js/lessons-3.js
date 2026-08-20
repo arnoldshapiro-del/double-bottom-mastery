@@ -217,7 +217,7 @@
       '<table class="tbl" style="margin:8px 0 0"><tbody>' +
       '<tr><td>1 tick</td><td class="n">0.10 points = <b>$0.50</b></td></tr>' +
       '<tr><td>1 point</td><td class="n">10 ticks = <b>$5.00</b></td></tr>' +
-      '<tr><td>A 12-tick stop</td><td class="n">1.2 points = <b>$6.00</b> a contract</td></tr>' +
+      '<tr><td>A 28-tick stop <span style="color:var(--mut)">(a typical morning candle)</span></td><td class="n">2.8 points = <b>$14.00</b> a contract</td></tr>' +
       '<tr><td>A 4-point pattern</td><td class="n">40 ticks = <b>$20</b> a contract from shelf to neckline</td></tr>' +
       '<tr><td>M2K daily range, mid-Aug 2026</td><td class="n">ATR(14) ≈ <b>41 points</b> ≈ $205 a contract</td></tr>' +
       '</tbody></table>' +

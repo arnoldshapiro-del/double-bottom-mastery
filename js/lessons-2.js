@@ -274,7 +274,7 @@
       '<div class="callout"><div class="ct">Three things to go and try right now</div>' +
       '<ul class="clean" style="margin:8px 0 0">' +
       '<li><b>Drag the pattern height down to 3 points.</b> Watch both doors collapse. That is why Chapter 8 has a minimum size rule.</li>' +
-      '<li><b>Drag Door A\'s stop from 12 ticks down to 4.</b> Watch the contracts pile up — and then watch the commission line eat the whole trade. That is the floor.</li>' +
+      '<li><b>Drag Door A\'s stop from 28 ticks down to 8.</b> Watch the contracts pile up — and then watch the commission line eat the whole trade. That is the floor.</li>' +
       '<li><b>Set Door B\'s stop to "under the second low."</b> Watch the break-even win rate go over 50%. That is the trade that disappointed you, shown as arithmetic.</li>' +
       '</ul></div>',
       '<p class="srcs"><b>About the commission figure.</b> The $1.90 default is a published round-turn all-in rate for M2K on one broker\'s most expensive plan. Yours will differ — put your real number in the box. The point is not the exact figure, it is that commission scales one-for-one with contract count, so it hurts the tight-stop door far more than the wide-stop one.</p>'
@@ -292,8 +292,8 @@
         '<input type="range" id="c-h" min="2" max="14" step="0.5" value="6">' +
         '<input type="number" id="c-hn" value="6" step="0.5"></div>' +
       '<div class="calc-row"><label>Door A stop (ticks)</label>' +
-        '<input type="range" id="c-sa" min="3" max="40" step="1" value="12">' +
-        '<input type="number" id="c-san" value="12" step="1"></div>' +
+        '<input type="range" id="c-sa" min="3" max="40" step="1" value="28">' +
+        '<input type="number" id="c-san" value="28" step="1"></div>' +
       '<div class="calc-row"><label>Door B stop goes…</label>' +
         '<select id="c-sb">' +
           '<option value="neck">a few ticks under the neckline</option>' +
