@@ -53,22 +53,12 @@ server needed** — open `index.html`. Deploy = GitHub → Netlify auto-build (g
    strip) silently replaced the hoisted `function nav()` on every chart that had steps —
    `seek()` threw, the roll-once autoplay looked like it had "worked", and only a harness
    that called the API caught it. `node --check` cannot see this.
-9. **Verifying pixels AND motion.** A temporary lab page in the repo root (served alongside
-   `js/`) renders one chart at a chosen `shown` with synthetic pointer events for hover /
-   ruler / pick, then headless Chrome photographs it. Two hard-won rules:
-   - **Static shots:** do everything SYNCHRONOUSLY after `D.chart()`. Headless Chrome's
-     virtual clock makes `setTimeout` ordering unreliable, and the roll-once autoplay starts
-     if `shown <= 2` when it fires.
-   - **Motion (play, the forming bar, the pair):** `--virtual-time-budget` throttles
-     `requestAnimationFrame` to ~1.5fps, so it CANNOT show you playback. Drop it and instead
-     hold the load event open — serve a `/slow?ms=9000` route and put `<img src="/slow…">` on
-     the page — so `--screenshot` waits while rAF runs at full speed. A passing run reads
-     ~220 frames in 3s and one bar per `spec.speed` ms with no bars skipped.
-   - `requestAnimationFrame` never fires in the hidden Browser pane either (same family as
-     gotcha #4), so charts there never paint. Call `fig._draw()` before reading anything
-     layout-dependent; a stale `L` is why `priceAt()` once returned null and the drill said
-     "23421 ticks".
-   Delete the lab file before committing; it is not part of the app.
+9. **`requestAnimationFrame` drives every animation, and two harnesses lie about it.** It
+   never fires in the hidden Browser pane (same family as gotcha #4) — call `fig._draw()`
+   before reading anything layout-dependent there. And headless Chrome throttles rAF to
+   ~1.5fps under `--virtual-time-budget`, so that flag CANNOT show you playback. To verify
+   motion, drop it and hold the load event open with a slow-loading asset instead. Full
+   recipe (both harnesses, and the "23421 ticks" bug this hid): SESSION_NOTES 2026-08-22.
 
 ## Content rules specific to this app
 
