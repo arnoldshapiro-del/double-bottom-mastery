@@ -318,22 +318,22 @@
 
       '<h2>The blue ring — the part that is new</h2>',
       '<p>Here is the problem the blue ring solves. The 15-minute candle takes fifteen minutes. If the gate only ever changed at the close, you would spend up to fourteen of those minutes looking at a colour that the market had already stopped agreeing with.</p>',
-      '<p>So: when price is trading <b>beyond the swing level that matters right now</b>, and a close at that price <i>would</i> change the colour, the circle grows a <b>bright blue ring with an arrow in it</b>.</p>',
+      '<p>So: when something is in motion that <i>would</i> change the colour once it finishes — price trading <b>beyond the swing level that matters right now</b> with the candle still open, <b>or a new swing high or swing low that has printed but has not yet had its two confirming candles</b> — the circle grows a <b>bright blue ring with an arrow in it</b>. (The second half arrived with FINAL GATE v5.63.0 on 2026-08-22; before that the ring only knew the first.)</p>',
       '<table class="tbl"><thead><tr><th style="width:120px">Ring</th><th>What is happening</th><th>Gate 1 says</th></tr></thead><tbody>' +
-      '<tr><td><b style="color:var(--cyan)">BLUE ▲</b></td><td>Price is above the last confirmed 15-minute swing high right now, and the candle has not closed.</td><td><b>OPEN — PROVISIONAL</b> for longs</td></tr>' +
-      '<tr><td><b style="color:var(--cyan)">BLUE ▼</b></td><td>Price is below the last confirmed 15-minute swing low right now, and the candle has not closed.</td><td><b>OPEN — PROVISIONAL</b> for shorts</td></tr>' +
+      '<tr><td><b style="color:var(--cyan)">BLUE ▲</b></td><td>Price is above the last confirmed 15-minute swing high and the candle has not closed — or a higher high / higher low has printed and is still waiting for its two confirming candles.</td><td><b>OPEN — PROVISIONAL</b> for longs</td></tr>' +
+      '<tr><td><b style="color:var(--cyan)">BLUE ▼</b></td><td>Price is below the last confirmed 15-minute swing low and the candle has not closed — or a lower low / lower high has printed and is still waiting for its two confirming candles.</td><td><b>OPEN — PROVISIONAL</b> for shorts</td></tr>' +
       '</tbody></table>',
-      '<p>Blue is deliberately hard to confuse with anything else on the panel, because it is not a verdict. <b>Blue means the candle is not finished.</b> That is all it has ever meant, on any of the three circles.</p>',
+      '<p>Blue is deliberately hard to confuse with anything else on the panel, because it is not a verdict. <b>Blue means not yet confirmed.</b> On the 5-minute and 2-minute circles that is the candle not being finished; on the 15-minute it is that, <i>or</i> a swing that has not yet earned its two confirming candles. The card tells you which, in words, under the circle.</p>',
 
       '<div class="callout warn"><div class="ct">What "provisional" is actually buying you</div>' +
       '<p><b>It is permission to hunt, not permission to trust.</b> A blue ring lets you drop to the 5-minute and the 2-minute and start looking for the entry — which is the difference between being ready when the setup arrives and reading about it afterwards.</p>' +
-      '<p>What it does <b>not</b> do is prove the trend. At the 15-minute close the panel recomputes, and the ring resolves one of two ways: it locks into the new solid colour, or it vanishes and the old colour stands. A poke that would not change anything does not even raise a ring — the panel only shows you blue when something is genuinely at stake.</p></div>',
+      '<p>What it does <b>not</b> do is prove the trend. At the 15-minute close the panel recomputes, and the ring resolves one of three ways: it locks into the new solid colour, it vanishes and the old colour stands, or — when the ring is waiting on a swing — it simply stays up until that swing confirms or dies. A poke that would not change anything does not even raise a ring — the panel only shows you blue when something is genuinely at stake.</p></div>',
 
       '<h2>A blue arrow against a solid colour is a warning, not a cancellation</h2>',
-      '<p>You will sometimes see a filled green circle wearing a blue rim with a <b>down</b> arrow. That is price currently under the swing low that green was built on. It is worth knowing about — the trend may be breaking as you watch — but it does <b>not</b> shut the gate before the close. The confirmed colour governs until its candle finishes. Treat the rim as a reason to tighten up and stop adding, not as a reason to abandon a trade that is working.</p>',
+      '<p>You will sometimes see a filled green circle wearing a blue rim with a <b>down</b> arrow. That is price currently under the swing low that green was built on — or a lower low that has printed and is waiting to confirm. It is worth knowing about — the trend may be breaking as you watch — but it does <b>not</b> shut the gate before the close. The confirmed colour governs until its candle finishes. Treat the rim as a reason to tighten up and stop adding, not as a reason to abandon a trade that is working.</p>',
 
       '<div class="callout bad"><div class="ct">The 5-minute and 2-minute rings grant you nothing</div>' +
-      '<p>All three circles use the same blue for the same reason — their own candle has not closed. But only the 15-minute one opens anything. A blue ring on the 5-minute or the 2-minute is information and nothing more: it cannot open a gate, and it never has been able to.</p></div>',
+      '<p>All three circles use the same blue for the same reason — something on their own timeframe is not yet confirmed. But only the 15-minute one opens anything. A blue ring on the 5-minute or the 2-minute is information and nothing more: it cannot open a gate, and it never has been able to.</p></div>',
 
       '<h2>So when may you actually take the trade?</h2>',
       '<p>Put the gate and the pattern together and the whole rule fits in four lines:</p>',

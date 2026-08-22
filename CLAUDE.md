@@ -71,3 +71,6 @@ This is a *teaching* app. It places no orders, connects to no broker, and reads 
 The separate April-2026 repo `double-top-bottom-teaching` is a different, older, 33-tab
 generalist playbook built around retired R-multiple / 0.75R-breakeven doctrine — **leave it
 alone.** This app does not replace or modify it.
+
+## 2026-08-22 — Chapter 7 follows GATES v5.63.0
+The blue ring now has TWO legs in the indicator: (1) the candle beyond the level has not closed; (2) a swing has PRINTED but not yet had its two confirming candles (the pivot leg, `BlueRingPivots`). Ch. 7 wording, the ring table and the three-way resolve (locks / vanishes / stays while the swing waits) updated to match. Confirmed law, BOS rule and "only the 15m grants" unchanged. Cache bumped (`?v=20260822124621`, `dbm-v6`).
