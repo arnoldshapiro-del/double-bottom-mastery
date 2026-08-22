@@ -62,6 +62,10 @@
       '<p>Same entry. Same chart. Same skill. But the left column needs to be right <b>42% of the time</b>, and the right column needs to be right <b>57%</b> — against a pattern that only confirms about half the time. That gap is the whole difference between a method that can work and one that cannot.</p>' +
       '<p>The right-hand column cannot win. Not because you read the chart badly, but because the arithmetic was impossible before you clicked the mouse.</p></div>',
 
+      '<h2>Watch it happen</h2>',
+      '<p>Here is that exact trade, drawn bar by bar: the entry you took, with Uni\'s stop and the platform\'s stop on the same chart — on one of the roughly half of all Ws that never confirm. Press Play and watch what each stop costs. Hover over any bar for its prices; press and drag to measure anything in ticks.</p>',
+      { chart: EX.twoStops() },
+
       '<h2>The tiny stop is not a bonus. It is the whole point.</h2>',
       '<p>Here is the part that took me a while to see, and it reframes everything:</p>',
       '<p>Entering at the low means you accept the ~50% of patterns that never confirm. You cannot avoid them — by definition you got in before the proof existed. So the only way that entry survives is if being wrong is <b>cheap relative to the move you are chasing</b> — which is not the same as cheap in ticks. On your morning chart that means about 28 ticks of risk against a 38-tick first target, not some fixed small number.</p>',

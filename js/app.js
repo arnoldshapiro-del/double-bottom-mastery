@@ -83,6 +83,8 @@
         while (d.firstChild) view.appendChild(d.firstChild);
       } else if (it.chart) {
         view.appendChild(D.chart(it.chart));
+      } else if (it.pair) {
+        view.appendChild(D.chartPair(it.pair));
       } else if (it.calc) {
         view.appendChild(D.buildCalc());
       } else if (it.drill) {
@@ -103,6 +105,9 @@
     Array.prototype.forEach.call(row.querySelectorAll("[data-go]"), function (b) {
       b.onclick = function () { go(b.dataset.go); };
     });
+
+    /* the chapter glides in (CSS honours prefers-reduced-motion) */
+    view.classList.remove("enter"); void view.offsetWidth; view.classList.add("enter");
 
     tbTitle.textContent = l.n + " · " + l.title;
     document.title = l.title + " — The W and the M";
@@ -127,6 +132,7 @@
   /* ---------- keyboard ---------- */
   document.addEventListener("keydown", function (e) {
     if (e.target && /input|select|textarea|button/i.test(e.target.tagName)) return;
+    if (document.body.classList.contains("fs-lock")) return;   // a full-screen chart owns the arrows
     var cur = location.hash.replace("#", "") || D.lessons[0].id;
     var i = 0;
     for (var k = 0; k < D.lessons.length; k++) if (D.lessons[k].id === cur) i = k;
@@ -143,7 +149,7 @@
 
   /* revised date stamp */
   var rev = document.getElementById("rev-date");
-  if (rev) rev.textContent = "2026-08-20";
+  if (rev) rev.textContent = "2026-08-22";
 
   /* service worker */
   if ("serviceWorker" in navigator) {

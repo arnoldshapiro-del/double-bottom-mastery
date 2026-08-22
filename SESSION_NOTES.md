@@ -200,3 +200,59 @@ with cross-references scattered across three lesson files — and it was verifie
 the pattern to Sim101 on M2K and logs the trades; after ~50 logged trades, revisit Chapter 14's
 scale-out advice using his own numbers. New: when the indicator's blue provisional ring is first
 seen firing on live tape, re-read Chapter 7 against what actually appeared on the card.
+
+## 2026-08-22 — v1.2.0: the living charts ("make it 10 times greater")
+
+**What we did.** Arnie asked for the app to be ten times better, with more chart animation and
+only additions that genuinely help him. Shipped as one work stream:
+
+- **chart.js rewritten as engine v2** (same spec format — none of the 16 existing charts or the
+  drill had to change to keep working). Candles now FORM — open, wick, body, close — with a live
+  price line and axis tag, so "wait for the 2-minute close" is watched, not read. Annotations draw
+  themselves in when play or a single step reaches them (levels sweep, pivots ripple, tags pop,
+  boxes grow, arrows draw); instant when scrubbing. New annotation types `path` (the W/M traced
+  through its points) and `ruler` (vertical tick/dollar measure). Every `trade` bracket now draws
+  automatic risk and reward rulers ("12 ticks · $6.00"). Hover crosshair with OHLC, bar range,
+  volume and ticks-from-the-shelf; press-and-drag a box to measure ticks/dollars/bars; ½×–4× speed
+  remembered in localStorage (`dbm_speed`); numbered step strip under each chart; keyboard in full
+  screen (space, arrows, Esc — app.js ignores chapter arrows while a chart is full screen);
+  `DBM.chartPair()` for two charts in lockstep; `fig._api` for the drill. Honours
+  prefers-reduced-motion. Chapter content glides in on load.
+- **Chapter 1 gained the diagnosis as a chart** (`EX.twoStops`): the same entry with the candle
+  stop (12 ticks, $6) and the platform's 50-tick default ($25) on one W that never confirms; both
+  are hit, five bars apart. Indices were computed from the seeded bars (fill bar 32, candle stop
+  bar 35, default stop bar 40). The caption states plainly that his own morning bars measured ~28,
+  so the 12 is this drawing, not a promise.
+- **Chapter 2 and 3 trace the W and the M** through their points as the final step.
+- **Chapter 8 now plays the good and bad second lows side by side**, one control bar, a note that
+  changes at the split (bar 17) and the verdict (bar 30).
+- **The drill asks the second question.** Every round whose answer is ENTER now follows the call
+  with "Part 2 — click the chart where your stop goes", scores it in ticks off the candle against
+  Uni's 2 (off the candle / loose / the platform's stop / inside the candle), prices both stops
+  side by side (risk, first target, reward:risk, break-even win rate), draws both on the frozen
+  chart and on the reveal, and keeps an all-time record in localStorage (`dbm_drill`: calls, hit
+  rate, best streak, average stop) with a two-click reset. On the neckline-retest round the middle
+  peak sits behind the entry, so the first target falls back to the measured move — the Opus
+  worker caught that and it is right.
+- **Not added, on purpose:** a trade journal (he already has one at /journal in the Final Edge
+  apps), sounds, decorative effects.
+
+**How it was verified.** `node --check` on every script; the hidden Browser pane's JS harness
+rendered all 18 chapters with zero errors and exercised seek/step/pick/addAnnotations and the
+whole drill Part 2 flow (click Enter → pick mode → place stop → verdict → record → reveal → next
+round); headless Chrome photographed a temporary lab page for the new chart states — Chapter 1
+final and post-fill, the traced W, the M in light mode, Door A and the full trade with rulers,
+hover readout, drag ruler, the pair, and a 500px phone layout. Label collisions found in the shots
+were fixed (the "stopped out" note vs the reward ruler tag; the default-stop ruler tag over
+candles, solved with a `labelY` option; Door A's redundant "risk 12 · reward 48" note removed now
+that the rulers say it). `?v=` bumped to 20260822130636 and `CACHE` to `dbm-v7` on top of this
+morning's 12:46 commit from another session (which had bumped to 124621 / v6).
+
+**Problems encountered.** A `var nav` (the step strip) silently replaced the hoisted
+`function nav()` inside `D.chart` on every chart with steps — `seek()` threw, and the charts
+looked fine because the roll-once autoplay still ran. Caught only because the harness called
+the API. Headless Chrome's virtual clock also made the lab's timers fire out of order; the lab
+now does everything synchronously after `D.chart()`. Both are in CLAUDE.md as gotchas 8 and 9.
+
+**What's next.** Arnie does ~15 drill calls including the stop placements, then takes it to
+Sim101; after ~50 logged trades revisit Chapter 15's scale-out advice with his own numbers.

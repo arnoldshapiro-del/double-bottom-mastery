@@ -186,8 +186,11 @@ table.tbl td.n{font-family:var(--mono); font-variant-numeric:tabular-nums; white
   background:var(--panel2); flex-wrap:wrap}
 .fig-title{font-family:var(--head); font-weight:700; font-size:.9rem; color:var(--txt); flex:1; min-width:140px}
 .fig-hint{font-size:.68rem; color:var(--faint); font-family:var(--head); letter-spacing:.4px}
-.fig-canvas-wrap{position:relative; background:var(--bg2); cursor:zoom-in}
+.fig-canvas-wrap{position:relative; background:var(--bg2); cursor:crosshair; touch-action:pan-y}
 .fig-canvas-wrap canvas{display:block; width:100%; height:auto}
+.fig-canvas-wrap canvas.ov{position:absolute; left:0; top:0; pointer-events:none}
+.fig-canvas-wrap.picking{cursor:cell}
+.fig.fs .fig-canvas-wrap canvas.ov{left:auto; top:auto}
 .fig-ctrls{display:flex; align-items:center; gap:7px; padding:10px 16px; border-top:1px solid var(--line);
   background:var(--panel2); flex-wrap:wrap}
 .cbtn{background:var(--panel3); color:var(--txt2); border:1px solid var(--line2); border-radius:8px;
@@ -199,8 +202,50 @@ table.tbl td.n{font-family:var(--mono); font-variant-numeric:tabular-nums; white
 .fig-cap{padding:13px 17px; font-size:.9rem; color:var(--txt2); border-top:1px solid var(--line); background:var(--panel)}
 .fig-cap b{color:var(--gold)}
 .fig-step{padding:11px 17px; background:rgba(34,211,238,.07); border-top:1px solid var(--line);
-  font-size:.9rem; color:var(--txt2); min-height:46px}
+  font-size:.9rem; color:var(--txt2); min-height:46px; display:flex; gap:14px; align-items:flex-start}
 .fig-step b{color:var(--cyan)}
+.fig-step-text{flex:1; min-width:0}
+.fig-step-text.swap,.fig-pair-note.swap{animation:stepIn .38s ease}
+@keyframes stepIn{from{opacity:0; transform:translateY(5px)} to{opacity:1; transform:none}}
+.fig-stepnav{display:flex; gap:4px; flex-wrap:wrap; justify-content:flex-end; flex:0 0 auto; max-width:42%; padding-top:2px}
+.sdot{width:23px; height:23px; border-radius:50%; border:1px solid var(--line2); background:var(--panel3); color:var(--mut);
+  font-family:var(--mono); font-size:.66rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center;
+  justify-content:center; padding:0; line-height:1; transition:background .13s,color .13s,border-color .13s}
+.sdot:hover{border-color:var(--cyan); color:var(--cyan)}
+.sdot.past{color:var(--txt2); border-color:rgba(34,211,238,.45)}
+.sdot.on{background:var(--cyan); color:#06202a; border-color:var(--cyan)}
+.cgroup{display:inline-flex; border:1px solid var(--line2); border-radius:8px; overflow:hidden; margin-left:auto}
+.cgroup .cbtn{border:0; border-radius:0; border-right:1px solid var(--line2); padding:5px 8px; min-width:34px}
+.cgroup .cbtn:last-child{border-right:0}
+.cgroup .cbtn.on{background:var(--gold); color:#12100a}
+
+/* two charts in lockstep */
+.fig-pair{margin:24px 0; box-shadow:var(--shadow); border-radius:var(--radius)}
+.fig-pair-bar{display:flex; align-items:center; gap:7px; flex-wrap:wrap; padding:10px 14px; background:var(--panel2);
+  border:1px solid var(--line); border-radius:var(--radius) var(--radius) 0 0}
+.fig-pair-title{font-family:var(--head); font-weight:700; font-size:.9rem; color:var(--txt); flex:1 1 100%; min-width:140px}
+.fig-pair-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:14px; background:var(--panel);
+  border:1px solid var(--line); border-top:0}
+.fig-pair-grid .fig{margin:0; box-shadow:none}
+.fig-pair-grid .fig:not(.fs) .fig-ctrls{display:none}
+.fig-pair-grid .fig:not(.fs) .fig-hint{display:none}
+.fig-pair-note{padding:12px 16px; background:rgba(34,211,238,.07); border:1px solid var(--line); border-top:0;
+  border-radius:0 0 var(--radius) var(--radius); font-size:.92rem; color:var(--txt2); min-height:44px}
+.fig-pair-note b{color:var(--cyan)}
+@media(max-width:900px){.fig-pair-grid{grid-template-columns:1fr} .fig-pair-title{flex-basis:auto}}
+
+/* chapter enters */
+#view.enter > *{animation:viewIn .42s ease both}
+#view.enter > *:nth-child(2){animation-delay:.04s}
+#view.enter > *:nth-child(3){animation-delay:.08s}
+#view.enter > *:nth-child(4){animation-delay:.12s}
+#view.enter > *:nth-child(5){animation-delay:.16s}
+#view.enter > *:nth-child(n+6){animation-delay:.2s}
+@keyframes viewIn{from{opacity:0; transform:translateY(9px)} to{opacity:1; transform:none}}
+@media (prefers-reduced-motion: reduce){
+  #view.enter > *,.fig-step-text.swap,.fig-pair-note.swap{animation:none}
+  html{scroll-behavior:auto}
+}
 
 /* fullscreen */
 .fig.fs{position:fixed; inset:0; z-index:200; margin:0; border-radius:0; display:flex;
@@ -352,14 +397,14 @@ body.fs-lock{overflow:hidden}
   </div>
 </div>
 
-<script src="js/bars.js?v=20260822124621"></script>
-<script src="js/chart.js?v=20260822124621"></script>
-<script src="js/examples.js?v=20260822124621"></script>
-<script src="js/lessons-1.js?v=20260822124621"></script>
-<script src="js/lessons-2.js?v=20260822124621"></script>
-<script src="js/lessons-3.js?v=20260822124621"></script>
-<script src="js/drill.js?v=20260822124621"></script>
-<script src="js/app.js?v=20260822124621"></script>
-<script src="narrator.js?v=20260822124621"></script>
+<script src="js/bars.js?v=20260822130636"></script>
+<script src="js/chart.js?v=20260822130636"></script>
+<script src="js/examples.js?v=20260822130636"></script>
+<script src="js/lessons-1.js?v=20260822130636"></script>
+<script src="js/lessons-2.js?v=20260822130636"></script>
+<script src="js/lessons-3.js?v=20260822130636"></script>
+<script src="js/drill.js?v=20260822130636"></script>
+<script src="js/app.js?v=20260822130636"></script>
+<script src="narrator.js?v=20260822130636"></script>
 </body>
 </html>

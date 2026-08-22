@@ -42,7 +42,8 @@
         { at: 13, text: "<b>Point 1 — the first low (L1).</b> Heavy volume, wide bars, a long tail. Sellers finally overdid it. This is the price level everything else gets measured against." },
         { at: 21, text: "<b>Point 2 — the middle peak (MP).</b> Buyers took control, briefly. This peak is the <b>neckline</b>. It is the level that confirms the pattern, and it is Uni's first profit target." },
         { at: 32, text: "<b>Point 3 — the second low (L2).</b> Price came back — but look at the bars and the volume. Quieter. Smaller. That is the whole tell, and Chapter 8 is about nothing else." },
-        { at: 37, text: "<b>Point 4 — the break.</b> A 2-minute <i>close</i> above the middle peak. Now the W is confirmed. Before this close it was only a candidate." }
+        { at: 37, text: "<b>Point 4 — the break.</b> A 2-minute <i>close</i> above the middle peak. Now the W is confirmed. Before this close it was only a candidate." },
+        { at: 43, text: "<b>And there it is — the W.</b> Decline, first low, middle peak, second low, break. Every chart in this course is a variation on those five strokes." }
       ],
       annotations: [
         { type: "level", price: 2338.2, label: "the low shelf", color: CYAN, style: "dash", showAt: 13 },
@@ -53,7 +54,9 @@
         { type: "vbar", i: i1, color: "rgba(236,72,153,.75)", label: "climax", showAt: 13 },
         { type: "vbar", i: i2, color: "rgba(163,230,53,.7)", label: "quiet", showAt: 32 },
         { type: "note", i: iBrk + 1, price: 2347.6, text: "close ABOVE the neckline = confirmed", color: LIME, showAt: 38 },
-        { type: "measured", lowPrice: 2338.2, neckPrice: 2345.1, fromI: 31, label: "measured move → 2352.0", color: VIOLET, showAt: 40 }
+        { type: "measured", lowPrice: 2338.2, neckPrice: 2345.1, fromI: 31, label: "measured move → 2352.0", color: VIOLET, showAt: 40 },
+        { type: "path", points: [{ i: 0, side: "high" }, { i: i1, side: "low" }, { i: iMP, side: "high" }, { i: i2, side: "low" }, { i: 41, side: "high" }],
+          label: "THE W", labelI: 21, labelPrice: 2336.5, color: GOLD, showAt: 42 }
       ],
       caption: "<b>Four points, in order: decline → L1 → middle peak → L2 → break.</b> Miss any one of them and what you are looking at is not a double bottom. The distance from the low shelf up to the neckline is the pattern's <b>height</b> — here about 7 points, which on M2K is 70 ticks, or $35 a contract."
     };
@@ -84,7 +87,8 @@
         { at: 14, text: "<b>H1 — the first high.</b> Buyers pushed, ran out, and left a tail on top." },
         { at: 22, text: "<b>MV — the middle valley.</b> This is the neckline for an M. A 2-minute close <i>below</i> it confirms." },
         { at: 33, text: "<b>H2 — the second high.</b> It failed to get through. Note the smaller bars and lighter volume — the same deceleration tell, upside down." },
-        { at: 40, text: "<b>The break.</b> Close below the middle valley. And notice the speed — the drop away is faster and steeper than the W's rise was." }
+        { at: 40, text: "<b>The break.</b> Close below the middle valley. And notice the speed — the drop away is faster and steeper than the W's rise was." },
+        { at: 46, text: "<b>The M, traced.</b> Advance, first high, middle valley, second high, break. The W upside down — and the drop out of it is the fast part." }
       ],
       annotations: [
         { type: "level", price: 2343.9, label: "the high shelf", color: GOLD, style: "dash", showAt: 14 },
@@ -92,7 +96,9 @@
         { type: "pivot", i: 12, side: "high", label: "H1", color: GOLD, showAt: 14 },
         { type: "pivot", i: 20, side: "low", label: "MV · middle valley", color: CYAN, showAt: 22 },
         { type: "pivot", i: 31, side: "high", label: "H2", color: GOLD, showAt: 33 },
-        { type: "note", i: 41, price: 2333.5, text: "faster down than up", color: RED, showAt: 41 }
+        { type: "note", i: 41, price: 2333.5, text: "faster down than up", color: RED, showAt: 41 },
+        { type: "path", points: [{ i: 0, side: "low" }, { i: 12, side: "high" }, { i: 20, side: "low" }, { i: 31, side: "high" }, { i: 44, side: "low" }],
+          label: "THE M", labelI: 21, labelPrice: 2345.4, color: GOLD, showAt: 45 }
       ],
       caption: "<b>The M is the W's mirror — but the odds are worse.</b> On daily stock charts Bulkowski measured that about <b>63% of apparent double tops never confirm at all</b>, versus 44% of double bottoms; and once confirmed, tops fail their first 5% about 20–25% of the time versus 12–16% for bottoms. Trade Ms, but respect that they are the harder side."
     };
@@ -254,9 +260,9 @@
         { type: "pivot", i: 7, side: "low", label: "L1", color: CYAN, showAt: 8 },
         { type: "pivot", i: 15, side: "high", label: "MP", color: GOLD, showAt: 16 },
         { type: "pivot", i: iL2, side: "low", label: "the LOW CANDLE", color: LIME, showAt: 26 },
-        { type: "note", i: iL2 + 2, price: 2338.6, text: "↑ everything hangs off this one bar", color: LIME, showAt: 26 },
-        { type: "trade", entry: 2341.2, stop: 2340.0, target: 2346.0, targetLabel: "TARGET 1", fromI: 26, showAt: 28 },
-        { type: "note", i: 31, price: 2343.9, text: "this example: risk 12 · reward 48", color: VIOLET, showAt: 29 }
+        { type: "note", i: iL2 + 2, price: 2338.1, text: "↑ everything hangs off this one bar", color: LIME, showAt: 26 },
+        /* the bracket's own rulers now show the risk and the reward in ticks and dollars */
+        { type: "trade", entry: 2341.2, stop: 2340.0, target: 2346.0, targetLabel: "TARGET 1", fromI: 26, showAt: 28 }
       ],
       caption: "<b>This is Uni's own rule, moved onto a 2-minute chart.</b> Her Bull Flag rule set says <i>\"trade 20 cents above the high of the low day\"</i> — on a daily chart. On the 2-minute, the low <i>day</i> becomes the low <i>candle</i>, and 20 cents becomes 2 ticks. Her rule #15 says the first profit target is <i>\"the initial previous high\"</i> — on a W, that is the middle peak. Linda Raschke published the identical logic in 1995 as <b>Turtle Soup</b>: a buy-stop just above the old low, so the trade only triggers if the new low is already failing."
     };
@@ -661,6 +667,62 @@
         { type: "zone", y1: 2341.8, y2: 2345.2, fromI: 26, toI: 31, color: "rgba(244,63,94,.13)", label: "loud into the low = no trade", textColor: RED, showAt: 28 }
       ],
       caption: "<b>Learning a category needs the near-misses, not just the winners.</b> This is why courses that only show you clean examples do not work — every double bottom in a textbook is, by construction, one that worked. The losers were never photographed."
+    };
+  };
+
+  /* ============================================================
+     17. TWO STOPS — the diagnosis, animated (Chapter 1)
+     Same entry, Uni's stop and the platform's stop on one chart,
+     on one of the ~half of Ws that never confirm. Indices were
+     computed from the seeded bars: L1 = 12, MP = 19, the low
+     candle = 30 (h 2339.0 / l 2338.2), fill at bar 32, the candle
+     stop is hit at bar 35, the default stop at bar 40.
+     ============================================================ */
+  EX.twoStops = function () {
+    var bars = B({
+      seed: 311, start: 2352.0, startTime: "09:48", unit: 0.95, baseVolume: 1500,
+      legs: [
+        { to: 2346.2, bars: 6, vol: "high",   energy: "drive" },
+        { to: 2339.0, bars: 7, vol: "climax", energy: "drive", wickBias: "lower", tag: "L1" },
+        { to: 2344.8, bars: 7, vol: "normal", energy: "grind", tag: "MP" },
+        { to: 2341.8, bars: 5, vol: "low",    energy: "grind" },
+        { to: 2338.3, bars: 6, vol: "dry",    energy: "stall", wickBias: "lower", tag: "L2" },
+        { to: 2340.0, bars: 3, vol: "normal", energy: "grind" },
+        { to: 2337.0, bars: 4, vol: "normal", energy: "drive" },
+        { to: 2332.6, bars: 7, vol: "climax", energy: "drive" },
+        { to: 2333.8, bars: 4, vol: "low",    energy: "grind" }
+      ]
+    });
+    var ENTRY = 2339.2, STOP_A = 2338.0, STOP_B = 2334.2, NECK = 2345.0, SHELF = 2338.0;
+    return {
+      title: "Same entry, two stops — on one of the half that never confirm",
+      verdict: "bad", verdictText: "THE DIAGNOSIS",
+      bars: bars, startAt: 1, speed: 320,
+      stepIntro: "<b>Press Play.</b> This is the trade you took twenty times, with both stops drawn on it.",
+      steps: [
+        { at: 13, text: "<b>The first low.</b> Climax volume, a long tail. Same as every W you have ever seen." },
+        { at: 20, text: "<b>The middle peak — the neckline.</b> Seven points above the shelf. A real pattern with a real target." },
+        { at: 31, text: "<b>The second low — and it looks right.</b> Smaller bars, drying volume, a quiet close. This is a legitimate Door A candidate. Uni would put a buy-stop 2 ticks above this candle's high, at 2339.2. So did you." },
+        { at: 33, text: "<b>Filled.</b> Now the only question that matters: where is the stop? Uni's is 2 ticks under the low candle — 2338.0, <b>12 ticks</b>, $6.00 a contract. The platform's default sat <b>50 ticks</b> down at 2334.2 — $25.00 a contract. Same entry. Same chart." },
+        { at: 36, text: "<b>Bar 35: the candle stop is hit.</b> −12 ticks, −$6.00. Annoying. Survivable. About half of all Ws never confirm, and this is one of them. You are out, flat, and able to think." },
+        { at: 41, text: "<b>Five bars later the platform's stop is hit.</b> −50 ticks, −$25.00. Same entry, same chart, same call — four times the loss, and you sat through every bar of it hoping." },
+        { at: 49, text: "<b>That is the 80%.</b> Not the chart-reading. The stop. Fix the stop and this exact trade becomes a small, boring loss you can take twenty times and shrug at." }
+      ],
+      annotations: [
+        { type: "level", price: SHELF, label: "the shelf", color: CYAN, style: "dash", showAt: 13 },
+        { type: "level", price: NECK, label: "NECKLINE", color: GOLD, showAt: 20 },
+        { type: "pivot", i: 12, side: "low", label: "L1 · loud", color: CYAN, showAt: 13 },
+        { type: "pivot", i: 19, side: "high", label: "MP · middle peak", color: GOLD, showAt: 20 },
+        { type: "pivot", i: 30, side: "low", label: "L2 · quiet", color: LIME, showAt: 31 },
+        { type: "vbar", i: 12, color: "rgba(236,72,153,.75)", label: "climax", showAt: 13 },
+        { type: "vbar", i: 30, color: "rgba(163,230,53,.7)", label: "dry", showAt: 31 },
+        { type: "trade", entry: ENTRY, stop: STOP_A, target: NECK, targetLabel: "TARGET 1 · neckline", fromI: 32, showAt: 32 },
+        { type: "level", price: STOP_B, label: "PLATFORM DEFAULT −50", color: ORANGE, style: "dash", fromI: 32, showAt: 32 },
+        { type: "ruler", i: 46, p1: ENTRY, p2: STOP_B, color: ORANGE, side: "left", label: "50 ticks · $25.00 — the default", labelY: 2338.5, showAt: 32 },
+        { type: "note", i: 37, price: 2343.6, text: "bar 35: candle stop hit, −12 ticks, −$6.00", color: RED, showAt: 35 },
+        { type: "note", i: 40, price: 2331.3, text: "stopped out: −50 ticks, −$25.00", color: ORANGE, showAt: 40 }
+      ],
+      caption: "<b>Twelve ticks or fifty — that was the entire difference.</b> On this drawn example the candle stop is 12 ticks ($6.00 a contract) and the platform's default is 50 ($25.00). On your own morning bars the candle stop measured about 28 ticks — bigger bars, same principle: the stop comes off the candle, not off the platform, and it is always a fraction of the default. Both stops lost here. Only one of them you can afford to lose twenty times."
     };
   };
 

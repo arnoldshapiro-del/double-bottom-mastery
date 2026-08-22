@@ -23,12 +23,17 @@
       '<p style="font-size:1.1rem"><b>The second low should take MORE time and LESS force than the first.</b></p>' +
       '<p>Narrower bars. Lighter volume. A slower, more reluctant descent. If the approach to the second low is getting <i>louder</i> — bigger bars, rising volume — the sellers are not exhausted, they are reloading, and the level is going to break.</p></div>',
 
-      '<h2>The good one</h2>',
-      { chart: EX.decelGood() },
-
-      '<h2>The bad one — same shape, opposite energy</h2>',
-      '<p>Scrub these two charts back and forth against each other. Through bar 16 they are the same trade. Everything that matters happens after that.</p>',
-      { chart: EX.decelBad() },
+      '<h2>The good one and the bad one — side by side, in lockstep</h2>',
+      '<p>Press <b>Play both</b>. Through bar 16 they are the same trade. Everything that matters happens after that — watch the bars coming down on the <b>right</b> get bigger while the ones on the <b>left</b> get smaller, and watch the volume do the same. Double-click either chart to study it full screen; each one still has its own steps.</p>',
+      { pair: {
+          title: "Same shape · left: quiet in, take it · right: loud in, skip it",
+          a: EX.decelGood(), b: EX.decelBad(),
+          note: function (s) {
+            return s < 17 ? "<b>Same trade so far.</b> A violent first low, a middle peak, and price turning back down. Nothing separates these two charts yet."
+                 : s < 30 ? "<b>Now they split.</b> Left: bars shrinking, volume drying up, price drifting down. Right: bars growing, volume rising, price being driven down. Same shape — opposite energy."
+                 : "<b>Left</b> held the shelf and left it loudly. <b>Right</b> went straight through it. The shape was identical; the force was not. That is the whole tell.";
+          }
+      } },
 
       '<h2>The four things you are comparing</h2>',
       '<table class="tbl"><thead><tr><th>Compare L2 against L1</th><th>Want to see</th><th>Warning</th></tr></thead><tbody>' +

@@ -42,6 +42,24 @@ server needed** — open `index.html`. Deploy = GitHub → Netlify auto-build (g
    rebuild it** (memory `feedback_narrator_every_app`). `#view` carries `data-narrate` so the
    sidebar is not read aloud.
 
+7. **chart.js is v2 (2026-08-22) and the drill depends on its `fig._api`.** `pick()`,
+   `addAnnotations()`, `seek()`, `step()`, `priceAt()`, `barAt()`, `ref` are used by
+   `drill.js` (the place-your-stop step) and `DBM.chartPair()` by `app.js` (`{ pair: … }`
+   items). Keep that surface stable or the drill breaks silently. Annotation types now
+   include `path` (`points:[{i, side|price}]`, `labelI/labelPrice`) and `ruler`
+   (`i, p1, p2, side, label?, labelY?`); `trade` brackets draw risk/reward rulers unless
+   `noRuler: true`. New accent colours still go through `LIGHT_MAP`.
+8. **Never name a `var` the same as a function inside `D.chart`.** A `var nav` (the step
+   strip) silently replaced the hoisted `function nav()` on every chart that had steps —
+   `seek()` threw, the roll-once autoplay looked like it had "worked", and only a harness
+   that called the API caught it. `node --check` cannot see this.
+9. **Verifying pixels:** a temporary `_lab.html` in the repo root (served alongside `js/`)
+   renders one chart at a chosen `shown` with synthetic pointer events for hover / ruler /
+   pick, then headless Chrome photographs it. Do it SYNCHRONOUSLY after `D.chart()` —
+   headless Chrome's virtual clock makes `setTimeout` ordering unreliable, and the
+   roll-once autoplay will start playing if `shown <= 2` when it fires. Delete the lab file
+   before committing; it is not part of the app.
+
 ## Content rules specific to this app
 
 - **Every Bulkowski statistic must be labelled "daily stock charts."** No one has published

@@ -1,10 +1,10 @@
 # THE W AND THE M — Double Bottom & Double Top Mastery
 
-A 17-chapter, baby-steps course that teaches Arnie to find and trade double bottoms and
+An 18-chapter, baby-steps course that teaches Arnie to find and trade double bottoms and
 double tops on the **2-minute M2K** chart, built around **Uni's** (Andrea "Uni" Webber, TTG)
 actual documented method.
 
-**Created 2026-08-19.**
+**Created 2026-08-19. Revised 2026-08-22 — v1.2.0, the living charts.**
 
 ---
 
@@ -13,14 +13,24 @@ actual documented method.
 A single-page static app. No build step, no framework, no dependencies. Open `index.html`
 and it runs.
 
-- **17 chapters** across 7 parts: See it → When to look → The moment → The two doors →
-  What goes wrong → Managing it → Practice.
-- **20 animated candlestick charts.** Bars reveal one at a time under the learner's
-  control — play, pause, step, scrub, replay. **Double-click any chart to fill the screen,
-  double-click again to put it back** (Esc also exits).
+- **18 chapters** across 8 parts: Start here → See it → When to look → The moment →
+  The two doors → What goes wrong → Managing it → Practice.
+- **21 animated candlestick charts (engine v2, 2026-08-22).** Candles *form* — open, wick,
+  body, close — instead of popping in, with a live price line and axis tag, so "wait for the
+  2-minute close" is something you watch. Annotations draw themselves in as the story
+  reaches them; the W and the M are traced through their points; every trade bracket carries
+  automatic **risk and reward rulers in ticks and dollars**. Hover any bar for its prices and
+  its distance from the shelf; press-and-drag to measure anything in ticks; ½×–4× speed;
+  numbered step strip to jump to a teaching moment; **double-click any chart to fill the
+  screen** (space / ← / → / Esc work there). Chapter 8 plays the good and bad second lows
+  **side by side in lockstep**. Chapter 1 animates the diagnosis itself: the same entry with
+  the candle stop and the platform's 50-tick default on one chart.
 - **A live position calculator** with real M2K mechanics comparing the two entries.
 - **A freeze-and-call practice drill** — the chart stops at the decision bar, you commit,
-  then it reveals what happened.
+  then it reveals what happened. Every round that *was* an entry then asks the question that
+  caused the 80%: **click where your stop goes**, scored in ticks off the candle against
+  Uni's 2, with the arithmetic of both stops side by side. An all-time record (calls, hit
+  rate, best streak, average stop) persists in the browser.
 - **The Narrator** on every page (copied from `trend-check-pro/narrator.js`, unmodified
   except the localStorage key prefix and the control-selector list).
 - Dark by default, light toggle, PWA/offline, left sidebar, progress tracking.
@@ -81,10 +91,10 @@ triggers if the new low is already failing.
 |---|---|
 | `index.html` | Shell, full CSS, sidebar, narrator markup |
 | `js/bars.js` | Deterministic 2-minute bar builder + M2K constants |
-| `js/chart.js` | Canvas chart engine — animation, annotations, fullscreen, theming |
-| `js/examples.js` | The 16 teaching chart definitions |
-| `js/lessons-1/2/3.js` | Chapter content (1–6, 7–12, 13–17) + the calculator |
-| `js/drill.js` | The freeze-and-call trainer (10 scenarios) |
+| `js/chart.js` | Canvas chart engine v2 — forming candles, animated annotations, crosshair/readout, drag ruler, speed, fullscreen keys, `DBM.chartPair`, `fig._api` |
+| `js/examples.js` | The 17 teaching chart definitions |
+| `js/lessons-1/2/3.js` | Chapter content (1–7, 8–13, 14–18) + the calculator |
+| `js/drill.js` | The freeze-and-call trainer (10 scenarios; entry rounds add "place your stop" + a persisted record) |
 | `js/app.js` | Router, sidebar, theme, progress |
 | `narrator.js` | Read-aloud, copied from trend-check-pro |
 | `sw.js` / `manifest.json` | PWA offline shell |

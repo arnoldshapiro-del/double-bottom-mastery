@@ -15,6 +15,55 @@
 
   var ENTER = "enter", WAIT = "wait", NONE = "none";
 
+  /* ---- the all-time record, kept in localStorage ----
+     Calls, how many were right, the best streak ever, and every stop
+     placement measured in ticks beyond the candle. Storage can be off or
+     full, so every read and write is wrapped. */
+  var REC_KEY = "dbm_drill", REC_MAX = 200;
+
+  function blankRec() { return { calls: 0, right: 0, stops: [], best: 0 }; }
+
+  function loadRec() {
+    var rec = blankRec();
+    try {
+      var raw = root.localStorage.getItem(REC_KEY);
+      if (raw) {
+        var o = JSON.parse(raw);
+        if (o && typeof o === "object") {
+          rec.calls = Math.max(0, +o.calls || 0);
+          rec.right = Math.max(0, +o.right || 0);
+          rec.best = Math.max(0, +o.best || 0);
+          if (Object.prototype.toString.call(o.stops) === "[object Array]") rec.stops = o.stops.slice(-REC_MAX);
+        }
+      }
+    } catch (e) {}
+    return rec;
+  }
+
+  function saveRec(rec) {
+    try { root.localStorage.setItem(REC_KEY, JSON.stringify(rec)); } catch (e) {}
+  }
+
+  /* ---- the two stop panels under the Part 2 verdict ---- */
+  function statRow(k, v, extra) {
+    return '<div class="dstat' + (extra ? " " + extra : "") + '"><span>' + k + "</span><span>" + v + "</span></div>";
+  }
+
+  function doorHTML(name, sub, risk, reward, target, uni, bad) {
+    var M = D.money;
+    var live = risk > 0 && reward > 0;
+    var rr = live ? (reward / risk).toFixed(2) + " : 1" : "—";
+    var be = live ? Math.round((risk / (risk + reward)) * 100) + "%" : "—";
+    return '<div class="door' + (uni ? " a" : "") + '" style="border-color:' + (uni ? "rgba(163,230,53,.55)" : "rgba(244,63,94,.5)") + '">' +
+      '<h4 style="color:' + (uni ? "var(--lime)" : "var(--red)") + '">' + name + "</h4>" +
+      '<div class="sub">' + sub + "</div>" +
+      statRow("Risk", M.tickWord(risk) + " · " + M.usd(risk)) +
+      statRow("First target — the " + target, M.tickWord(reward)) +
+      statRow("Reward : risk", rr, bad ? "warnv" : "hero") +
+      statRow("Win rate needed to break even", be) +
+      "</div>";
+  }
+
   /* ---- each round: full bar series + the bar we freeze at ---- */
   var ROUNDS = [
     {
@@ -205,9 +254,50 @@
         '<span class="fig-hint" id="dr-count"></span></div>' +
         '<div class="fig-hint mono" id="dr-score"></div>' +
       "</div>" +
+      '<div class="calc-row" id="dr-recrow" style="justify-content:flex-end;gap:10px;margin-top:-6px;display:none">' +
+        '<div class="fig-hint mono" id="dr-record"></div>' +
+        '<button class="cbtn" id="dr-reset" type="button" style="font-size:.66rem;padding:3px 9px">reset record</button>' +
+      "</div>" +
       '<div id="dr-body"></div>';
 
     var body = host.querySelector("#dr-body");
+
+    /* ---- the all-time line, and the two-click reset next to it ---- */
+    function renderRecord() {
+      var row = host.querySelector("#dr-recrow"), line = host.querySelector("#dr-record");
+      if (!row || !line) return;
+      var rec = loadRec();
+      if (!rec.calls) { row.style.display = "none"; return; }
+      row.style.display = "flex";
+      var pct = Math.round((rec.right / rec.calls) * 100);
+      var txt = "all-time: " + rec.calls + (rec.calls === 1 ? " call" : " calls") +
+        " · " + pct + "% right · best streak " + rec.best;
+      if (rec.stops.length) {
+        var sum = 0;
+        for (var i = 0; i < rec.stops.length; i++) sum += (+rec.stops[i] || 0);
+        txt += " · your stops average " + (sum / rec.stops.length).toFixed(1) + " ticks off the candle (Uni: 2)";
+      }
+      line.textContent = txt;
+    }
+
+    var resetArmed = false, resetTimer = null;
+    var resetBtn = host.querySelector("#dr-reset");
+    if (resetBtn) resetBtn.onclick = function () {
+      if (resetArmed) {
+        if (resetTimer) { root.clearTimeout(resetTimer); resetTimer = null; }
+        resetArmed = false;
+        resetBtn.textContent = "reset record";
+        saveRec(blankRec());
+        renderRecord();
+        return;
+      }
+      resetArmed = true;
+      resetBtn.textContent = "sure? click again";
+      resetTimer = root.setTimeout(function () {
+        resetArmed = false; resetTimer = null; resetBtn.textContent = "reset record";
+      }, 4000);
+    };
+    renderRecord();
 
     function render() {
       var r = ROUNDS[order[idx]];
@@ -244,7 +334,7 @@
       body.appendChild(q);
 
       q.querySelectorAll(".q-opt").forEach(function (btn) {
-        btn.onclick = function () { answer(btn.dataset.v, r, frozen, q); };
+        btn.onclick = function () { answer(btn.dataset.v, r, frozen, q, cut, fig); };
       });
 
       function opt(v, k, t, s) {
@@ -253,7 +343,7 @@
       }
     }
 
-    function answer(v, r, fullBars, q) {
+    function answer(v, r, fullBars, q, cut, fig) {
       var right = v === r.answer;
       done++;
       if (right) { score++; streak++; if (streak > best) best = streak; } else streak = 0;
@@ -272,6 +362,122 @@
       host.querySelector("#dr-score").textContent =
         score + " / " + done + (best > 1 ? "   ·   best streak " + best : "");
 
+      var rec = loadRec();
+      rec.calls++;
+      if (right) rec.right++;
+      if (streak > rec.best) rec.best = streak;
+      saveRec(rec);
+      renderRecord();
+
+      /* Every round that was a real entry now asks the second question.
+         The call was never the part he got wrong — the stop was. */
+      if (r.answer === ENTER && cut && fig && fig._api) placeStop(r, fullBars, cut, fig, q);
+      else finish(r, fullBars, null, fig);
+    }
+
+    /* ============================================================
+       PART 2 — where does the stop go?
+       Entering at the low is only legal if being wrong is cheap.
+       ============================================================ */
+    function placeStop(r, fullBars, cut, fig, q) {
+      var M = D.money, U = D.util;
+      var isTop = !!r.isTop;
+      var ci = isTop ? U.highestIdx(cut, cut.length - 8, cut.length - 1)
+                     : U.lowestIdx(cut, cut.length - 8, cut.length - 1);
+      var candle = cut[ci];
+      var uniStop = isTop ? U.round1(candle.h + 0.2) : U.round1(candle.l - 0.2);
+      var entry = isTop ? U.round1(candle.l - 0.2) : U.round1(candle.h + 0.2);
+
+      var p2 = document.createElement("div");
+      p2.innerHTML =
+        '<h3 style="margin-top:18px">Part 2 — now place your stop</h3>' +
+        "<p>Click the chart where your stop goes. " +
+        (isTop ? "(For an M, that is above the high candle.)" : "(For a W, that is below the low candle.)") + "</p>" +
+        '<div class="q-fb" id="dr-sfb"></div>' +
+        '<div id="dr-scmp"></div>';
+      /* Part 2 sits directly under the chart he has to click, and the chart
+         scrolls back into view — the options he just used are below it. */
+      body.insertBefore(p2, q && q.parentNode === body ? q : null);
+      var titleEl = fig.querySelector(".fig-title");
+      if (titleEl) titleEl.textContent = "Part 2 · click the chart where your stop goes";
+      try { root.scrollTo({ top: fig.getBoundingClientRect().top + root.scrollY - 64, behavior: "smooth" }); } catch (e) {}
+
+      fig._api.pick({ label: "YOUR STOP", hint: "click to place it", color: RED }, function (price) {
+        if (titleEl) titleEl.textContent = "Your stop against Uni's";
+        var beyond = isTop ? Math.round((price - candle.h) * 10) : Math.round((candle.l - price) * 10);
+        var side = isTop ? "above the high" : "under the low";
+        var cls = "no", msg;
+
+        if (beyond <= 0) {
+          msg = "<b>✗ Inside the candle.</b> A stop at or " +
+            (isTop ? "below the high candle's high" : "above the low candle's low") +
+            " gets hit by ordinary noise — the candle already traded there.";
+        } else if (beyond <= 4) {
+          cls = "ok";
+          msg = "<b>✓ Off the candle.</b> " + M.tickWord(beyond) + " " + side +
+            " (Uni's is 2). This is the stop that makes entering early legal.";
+        } else if (beyond <= 15) {
+          msg = '<b style="color:var(--orange)">Loose.</b> ' + M.tickWord(beyond) + " " + side +
+            " candle — Uni's is 2. Every extra tick is money you pay to be wrong, and half of these never confirm.";
+        } else {
+          msg = "<b>✗ That is the platform's stop, not the chart's.</b> " + M.tickWord(beyond) + " " + side +
+            " — the ~50-tick default is what lost you 80%.";
+        }
+
+        var sfb = p2.querySelector("#dr-sfb");
+        sfb.className = "q-fb show " + cls;
+        sfb.innerHTML = msg;
+
+        /* the two stops, priced out side by side */
+        var risk = M.ticksBetween(entry, price);
+        var uniRisk = M.ticksBetween(entry, uniStop);
+        var tgtPrice = r.neck, target = isTop ? "middle valley" : "middle peak";
+        if (isTop ? tgtPrice >= entry : tgtPrice <= entry) {
+          /* on the neckline retest the middle peak is already behind the
+             entry, so the first target is the measured move instead */
+          tgtPrice = isTop ? U.round1(r.neck - (r.shelf - r.neck)) : U.round1(r.neck + (r.neck - r.shelf));
+          target = "measured move";
+        }
+        var reward = M.ticksBetween(entry, tgtPrice);
+        p2.querySelector("#dr-scmp").innerHTML =
+          '<div class="calc-out">' +
+            doorHTML("Your stop", "WHERE YOU CLICKED · " + M.fmt(price), risk, reward, target, false, beyond <= 0) +
+            doorHTML("Uni's stop", "2 TICKS " + (isTop ? "ABOVE" : "UNDER") + " THE CANDLE · " + M.fmt(uniStop),
+                     uniRisk, reward, target, true) +
+          "</div>";
+
+        /* draw both of them on the frozen chart */
+        fig._api.addAnnotations([
+          { type: "level", price: entry, label: "ENTRY", color: GOLD, style: "dash", fromI: cut.length - 7, showAt: 0 },
+          { type: "level", price: price, label: "YOUR STOP", color: RED, style: "dash", fromI: cut.length - 7, showAt: 0 },
+          { type: "level", price: uniStop, label: "UNI'S STOP", color: LIME, style: "dash", fromI: cut.length - 7, showAt: 0 },
+          { type: "ruler", i: cut.length - 3, p1: entry, p2: price, color: RED, side: "left", showAt: 0 },
+          { type: "ruler", i: cut.length - 5, p1: entry, p2: uniStop, color: LIME, side: "left", showAt: 0 }
+        ]);
+
+        var rec2 = loadRec();
+        rec2.stops.push(beyond);
+        if (rec2.stops.length > REC_MAX) rec2.stops = rec2.stops.slice(-REC_MAX);
+        saveRec(rec2);
+        renderRecord();
+
+        finish(r, fullBars, { entry: entry, price: price, uniStop: uniStop }, fig);
+      });
+    }
+
+    /* ---- the reveal, then the way out ---- */
+    function finish(r, fullBars, stop, fig) {
+      var annos = [
+        { type: "level", price: r.shelf, label: r.isTop ? "high shelf" : "shelf", color: r.isTop ? GOLD : CYAN, style: "dash", showAt: 0 },
+        { type: "level", price: r.neck, label: r.isTop ? "middle valley" : "middle peak", color: r.isTop ? CYAN : GOLD, showAt: 0 },
+        { type: "note", i: r.freeze - 1, price: r.isTop ? r.shelf + 1.4 : r.shelf - 1.4, text: "◀ you decided here", color: VIOLET, showAt: 0 }
+      ];
+      if (stop) {
+        annos.push({ type: "level", price: stop.entry, label: "ENTRY", color: GOLD, style: "dash", fromI: r.freeze - 7, showAt: 0 });
+        annos.push({ type: "level", price: stop.price, label: "YOUR STOP", color: RED, style: "dash", fromI: r.freeze - 7, showAt: 0 });
+        annos.push({ type: "level", price: stop.uniStop, label: "UNI'S STOP", color: LIME, style: "dash", fromI: r.freeze - 7, showAt: 0 });
+      }
+
       /* reveal the rest of the chart */
       var reveal = D.chart({
         title: "…and here is the rest of it",
@@ -279,11 +485,7 @@
         verdict: r.answer === ENTER ? "good" : r.answer === WAIT ? "warn" : "bad",
         verdictText: r.answer === ENTER ? "TAKE IT" : r.answer === WAIT ? "WAIT" : "SKIP IT",
         stamp: "press Play to watch it finish",
-        annotations: [
-          { type: "level", price: r.shelf, label: r.isTop ? "high shelf" : "shelf", color: r.isTop ? GOLD : CYAN, style: "dash", showAt: 0 },
-          { type: "level", price: r.neck, label: r.isTop ? "middle valley" : "middle peak", color: r.isTop ? CYAN : GOLD, showAt: 0 },
-          { type: "note", i: r.freeze - 1, price: r.isTop ? r.shelf + 1.4 : r.shelf - 1.4, text: "◀ you decided here", color: VIOLET, showAt: 0 }
-        ],
+        annotations: annos,
         caption: "<b>" + r.why + "</b>"
       });
       body.appendChild(reveal);
@@ -293,6 +495,7 @@
       nav.innerHTML = '<button class="cbtn on" id="dr-next" type="button" style="font-size:.88rem;padding:9px 16px">Next setup →</button>';
       body.appendChild(nav);
       nav.querySelector("#dr-next").onclick = function () {
+        if (fig && fig._api) { try { fig._api.cancelPick(); } catch (e) {} }
         idx++;
         if (idx >= order.length) { reshuffle(); }
         D.stopAll();
