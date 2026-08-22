@@ -245,8 +245,21 @@ final and post-fill, the traced W, the M in light mode, Door A and the full trad
 hover readout, drag ruler, the pair, and a 500px phone layout. Label collisions found in the shots
 were fixed (the "stopped out" note vs the reward ruler tag; the default-stop ruler tag over
 candles, solved with a `labelY` option; Door A's redundant "risk 12 · reward 48" note removed now
-that the rulers say it). `?v=` bumped to 20260822130636 and `CACHE` to `dbm-v7` on top of this
-morning's 12:46 commit from another session (which had bumped to 124621 / v6).
+that the rulers say it). `?v=` and `CACHE` bumped twice (final: 20260822160832 / `dbm-v8`) on top of this
+morning's 12:46 commit from another session.
+
+**A second pass after the first deploy, and it was worth doing.** Verifying the LIVE site turned
+up that the play loop had never actually been watched running — every earlier check was a static
+seek — and two harness artifacts were hiding it: `requestAnimationFrame` does not fire in the
+hidden Browser pane (so charts never painted and `priceAt()` returned null, which surfaced in the
+drill as a nonsense "23421 ticks" verdict), and headless Chrome with `--virtual-time-budget`
+throttles rAF to about 1.5fps. Fixed by holding the load event open with a slow-loading asset
+instead of using a virtual clock: **223 real frames in 3 seconds, bars 1-10 each rendered
+distinctly at one per 340ms, the forming bar visible mid-formation, clean pause, zero errors** —
+and the same test on the Chapter 8 pair reported **lockstep 10/10**. Hardened in passing: the
+first draw is now synchronous (rAF never runs in a tab that has not painted) and `priceAt`/`barAt`
+draw once rather than return null. Also fixed a live-price tag that collided with the gridline
+label beneath it. The real-time harness recipe is now gotcha #9 in CLAUDE.md.
 
 **Problems encountered.** A `var nav` (the step strip) silently replaced the hoisted
 `function nav()` inside `D.chart` on every chart with steps — `seek()` threw, and the charts

@@ -444,6 +444,21 @@
             plotW: plotW, plotH: plotH, volH: volH, slot: slot, bw: bw, lo: lo, hi: hi, n: n,
             X: X, Y: Y, full: full };
 
+      /* ---------- the forming bar, worked out before the axis so the live
+                    price tag can suppress the gridline label it would cover ---------- */
+      var live = null, formT = 0;
+      if (form && form.idx === shown && form.idx < n) {
+        var fb = bars[form.idx];
+        var elapsed = (!playing && form.frozen != null) ? form.frozen : (t - form.t0);
+        formT = clamp01(elapsed / barDur());
+        var pp = barPath(fb, formT);
+        live = { price: pp.p, up: pp.p >= fb.o, x: X(form.idx), h: pp.h, l: pp.l, o: fb.o };
+      } else if (bars[shown - 1]) {
+        var lb = bars[shown - 1];
+        live = { price: lb.c, up: lb.c >= lb.o, x: X(shown - 1) };
+      }
+      var liveY = (live && spec.livePrice !== false) ? Y(live.price) : null;
+
       /* ---------- grid + price axis ---------- */
       g.font = (10.5 * scale).toFixed(1) + "px 'Space Mono',monospace";
       g.textBaseline = "middle";
@@ -452,6 +467,9 @@
         var y = Y(v);
         g.strokeStyle = p.grid; g.lineWidth = 1;
         g.beginPath(); g.moveTo(padL, y + .5); g.lineTo(padL + plotW, y + .5); g.stroke();
+        /* the live tag is 15*scale tall and the label ~10.5, so they need
+           half of each in clearance or they visibly touch on a narrow canvas */
+        if (liveY != null && Math.abs(y - liveY) < 19 * scale) continue;
         g.fillStyle = p.mut; g.textAlign = "left";
         g.fillText(v.toFixed(1), padL + plotW + 7, y);
       }
@@ -558,19 +576,8 @@
       }
       for (var k = 0; k < shown && k < n; k++) candle(k, bars[k], 1);
 
-      /* the forming bar — open, wick, body, close — and the live price */
-      var live = null, formT = 0;
-      if (form && form.idx === shown && form.idx < n) {
-        var fb = bars[form.idx];
-        var el = (!playing && form.frozen != null) ? form.frozen : (t - form.t0);
-        formT = clamp01(el / barDur());
-        var pp = barPath(fb, formT);
-        candle(form.idx, { o: fb.o, h: pp.h, l: pp.l, c: pp.p }, 1);
-        live = { price: pp.p, up: pp.p >= fb.o, x: X(form.idx) };
-      } else if (bars[shown - 1]) {
-        var lb = bars[shown - 1];
-        live = { price: lb.c, up: lb.c >= lb.o, x: X(shown - 1) };
-      }
+      /* the forming bar — open, wick, body, close (computed above the axis) */
+      if (live && live.h != null) candle(form.idx, { o: live.o, h: live.h, l: live.l, c: live.price }, 1);
 
       /* the close flash — the moment a 2-minute bar becomes final */
       if (flash && bars[flash.idx]) {
@@ -781,8 +788,8 @@
       });
 
       /* ---------- live price line + axis tag ---------- */
-      if (live && spec.livePrice !== false) {
-        var ly2 = Y(live.price), lc = live.up ? p.up : p.dn;
+      if (liveY != null) {
+        var ly2 = liveY, lc = live.up ? p.up : p.dn;
         g.strokeStyle = rgba(lc, .7); g.lineWidth = 1; g.setLineDash([2, 4]);
         g.beginPath(); g.moveTo(live.x + bw / 2 + 2, ly2 + .5); g.lineTo(padL + plotW, ly2 + .5); g.stroke();
         g.setLineDash([]);
@@ -834,11 +841,17 @@
        OVERLAY — crosshair, readout, drag ruler, the drill's picker
        ============================================================ */
     function priceAt(y) {
+      /* L is only set by draw(). A pointer can in principle arrive before the
+         first animation frame has run (a tab that has never painted), so draw
+         once rather than hand back null — a null here became "23421 ticks" in
+         the drill's stop verdict. */
+      if (!L) draw(now());
       if (!L) return null;
       var v = L.lo + (L.hi - L.lo) * (1 - (y - L.padT) / L.plotH);
       return round1(Math.max(L.lo, Math.min(L.hi, v)));
     }
     function barAt(x) {
+      if (!L) draw(now());
       if (!L) return -1;
       var i = Math.floor((x - L.padL) / L.slot);
       if (i < 0) i = 0;
@@ -1022,6 +1035,7 @@
 
     setTimeout(function () {
       setShown(shown, { instant: true });
+      draw(now());          /* paint once synchronously — rAF never runs in a tab that has not painted */
       if (spec.autoplay) { setShown(1, { instant: true }); play(); }
     }, 20);
 
