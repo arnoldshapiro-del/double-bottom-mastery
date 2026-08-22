@@ -269,3 +269,14 @@ now does everything synchronously after `D.chart()`. Both are in CLAUDE.md as go
 
 **What's next.** Arnie does ~15 drill calls including the stop placements, then takes it to
 Sim101; after ~50 logged trades revisit Chapter 15's scale-out advice with his own numbers.
+
+**Gallery card refreshed the same day.** Arnie left the call to judgment ("only if the one you
+have isn't any good or looks completely different"). The old thumbnail was good and the
+composition unchanged — but three things on the card were wrong, not merely dated: the tagline
+said 17 chapters and 20 charts, `lastWorked` still read 2026-08-19 (the field the gallery's
+default sort uses), and the picture predated the traced gold W on the exact chart it shows,
+with a sidebar still on the pre-Gate-1 numbering. Re-shot and re-worded. The screenshot needs
+`arnies-app-showcase/take-double-bottom-screenshot.js` — the generic tool catches the chart
+mid-animation; that script clicks "Show all" and scrolls the figure clear of the sticky bar.
+The tagline's "Uni risks 12 ticks" was also corrected to the measured ~28 from his own record,
+since 12 is only the drawn example and the app itself says so.
