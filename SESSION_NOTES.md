@@ -320,3 +320,11 @@ live since 08-19); confirm SW registers on the Netlify origin after deploy.
 
 **Deploy state at time of writing: NOT pushed — waiting on Arnie's "anything else?" answer
 (global rule 9).**
+
+**Close-out (same day, wrap-up):** he approved deploy → v2.0.0 LIVE and verified on production
+(all 10 script tags at v=20260901210500, lessons-4.js 200, service worker registered on the
+real origin — the localhost SW failure was confirmed a harness artifact). Desktop explainer
+written: "THE FIVE GATES — What Changed & What You Do Now (2026-09-01).html". Same day the
+findings were transferred into the NT8 suite (SWEEPS v3.20.0→v3.22.1 — see the indicator
+repo's SESSION_NOTES). Gallery card: exists from 08-22; visual change is modest (same theme,
+sidebar gained chapters) — re-shot offered at wrap-up, his call.
