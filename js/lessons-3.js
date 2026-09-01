@@ -15,7 +15,7 @@
     id: "fails", part: "What goes wrong", n: 14,
     title: "The failure gallery — six ways this kills you",
     render: function () { return [
-      '<div class="eyebrow">Chapter 14 · What goes wrong</div>',
+      '<div class="eyebrow">Chapter 18 · What goes wrong</div>',
       '<h1>The failure gallery</h1>',
       '<p class="lead">You asked to be shown what can go wrong so you know when <b>not</b> to enter. This is that chapter, and it is the most important one in the course. Six failures, each animated, each with the tell that would have kept you out.</p>',
 
@@ -80,7 +80,7 @@
     id: "manage", part: "Managing it", n: 15,
     title: "Stops, targets, and the 70% retest",
     render: function () { return [
-      '<div class="eyebrow">Chapter 15 · Managing it</div>',
+      '<div class="eyebrow">Chapter 20 · Managing it</div>',
       '<h1>Stops, targets, and the 70% retest</h1>',
       '<p class="lead">You are in. Now what. This chapter follows your existing Plan A rules — because they are already right — and adds the double-bottom-specific pieces.</p>',
 
@@ -107,6 +107,7 @@
 
       '<h2>The 70% retest</h2>',
       '<p>After the break above the neckline, expect a pullback back to it. Uni says 70% of breakouts test the level; Bulkowski measured 55–67%. Either way, it is the normal case, not a failure.</p>',
+      '<p>And she put a clock on it that the first version of this course missed: <i>"70% of the time these broken support and resistance levels will be tested usually within a candle to 5-6 candles."</i> On your chart that is <b>two to twelve minutes after the break</b>. So the retest is not just likely — it is <i>soon</i>. If you are waiting for the second-chance entry, it either shows up inside a dozen candles or it usually is not coming.</p>',
       '<ul class="clean">' +
       '<li><b>If you are already in:</b> this is not a reason to panic out. It is expected.</li>' +
       '<li><b>If you missed the entry:</b> this is your second chance, with a small stop under the neckline.</li>' +
@@ -136,7 +137,7 @@
     id: "drill", part: "Practice", n: 16,
     title: "The drill — call it before you see it",
     render: function () { return [
-      '<div class="eyebrow">Chapter 16 · Practice</div>',
+      '<div class="eyebrow">Chapter 21 · Practice</div>',
       '<h1>The drill — call it before you see it</h1>',
       '<p class="lead">Reading about this will not teach you to see it. This will. The chart stops at the moment of decision and you have to call it — and only then does it show you what happened.</p>',
 
@@ -163,7 +164,7 @@
     id: "card", part: "Practice", n: 17,
     title: "The card — print this and put it on the desk",
     render: function () { return [
-      '<div class="eyebrow">Chapter 17 · Practice</div>',
+      '<div class="eyebrow">Chapter 23 · Practice</div>',
       '<h1>The card</h1>',
       '<p class="lead">Everything in this course, on one screen, in the order you actually need it. Print it. It is designed to be run in under a minute, after you have already made the call.</p>',
 
@@ -175,13 +176,15 @@
       '<li><b>Clock is clean.</b> Not 11:30–1:30. Nothing scheduled inside the hold. <span class="pill r">killer item</span></li>' +
       '<li><b>There was a real decline</b> for this to reverse.</li>' +
       '<li><b>The shelf is on a level I can name out loud.</b></li>' +
+      '<li><b>The Tide:</b> this W is a pullback in a bigger up-move I can point at — not a knife-catch.</li>' +
       '</ul>' +
 
       '<h2>② AT THE SECOND LOW — the read</h2>' +
       '<ul class="clean check">' +
       '<li><b>Tall enough:</b> shelf → middle peak ≥ 3× the average bar. On M2K, usually 4+ points.</li>' +
       '<li><b>It decelerated:</b> smaller bars, lighter volume, more time than the first drop.</li>' +
-      '<li><b>There is a low candle:</b> a tail, a stall, an engulfing bar, or an undercut that reclaimed.</li>' +
+      '<li><b>L1 had a tail</b> — an excess low holds on retest; a flat first low is a shelf waiting to break.</li>' +
+      '<li><b>There is a low candle:</b> a tail, a stall, an engulfing bar, or an undercut that reclaimed <i>fast</i>.</li>' +
       '<li><b>Master chess player:</b> could this be a triple bottom or a rectangle instead? Hold it as a candidate.</li>' +
       '</ul>' +
 
@@ -197,6 +200,7 @@
       '<h2>④ AFTER — the ladder</h2>' +
       '<ul class="clean">' +
       '<li>A blue ring alone is not an entry — the 2-minute must still confirm.</li>' +
+      '<li>Door B: one close over the neckline = <b>provisional</b> · two consecutive closes = <b>confirmed</b> (her rule, and Murphy\'s).</li>' +
       '<li>Before target 1: <b>the stop does not move.</b></li>' +
       '<li>Target 1 pays → one move up under the previous completed 2-min swing. <b>Not a trail.</b></li>' +
       '<li>Target 2 pays → runners past entry, and <b>now</b> the trail is on.</li>' +
@@ -235,7 +239,7 @@
     id: "learn", part: "Practice", n: 18,
     title: "How to actually learn this — and how long it takes",
     render: function () { return [
-      '<div class="eyebrow">Chapter 18 · Practice</div>',
+      '<div class="eyebrow">Chapter 24 · Practice</div>',
       '<h1>How to actually learn this</h1>',
       '<p class="lead">You said you are determined. Good — but determination pointed at the wrong practice does not work, and I would rather tell you the real timeline than sell you a fast one.</p>',
 
@@ -267,10 +271,11 @@
       '<tr><td>Door A or Door B, and where the stop went</td><td>This is the one that caused the 80%.</td></tr>' +
       '<tr><td>Pattern height in points</td><td>You will find a size below which you should simply never trade.</td></tr>' +
       '<tr><td>Was it a re-entry?</td><td>Re-entries are a different trade with different odds. Tag them separately.</td></tr>' +
+      '<tr><td><b>The five gates — pass / mixed / fail, each</b></td><td>The Grader (Chapter 22) hands you this in ten seconds. After 20–30 graded reps, your own numbers show which gates carry the weight on YOUR chart — and that beats every study quoted in this course.</td></tr>' +
       '</tbody></table>',
 
       '<div class="callout bad"><div class="ct">Go back over the losing trades you already have</div>' +
-      '<p>You have twenty or thirty of these in the past. If you can find them, score each one against the card in Chapter 17 — did it one-timeframe? Was the second low quieter? Where was the stop? Was the pattern tall enough?</p>' +
+      '<p>You have twenty or thirty of these in the past. If you can find them, score each one against the card in Chapter 23 — did it one-timeframe? Was the second low quieter? Where was the stop? Was the pattern tall enough?</p>' +
       '<p>Whichever box was empty most often is your actual problem, and it will be more useful than any general ranking I could give you. My money is on the stop.</p></div>',
 
       '<h2>The last thing</h2>',

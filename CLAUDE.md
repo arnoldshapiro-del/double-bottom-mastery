@@ -73,7 +73,8 @@ server needed** — open `index.html`. Deploy = GitHub → Netlify auto-build (g
 - Trade management follows **Plan A as written** (memory `plan-a-trading-like-uni`): stops by
   structure never by R, the two-stage stop sequence, no 5-minute guard number, BE+3 retired.
 
-- **Chapter 7 mirrors the indicator, not a textbook.** "Gate 1 and the blue ring" describes the
+- **Chapter 10 (id `gate1`) mirrors the indicator, not a textbook.** (It was Chapter 7 before the
+  2026-09-01 rebuild — dated notes below still say 7.) "Gate 1 and the blue ring" describes the
   15-minute law exactly as `final-edge-nt8-indicator` **GATES v5.61.0** enforces it: the 15m circle
   judges swing structure (higher low compulsory; a 15m close beyond the last confirmed swing can
   stand in for the higher high), solid states lock at the close, and a **blue ring means that
@@ -89,6 +90,18 @@ This is a *teaching* app. It places no orders, connects to no broker, and reads 
 The separate April-2026 repo `double-top-bottom-teaching` is a different, older, 33-tab
 generalist playbook built around retired R-multiple / 0.75R-breakeven doctrine — **leave it
 alone.** This app does not replace or modify it.
+
+## 2026-09-01 — v2.0.0: the five-gates rebuild (his "Option 2")
+- **THE SPINE at the bottom of `js/lessons-4.js` is the single authority on chapter order,
+  numbering and parts** — it re-sorts `D.lessons` at load; in-file `n:`/`part:` are IGNORED.
+  Renumbering = edit the SPINE + that chapter's hardcoded `eyebrow` + prose cross-refs
+  (`grep -n "Chapter [0-9]"` across js/ catches them).
+- `{ grader: true }` → `D.buildGrader()` (dispatch in app.js). Drill rounds carry `gate:` labels.
+- **Confirmation doctrine = TWO closes** (one provisional, two confirmed — Murphy ∧ Uni's
+  "2 candles intraday"); keep ch 3 / ch 16 / ch 23 consistent if edited.
+- Honesty labels (folklore vs measured vs her words) are load-bearing — never strip them.
+  Full detail + provenance: SESSION_NOTES 2026-09-01 + memory
+  `double-bottom-five-gates-verdict-2026-09-01.md`.
 
 ## 2026-08-22 — Chapter 7 follows GATES v5.63.0
 The blue ring now has TWO legs in the indicator: (1) the candle beyond the level has not closed; (2) a swing has PRINTED but not yet had its two confirming candles (the pivot leg, `BlueRingPivots`). Ch. 7 wording, the ring table and the three-way resolve (locks / vanishes / stays while the swing waits) updated to match. Confirmed law, BOS rule and "only the 15m grants" unchanged. Cache bumped (`?v=20260822124621`, `dbm-v6`).

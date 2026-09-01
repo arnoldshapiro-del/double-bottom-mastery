@@ -77,11 +77,13 @@
 
       '<h2>What you are going to learn, in order</h2>',
       '<ul class="clean">' +
-      '<li><b>Chapters 2–4 · See it.</b> The four points of the W, the M, and why the <i>shape</i> of a low tells you how good it is.</li>' +
-      '<li><b>Chapters 5–8 · When to start looking.</b> Uni\'s Weight of the Evidence, the three things that must be true before you even care, Gate 1 and the blue ring, and the one tell that separates a real second low from a fake one.</li>' +
-      '<li><b>Chapters 9–13 · The moment, and the two doors.</b> The checklist at the second low, the undercut-and-reclaim, both entries, and a calculator with your real M2K numbers.</li>' +
-      '<li><b>Chapter 14 · What goes wrong.</b> Six ways this trade kills you, each one animated, each one with the early warning sign.</li>' +
-      '<li><b>Chapters 15–18 · Managing it and practising it.</b> Stops, targets, the 70% retest, a drill that makes you call the chart before it shows you the answer, and a card for the desk.</li>' +
+      '<li><b>Chapters 1–2 · Start here.</b> Why you lost, and the win-rate dial — what Uni\'s 80% actually is, where it lives, and why chasing it on a 2-minute chart was never the game.</li>' +
+      '<li><b>Chapters 3–6 · The story of a bottom.</b> The four points of the W, Wyckoff\'s whole map of how bottoms get built — including the two Ws hiding inside every real one — the M, and why the <i>shape</i> of a low tells you how good it is.</li>' +
+      '<li><b>Chapters 7–11 · The five gates.</b> Uni\'s Weight of the Evidence, the Tide (the half of her method you never had), the three checks, Gate 1 and the blue ring, and the quiet-approach tell.</li>' +
+      '<li><b>Chapters 12–14 · The moment.</b> The checklist at the second low, the undercut-and-reclaim, and the truth ladder — six lie detectors for a second low, honestly labeled.</li>' +
+      '<li><b>Chapters 15–17 · The two doors.</b> Both entries, and a calculator with your real M2K numbers.</li>' +
+      '<li><b>Chapters 18–19 · What goes wrong.</b> Six animated failures, and the M\'s dirty secret — the upthrust.</li>' +
+      '<li><b>Chapters 20–24 · Managing and practising.</b> Stops, targets, the 70% retest, the drill, the Bottom Grader, the desk card, and how to actually learn this.</li>' +
       '</ul>',
 
       '<p class="srcs"><b>A word about the charts in this course.</b> They are drawn bar by bar to teach one idea each, in real M2K price territory with real M2K mechanics — 0.10-point ticks, $0.50 a tick, $5.00 a point. They are illustrations, not recordings of specific sessions, and every chart says so in its corner. Where I quote a statistic I say where it came from and whether it transfers to your 2-minute chart.</p>'
@@ -95,7 +97,7 @@
     id: "anatomy", part: "See it", n: 2,
     title: "The four points of a W",
     render: function () { return [
-      '<div class="eyebrow">Chapter 2 · See it</div>',
+      '<div class="eyebrow">Chapter 3 · The story of a bottom</div>',
       '<h1>The four points of a W</h1>',
       '<p class="lead">Before anything moves, learn the names. There are only four things on this chart and every rule in the course refers to one of them. Get these four and the rest is bookkeeping.</p>',
 
@@ -103,7 +105,7 @@
       '<tr><td><b style="color:var(--cyan)">L1 — first low</b></td><td>The bottom of the decline. Usually made in a rush, on heavy volume, with a tail underneath.</td><td>Sets <b>the shelf</b> — the price everything else gets measured against.</td></tr>' +
       '<tr><td><b style="color:var(--gold)">MP — middle peak</b></td><td>The rally between the two lows. Also called <b>the neckline</b>.</td><td>Two jobs: a close above it <b>confirms</b> the pattern, and it is Uni\'s <b>first profit target</b>.</td></tr>' +
       '<tr><td><b style="color:var(--cyan)">L2 — second low</b></td><td>Price returns to the shelf. This is where the whole decision happens.</td><td>Where your <b>stop</b> goes, and the bar that triggers your <b>entry</b>.</td></tr>' +
-      '<tr><td><b style="color:var(--lime)">The break</b></td><td>A 2-minute <i>close</i> above the middle peak.</td><td>The moment a candidate becomes a pattern.</td></tr>' +
+      '<tr><td><b style="color:var(--lime)">The break</b></td><td>Close(s) above the middle peak — one close starts it, <b>two consecutive closes confirm it</b> (Ch. 16).</td><td>The moment a candidate becomes a pattern.</td></tr>' +
       '</tbody></table>',
 
       { chart: EX.anatomy() },
@@ -129,7 +131,7 @@
     id: "them", part: "See it", n: 3,
     title: "The M — the same thing upside down",
     render: function () { return [
-      '<div class="eyebrow">Chapter 3 · See it</div>',
+      '<div class="eyebrow">Chapter 5 · The story of a bottom</div>',
       '<h1>The M — the same thing upside down</h1>',
       '<p class="lead">Everything you just learned flips. Two highs at the same level, a valley between them, and a close <i>below</i> that valley confirms it. But the odds are genuinely worse on this side, and you should know that going in.</p>',
 
@@ -150,7 +152,10 @@
       '<h2>The one real difference in behaviour</h2>',
       '<p>Watch the chart above again and look at the shape of the move <i>away</i> from the pattern. The rise into the highs was a grind; the drop out of it was fast. That is the old floor-trader line — <b>stairs up, elevator down</b> — and it has a straightforward reason behind it: fear acts faster than greed. People sell to get out in a hurry far more urgently than they buy to get in.</p>',
       '<p>Practically, for you: on an M, the move after the break often comes quicker and steeper. Your first target can fill in a couple of bars. Do not be slow taking it.</p>',
-      '<p class="srcs"><b>Flagging this honestly:</b> the "stairs up, elevator down" idea is well-observed folklore with real behavioural logic behind it, but I could not find a rigorous study proving it explains the double-top/double-bottom gap specifically. The <i>statistics</i> above are measured; the <i>explanation</i> is reasoning.</p>'
+      '<p class="srcs"><b>Flagging this honestly:</b> the "stairs up, elevator down" idea is well-observed folklore with real behavioural logic behind it, but I could not find a rigorous study proving it explains the double-top/double-bottom gap specifically. The <i>statistics</i> above are measured; the <i>explanation</i> is reasoning.</p>',
+
+      '<div class="callout warn"><div class="ct">And one secret this chapter is keeping</div>' +
+      '<p>There is a reason the M keeps stopping you out at the second high, and it deserves its own chapter: in a real top, the second high is usually <b>designed to trade above the first one</b> before it fails. Chapter 19 — the upthrust — is that story. Read it before you short another M.</p></div>'
     ]; }
   });
 
@@ -161,7 +166,7 @@
     id: "adameve", part: "See it", n: 4,
     title: "Adam and Eve — the shape of a low",
     render: function () { return [
-      '<div class="eyebrow">Chapter 4 · See it</div>',
+      '<div class="eyebrow">Chapter 6 · The story of a bottom</div>',
       '<h1>Adam and Eve — the shape of a low</h1>',
       '<p class="lead">Two lows can sit at exactly the same price and be completely different animals. Bulkowski named the two shapes decades ago, and the naming turns out to carry real information about which patterns work.</p>',
 
@@ -186,7 +191,11 @@
       '<div class="callout"><div class="ct">Why rounder is better — and what is actually proven</div>' +
       '<p>Bulkowski reports the ranking as a measured fact. He does <b>not</b> give a reason for it, and I am not going to pretend he did.</p>' +
       '<p>But it lines up exactly with what the next three chapters are about. A wide, slow, boring low means a lot of selling got quietly soaked up over many bars. A single sharp spike means one flush happened and then nothing — which tells you much less about whether the sellers are actually finished.</p>' +
-      '<p><b>Practical version for your 2-minute chart:</b> a second low that takes its time and goes nowhere is better than one that stabs down and rockets back. Boring is good.</p></div>'
+      '<p><b>Practical version for your 2-minute chart:</b> a second low that takes its time and goes nowhere is better than one that stabs down and rockets back. Boring is good.</p></div>',
+
+      '<div class="callout"><div class="ct">The 1948 version — and the "wrong-looking" one that wins</div>' +
+      '<p>Edwards &amp; Magee\'s original textbook demanded this same asymmetry seventy-five years ago: in a proper double bottom the first low should be <i>"distinct and sharp"</i> and the second <i>"conspicuously dull… quite rounded."</i> A loud, violent first low and a quiet, rounded second one. Adam then Eve, by their older names.</p>' +
+      '<p>And do not demand that the lows match: Bulkowski\'s "ugly double bottom" — a second low sitting noticeably <b>higher</b> than the first — performed slightly <i>better</i> than the tidy version (41% average rise vs 37% blended, daily stock charts). A higher second low is a trend change starting, an undercut-and-reclaimed one is a shakeout, and the politely equal pair is actually the least interesting case. Symmetry is for photographs, not for money.</p></div>'
     ]; }
   });
 
@@ -197,7 +206,7 @@
     id: "woe", part: "When to look", n: 5,
     title: "Uni's Weight of the Evidence",
     render: function () { return [
-      '<div class="eyebrow">Chapter 5 · When to look</div>',
+      '<div class="eyebrow">Chapter 7 · The five gates</div>',
       '<h1>Uni\'s Weight of the Evidence</h1>',
       '<p class="lead">This is Uni\'s own decision framework, straight out of her Advanced Technical Analysis Bootcamp. It is how she decides whether anything is worth trading, and it explains why she passes on setups that look fine to you.</p>',
 
@@ -223,7 +232,7 @@
 
       '<div class="callout bad"><div class="ct">Here is the trap that framework protects you from</div>' +
       '<p>When you spot a W, your eye has found a shape — which is worth <b>30% at most</b>, and only if the level it sits on is a real one. If you have not checked the trend, you have not looked at half the evidence.</p>' +
-      '<p>And "trend" on a double bottom means something specific and slightly odd: <b>you need a decline for the pattern to reverse, but you must not be standing in front of a train that is still moving.</b> Chapter 6 is how to tell those two apart.</p></div>',
+      '<p>And "trend" on a double bottom means something specific and slightly odd: <b>you need a decline for the pattern to reverse, but you must not be standing in front of a train that is still moving.</b> Chapters 8 and 9 are how to tell those two apart.</p></div>',
 
       '<h2>Her other numbers worth writing down</h2>',
       '<table class="tbl"><thead><tr><th>Uni\'s rule</th><th>What it means for your W</th></tr></thead><tbody>' +
@@ -247,7 +256,7 @@
     id: "before", part: "When to look", n: 6,
     title: "The three things that must be true before you care",
     render: function () { return [
-      '<div class="eyebrow">Chapter 6 · When to look</div>',
+      '<div class="eyebrow">Chapter 9 · The five gates</div>',
       '<h1>The three things that must be true before you care</h1>',
       '<p class="lead">This is your "it looks like a bottom is forming" moment — the thing Uni says out loud and you want to be able to say too. It is not a feeling. It is three checks, and they take about ten seconds.</p>',
 
@@ -298,7 +307,7 @@
     id: "gate1", part: "When to look", n: 7,
     title: "Gate 1 and the blue ring",
     render: function () { return [
-      '<div class="eyebrow">Chapter 7 · When to look</div>',
+      '<div class="eyebrow">Chapter 10 · The five gates</div>',
       '<h1>Gate 1 and the blue ring</h1>',
       '<p class="lead">The last chapter gave you three checks you run with your own eyes. This one is run for you. The 15-minute circle on your panel is <b>Gate 1</b>, and it answers one question: which direction is the 15-minute chart currently willing to let you trade? Read it in a glance and you stop taking Ws into a market that is still going down.</p>',
 

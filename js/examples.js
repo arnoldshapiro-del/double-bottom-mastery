@@ -41,8 +41,8 @@
         { at: 6,  text: "<b>Point 0 — the decline.</b> A W is a <i>reversal</i>. If there was no real decline first, there is nothing to reverse and no pattern here." },
         { at: 13, text: "<b>Point 1 — the first low (L1).</b> Heavy volume, wide bars, a long tail. Sellers finally overdid it. This is the price level everything else gets measured against." },
         { at: 21, text: "<b>Point 2 — the middle peak (MP).</b> Buyers took control, briefly. This peak is the <b>neckline</b>. It is the level that confirms the pattern, and it is Uni's first profit target." },
-        { at: 32, text: "<b>Point 3 — the second low (L2).</b> Price came back — but look at the bars and the volume. Quieter. Smaller. That is the whole tell, and Chapter 8 is about nothing else." },
-        { at: 37, text: "<b>Point 4 — the break.</b> A 2-minute <i>close</i> above the middle peak. Now the W is confirmed. Before this close it was only a candidate." },
+        { at: 32, text: "<b>Point 3 — the second low (L2).</b> Price came back — but look at the bars and the volume. Quieter. Smaller. That is the whole tell, and Chapter 11 is about nothing else." },
+        { at: 37, text: "<b>Point 4 — the break.</b> A 2-minute <i>close</i> above the middle peak starts the confirmation — Uni\'s full intraday rule (and Murphy\'s) wants a <b>second candle to agree</b>. Before the close it was only a candidate." },
         { at: 43, text: "<b>And there it is — the W.</b> Decline, first low, middle peak, second low, break. Every chart in this course is a variation on those five strokes." }
       ],
       annotations: [
@@ -304,7 +304,7 @@
         { type: "trade", entry: 2346.4, stop: 2340.0, target: 2352.0, targetLabel: "MEASURED MOVE", fromI: 31, showAt: 33 },
         { type: "measured", lowPrice: 2340.1, neckPrice: 2346.0, fromI: 31, label: "5.9 pts projected up", color: VIOLET, showAt: 40 }
       ],
-      caption: "<b>Door B is the honest, textbook entry — and its arithmetic is brutal.</b> You get a much higher chance of being right, because you only trade patterns that actually confirmed. But you paid for that proof with the entire lower half of the move, and your stop is now five times wider. <b>Door B only works if you do NOT put the stop under the second low</b> — Chapter 12 shows the two ways to fix it."
+      caption: "<b>Door B is the honest, textbook entry — and its arithmetic is brutal.</b> You get a much higher chance of being right, because you only trade patterns that actually confirmed. But you paid for that proof with the entire lower half of the move, and your stop is now five times wider. <b>Door B only works if you do NOT put the stop under the second low</b> — Chapter 16 shows the two ways to fix it."
     };
   };
 
@@ -539,7 +539,7 @@
         { type: "zone", y1: 2343.0, y2: 2345.4, fromI: 19, toI: 24, color: "rgba(251,146,60,.14)", label: "no turn has happened yet", textColor: ORANGE, showAt: 22 },
         { type: "arrow", i: 24, price: 2343.6, toI: 30, toPrice: 2338.6, text: "no second low — ever", color: RED, showAt: 30 }
       ],
-      caption: "<b>If you fix one thing, fix this one.</b> Bulkowski measured that on daily stock charts, <b>44–50% of apparent double bottoms never confirm at all</b> — they simply never close above the middle peak. Anticipating the second low means taking that entire failure rate onto your account, on every trade. There is a way to survive entering early — it is the tiny stop — and that is the whole subject of Chapter 11."
+      caption: "<b>If you fix one thing, fix this one.</b> Bulkowski measured that on daily stock charts, <b>44–50% of apparent double bottoms never confirm at all</b> — they simply never close above the middle peak. Anticipating the second low means taking that entire failure rate onto your account, on every trade. There is a way to survive entering early — it is the tiny stop — and that is the whole subject of Chapter 15."
     };
   };
 
@@ -723,6 +723,110 @@
         { type: "note", i: 40, price: 2331.3, text: "stopped out: −50 ticks, −$25.00", color: ORANGE, showAt: 40 }
       ],
       caption: "<b>Twelve ticks or fifty — that was the entire difference.</b> On this drawn example the candle stop is 12 ticks ($6.00 a contract) and the platform's default is 50 ($25.00). On your own morning bars the candle stop measured about 28 ticks — bigger bars, same principle: the stop comes off the candle, not off the platform, and it is always a fraction of the default. Both stops lost here. Only one of them you can afford to lose twenty times."
+    };
+  };
+
+  /* ============================================================
+     THE STORY OF A BOTTOM — Wyckoff's whole map on one chart
+     (added 2026-09-01 rebuild)
+     ============================================================ */
+  EX.wyckoffStory = function () {
+    var bars = B({
+      seed: 501, start: 2358.0, startTime: "09:32", unit: 0.95, baseVolume: 1600,
+      legs: [
+        { to: 2348.0, bars: 7, vol: "high",   energy: "drive" },
+        { to: 2341.0, bars: 5, vol: "climax", energy: "drive", wickBias: "lower", tag: "SC" },
+        { to: 2348.4, bars: 6, vol: "high",   energy: "drive", tag: "AR" },
+        { to: 2342.8, bars: 6, vol: "low",    energy: "grind", wickBias: "lower", tag: "ST" },
+        { to: 2346.4, bars: 5, vol: "low",    energy: "chop" },
+        { to: 2343.2, bars: 5, vol: "dry",    energy: "chop" },
+        { to: 2340.2, bars: 4, vol: "low",    energy: "grind", wickBias: "lower", tag: "SPRING" },
+        { to: 2344.2, bars: 5, vol: "dry",    energy: "stall" },
+        { to: 2350.2, bars: 7, vol: "high",   energy: "drive" },
+        { to: 2348.0, bars: 4, vol: "low",    energy: "grind" },
+        { to: 2354.0, bars: 6, vol: "high",   energy: "drive" }
+      ]
+    });
+    return {
+      title: "One real bottom, start to finish — and the two Ws inside it",
+      verdict: "good", verdictText: "THE MAP",
+      bars: bars, startAt: 1, speed: 300,
+      stepIntro: "<b>Press Play</b> and watch a bottom get BUILT — this is the whole story the W is only one chapter of.",
+      steps: [
+        { at: 12, text: "<b>The selling climax (SC).</b> Panic volume, wide bars, a long tail, closing off the low. The public sells everything; someone bigger is on the other side of it. This sets the floor of the box." },
+        { at: 18, text: "<b>The automatic rally (AR).</b> Supply is spent, so even modest buying snaps price up. The high of this rally sets the CEILING of the box. From here on, the bottom is a range, not a line." },
+        { at: 24, text: "<b>The secondary test (ST) — quiet.</b> Price revisits the climax area on visibly less volume and smaller bars. That diminishment is the requirement. And look at the shape so far: climax, rally, test — <b>a W. This is the FIRST W, and it is not a buy.</b> It only draws the box." },
+        { at: 33, text: "<b>Phase B — the boring middle.</b> Chop, chop, chop inside the box while big money absorbs supply. Most fake double bottoms get bought right here and die of boredom or breakdown." },
+        { at: 38, text: "<b>THE SPRING.</b> Price undercuts the box floor — the thing that 'invalidates the pattern' — takes out every stop under the lows, and comes straight back. This is the shakeout. It is not the pattern failing; it is the pattern finishing." },
+        { at: 42, text: "<b>The quiet test.</b> One more small dip on almost no volume that holds above the spring low. Sellers were invited back and did not show up. <b>Spring + test = the SECOND W — the one worth money.</b> This is what Uni's entry, IBD's shakeout and your sweep-at-a-real-level are all catching." },
+        { at: 49, text: "<b>The sign of strength.</b> Wide bars, rising volume, and the ceiling of the box breaks. Demand is now running the tape." },
+        { at: 54, text: "<b>The pullback that holds higher.</b> The retest of the broken ceiling — arriving on schedule, exactly your 70% retest — and it holds above the box." },
+        { at: 58, text: "<b>Markup.</b> The part everyone else screenshots. You now know the eight scenes that came before it — which means next time you can recognise the play by scene three." }
+      ],
+      annotations: [
+        { type: "level", price: 2341.0, label: "the box floor (SC low)", color: CYAN, style: "dash", showAt: 12 },
+        { type: "level", price: 2348.4, label: "the box ceiling (AR high)", color: GOLD, style: "dash", showAt: 18 },
+        { type: "pivot", i: 11, side: "low", label: "SC", color: PINK, showAt: 12 },
+        { type: "vbar", i: 11, color: "rgba(236,72,153,.75)", label: "climax", showAt: 12 },
+        { type: "pivot", i: 17, side: "high", label: "AR", color: GOLD, showAt: 18 },
+        { type: "pivot", i: 23, side: "low", label: "ST · quiet", color: CYAN, showAt: 24 },
+        { type: "vbar", i: 23, color: "rgba(163,230,53,.7)", label: "lighter", showAt: 24 },
+        { type: "path", points: [{ i: 11, side: "low" }, { i: 17, side: "high" }, { i: 23, side: "low" }],
+          label: "the FIRST W — not a buy", labelI: 16, labelPrice: 2338.9, color: ORANGE, showAt: 26 },
+        { type: "zone", y1: 2342.9, y2: 2346.6, fromI: 24, toI: 33, color: "rgba(148,163,184,.10)", label: "phase B — the boring middle", textColor: "#94A3B8", showAt: 33 },
+        { type: "pivot", i: 37, side: "low", label: "SPRING — under the floor", color: LIME, showAt: 38 },
+        { type: "note", i: 41, price: 2339.0, text: "the quiet test holds", color: LIME, showAt: 42 },
+        { type: "path", points: [{ i: 33, side: "high" }, { i: 37, side: "low" }, { i: 44, side: "high" }],
+          label: "the SECOND W — the trade", labelI: 39, labelPrice: 2337.4, color: LIME, showAt: 45 },
+        { type: "note", i: 47, price: 2351.4, text: "SOS — the ceiling breaks", color: GREEN, showAt: 49 },
+        { type: "note", i: 52, price: 2345.4, text: "the retest holds higher", color: VIOLET, showAt: 54 }
+      ],
+      caption: "<b>A real bottom is a process with two Ws in it.</b> The first W (climax → rally → quiet test) only draws the box — buying it is buying the middle of Phase B. The tradable W is the spring and its quiet test at the end. Honesty rider: the phases and events are sourced Wyckoff doctrine; the two-Ws framing is this course's synthesis of those definitions, and nobody publishes statistics on it — the chart is drawn to teach the map, not to promise the frequency."
+    };
+  };
+
+  /* ============================================================
+     THE UPTHRUST M — the second top is designed to sweep
+     (added 2026-09-01 rebuild)
+     ============================================================ */
+  EX.upthrustM = function () {
+    var bars = B({
+      seed: 502, start: 2340.0, startTime: "13:52", unit: 0.95, baseVolume: 1500,
+      legs: [
+        { to: 2346.0, bars: 7, vol: "high",   energy: "drive" },
+        { to: 2352.0, bars: 6, vol: "climax", energy: "drive", wickBias: "upper", tag: "H1" },
+        { to: 2346.2, bars: 6, vol: "high",   energy: "drive" },
+        { to: 2350.4, bars: 5, vol: "low",    energy: "grind" },
+        { to: 2352.9, bars: 3, vol: "dry",    energy: "grind", wickBias: "upper", tag: "UT" },
+        { to: 2347.2, bars: 5, vol: "high",   energy: "drive" },
+        { to: 2341.8, bars: 8, vol: "climax", energy: "drive" }
+      ]
+    });
+    return {
+      title: "The upthrust — why the M's second top goes ABOVE the first",
+      verdict: "warn", verdictText: "THE TRAP",
+      bars: bars, startAt: 1, speed: 300,
+      stepIntro: "<b>Press Play</b> — and watch what the second high does to everyone who drew a line at the first one.",
+      steps: [
+        { at: 13, text: "<b>H1 — the buying climax.</b> Urgent volume into a spike high with a tail on top. Everyone watching now has a line drawn at this price." },
+        { at: 19, text: "<b>The middle valley.</b> The sharp reaction down sets the M's neckline. So far it looks exactly like the mirror of a W." },
+        { at: 26, text: "<b>The second high goes ABOVE the first.</b> To a breakout buyer this is the moment to buy; to everyone short, it is the stop being hit. Both of them are the fuel." },
+        { at: 29, text: "<b>…and it fails back inside.</b> The poke could not hold — it closes back under the old high. That is the <b>upthrust</b>: a sweep of the level, not a breakout. The 'double top' just printed its second top — half a point higher than the first." },
+        { at: 34, text: "<b>The break.</b> Trapped breakout buyers sell out, fresh shorts pile on, and the middle valley gives way fast — drops move quicker than rallies." },
+        { at: 39, text: "<b>The lesson.</b> In a real top the second high USUALLY trades above the first before failing. Shorting the touch of the old high is standing in front of the sweep — the entry works off the candle that fails back inside, never the touch." }
+      ],
+      annotations: [
+        { type: "level", price: 2352.1, label: "H1 — everyone's line", color: GOLD, style: "dash", showAt: 13 },
+        { type: "level", price: 2346.1, label: "middle valley (NECKLINE)", color: CYAN, showAt: 19 },
+        { type: "pivot", i: 12, side: "high", label: "H1 · climax", color: GOLD, showAt: 13 },
+        { type: "pivot", i: 26, side: "high", label: "H2 — the upthrust", color: PINK, showAt: 27 },
+        { type: "zone", y1: 2352.1, y2: 2353.5, fromI: 20, toI: 28, color: "rgba(236,72,153,.12)", label: "stops + breakout buyers lived here", textColor: PINK, showAt: 27 },
+        { type: "note", i: 29, price: 2349.2, text: "closes back inside — the trap springs", color: RED, showAt: 29 },
+        { type: "note", i: 33, price: 2344.2, text: "the M's real entry works off this failure", color: LIME, showAt: 33 },
+        { type: "path", points: [{ i: 0, side: "low" }, { i: 12, side: "high" }, { i: 18, side: "low" }, { i: 26, side: "high" }, { i: 38, side: "low" }],
+          label: "THE M — with the sweep built in", labelI: 19, labelPrice: 2354.6, color: GOLD, showAt: 38 }
+      ],
+      caption: "<b>An M with two politely equal tops is the rare case.</b> In Wyckoff's map of distribution the second top routinely prints as an upthrust — a sweep above the first high that fails back inside, engineered to hand size to sellers at the best prices. Expect the sweep, and work off the candle that fails — never the touch of the old high."
     };
   };
 

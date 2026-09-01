@@ -68,6 +68,7 @@
   var ROUNDS = [
     {
       why: "Quiet second low on a named level, two-sided tape.",
+      gate: "ALL FIVE GATES OPEN",
       answer: ENTER,
       freeze: 27,
       spec: { seed: 2201, start: 2350.6, startTime: "10:10", unit: 0.88, baseVolume: 1500, legs: [
@@ -83,6 +84,7 @@
     },
     {
       why: "One-timeframing — every high lower than the last.",
+      gate: "KILLER CHECK · ONE-TIMEFRAMING — the tide owns the day",
       answer: NONE,
       freeze: 26,
       spec: { seed: 2202, start: 2357.0, startTime: "09:40", unit: 1.0, baseVolume: 1900, legs: [
@@ -99,6 +101,7 @@
     },
     {
       why: "Second low arrives on expanding range and rising volume.",
+      gate: "GATE 4 · THE QUIET APPROACH — it came back louder",
       answer: NONE,
       freeze: 26,
       spec: { seed: 2203, start: 2351.0, startTime: "10:22", unit: 0.9, baseVolume: 1500, legs: [
@@ -113,6 +116,7 @@
     },
     {
       why: "Undercut of the shelf on light volume, reclaimed on heavy.",
+      gate: "GATES 3 + 5 · THE SPRING — light-volume undercut, fast reclaim",
       answer: ENTER,
       freeze: 29,
       spec: { seed: 2204, start: 2349.0, startTime: "10:36", unit: 0.85, baseVolume: 1500, legs: [
@@ -129,6 +133,7 @@
     },
     {
       why: "Lunchtime, and the whole pattern is one point tall.",
+      gate: "KILLER CHECKS · THE CLOCK AND THE SIZE — no gate can rescue these",
       answer: NONE,
       freeze: 24,
       spec: { seed: 2205, start: 2345.0, startTime: "12:06", unit: 0.4, baseVolume: 600, legs: [
@@ -144,6 +149,7 @@
     },
     {
       why: "Approaching the shelf but nothing has turned yet.",
+      gate: "GATE 5 · THE PROOF — the case is built, the proof is not in",
       answer: WAIT,
       freeze: 22,
       spec: { seed: 2206, start: 2352.0, startTime: "10:02", unit: 0.9, baseVolume: 1600, legs: [
@@ -159,6 +165,7 @@
     },
     {
       why: "Equal lows inside a range — nothing to reverse.",
+      gate: "GATE 1 · THE TIDE — a range has no tide; equal lows are what ranges do",
       answer: NONE,
       freeze: 25,
       spec: { seed: 2207, start: 2344.0, startTime: "11:50", unit: 0.72, baseVolume: 900, legs: [
@@ -174,6 +181,7 @@
     },
     {
       why: "Neckline broke, pulled back, and is holding above it.",
+      gate: "GATE 5 · THE PROOF — confirmed, and the retest holds the line",
       answer: ENTER,
       freeze: 34,
       spec: { seed: 2208, start: 2350.0, startTime: "09:58", unit: 0.88, baseVolume: 1600, legs: [
@@ -190,6 +198,7 @@
     },
     {
       why: "Third tap — the rally never closed above the middle peak.",
+      gate: "GATE 5 · THE PROOF — it never confirmed; the master chess player walks",
       answer: NONE,
       freeze: 30,
       spec: { seed: 2209, start: 2349.0, startTime: "10:48", unit: 0.85, baseVolume: 1400, legs: [
@@ -206,6 +215,7 @@
     },
     {
       why: "A double top: second high quieter, valley below it.",
+      gate: "ALL FIVE GATES OPEN — the M version (tide down, quiet second high)",
       answer: ENTER,
       freeze: 28,
       spec: { seed: 2210, start: 2336.0, startTime: "14:10", unit: 0.9, baseVolume: 1500, legs: [
@@ -356,7 +366,8 @@
 
       var fb = q.querySelector("#dr-fb");
       fb.className = "q-fb show " + (right ? "ok" : "no");
-      fb.innerHTML = "<b>" + (right ? "✓ Correct." : "✗ Not this time.") + "</b> " + r.good +
+      fb.innerHTML = (r.gate ? '<span class="pill v">' + r.gate + "</span><br><br>" : "") +
+        "<b>" + (right ? "✓ Correct." : "✗ Not this time.") + "</b> " + r.good +
         "<br><br><span style='color:var(--mut)'><b>What happened next:</b> " + r.after + "</span>";
 
       host.querySelector("#dr-score").textContent =
@@ -486,7 +497,8 @@
         verdictText: r.answer === ENTER ? "TAKE IT" : r.answer === WAIT ? "WAIT" : "SKIP IT",
         stamp: "press Play to watch it finish",
         annotations: annos,
-        caption: "<b>" + r.why + "</b>"
+        caption: "<b>" + r.why + "</b>" +
+          (r.gate ? '<br><span style="font-family:var(--head);font-size:.74rem;letter-spacing:.8px;color:var(--violet)">' + r.gate + "</span>" : "")
       });
       body.appendChild(reveal);
 

@@ -280,3 +280,43 @@ with a sidebar still on the pre-Gate-1 numbering. Re-shot and re-worded. The scr
 mid-animation; that script clicks "Show all" and scrolls the figure clear of the sticky bar.
 The tagline's "Uni risks 12 ticks" was also corrected to the measured ~28 from his own record,
 since 12 is only the drawn example and the app itself says so.
+
+## 2026-09-01 — v2.0.0: the five-gates rebuild (Option 2, his named pick)
+
+**Ask:** after two rounds of deep research ("study Uni again + the deepest online research,
+then make the plan 10× better"), Arnie picked **Option 2 — the Rebuild**: keep the engine,
+rebuild the curriculum around the five gates. Research verdict + sources live in the artifact
+"The Five Gates of a True W" and memory `double-bottom-five-gates-verdict-2026-09-01.md`.
+
+**What changed:**
+- **24 chapters in 8 parts**, ordered by THE SPINE at the bottom of `js/lessons-4.js` —
+  the single authority on order/numbering/part names (in-file `n:`/`part:` values are ignored).
+- **Six new chapters** (all in `lessons-4.js`): the Win-Rate Dial (ch 2) · the Story of a
+  Bottom / two Ws (ch 4) · the Tide (ch 8, incl. her TL×20 chat rule + his $730 backtest) ·
+  the Truth Ladder (ch 14) · the M doctrine / upthrust (ch 19) · the Bottom Grader (ch 22,
+  interactive `{ grader: true }` → `D.buildGrader()`, dispatch added in app.js).
+- **Two new teaching charts** in examples.js: `EX.wyckoffStory` (seed 501) and `EX.upthrustM`
+  (seed 502). Existing seeds/legs untouched (gotcha 2 respected).
+- **Doctrine upgrade — confirmation is TWO closes:** one close above the neckline =
+  provisional; two consecutive closes = confirmed (Murphy's published filter ∧ Uni's
+  "1–3% daily · 2 candles intraday", her bootcamp PDF). Updated in anatomy (ch 3 table +
+  example step), Door B (ch 16), and the card (ch 23).
+- **Drill v2:** every round carries a `gate:` label shown in the feedback and the reveal.
+- Upgrades folded into existing chapters: her pullback-character quote + capitulation hammer +
+  excess/poor first-low (ch 11) · divergence-voice callout (ch 12) · IBD undercut doctrine +
+  spring validity + SMB 2–3-minute reclaim stopwatch (ch 13) · her retest-within-1–6-candles
+  window (ch 20) · E&M sharp-first/dull-second + ugly-DB stats (ch 6) · tide/L1-tail/two-close
+  lines on the card (ch 23) · five-gates column in the trade log (ch 24).
+- Cache: all script tags `?v=20260901210500`, sw.js `dbm-v9` + lessons-4.js in ASSETS;
+  rev-date 2026-09-01 (app.js).
+
+**Verified locally** (throwaway node server + browser harness + screenshots): 24/24 chapters
+render exception-free; both new charts seek to final frame clean and were eyeballed in dark
+mode (annotations land right); Grader returns correct verdicts on 5 scripted scenarios;
+drill's stop-picker + gate pill work; light mode legible; `node --check` clean on all js;
+chapter cross-reference sweep done (grep). One console error on localhost: **service-worker
+registration fails on the throwaway server — harness artifact** (sw.js serves 200, same code
+live since 08-19); confirm SW registers on the Netlify origin after deploy.
+
+**Deploy state at time of writing: NOT pushed — waiting on Arnie's "anything else?" answer
+(global rule 9).**

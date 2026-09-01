@@ -1,10 +1,10 @@
 /* The W and the M — offline shell */
-const CACHE = "dbm-v8";
+const CACHE = "dbm-v9";
 const ASSETS = [
   "./", "./index.html", "./manifest.json", "./narrator.js",
   "./js/bars.js", "./js/chart.js", "./js/examples.js",
   "./js/lessons-1.js", "./js/lessons-2.js", "./js/lessons-3.js",
-  "./js/drill.js", "./js/app.js", "./icons/icon.svg"
+  "./js/lessons-4.js", "./js/drill.js", "./js/app.js", "./icons/icon.svg"
 ];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));

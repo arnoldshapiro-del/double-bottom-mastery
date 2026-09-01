@@ -89,6 +89,8 @@
         view.appendChild(D.buildCalc());
       } else if (it.drill) {
         view.appendChild(D.buildDrill());
+      } else if (it.grader) {
+        view.appendChild(D.buildGrader());
       }
     });
 
@@ -149,7 +151,7 @@
 
   /* revised date stamp */
   var rev = document.getElementById("rev-date");
-  if (rev) rev.textContent = "2026-08-22";
+  if (rev) rev.textContent = "2026-09-01";
 
   /* service worker */
   if ("serviceWorker" in navigator) {

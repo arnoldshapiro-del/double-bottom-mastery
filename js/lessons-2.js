@@ -15,7 +15,7 @@
     id: "decel", part: "When to look", n: 8,
     title: "The tell — quiet in, loud out",
     render: function () { return [
-      '<div class="eyebrow">Chapter 8 · When to look</div>',
+      '<div class="eyebrow">Chapter 11 · The five gates</div>',
       '<h1>The tell — quiet in, loud out</h1>',
       '<p class="lead">If you only take one idea from this whole course, take this one. Two charts can have the identical shape and opposite outcomes, and the thing that separates them is not the shape at all. It is <b>how much force it took to get back down to the low</b>.</p>',
 
@@ -47,6 +47,10 @@
       '<p>Quiet coming in, and then <b>volume expansion on the way out</b>. That combination is the signature. Uni\'s stated confirmation for the double bottom is exactly this: <i>"increased volume as price is breaking resistance."</i></p>' +
       '<p>Do not confuse the two halves. You want volume <b>low going into</b> the low and <b>high coming off</b> it. People muddle those and then argue about whether "volume should be higher or lower" — the answer is both, at different moments.</p></div>',
 
+      '<div class="callout uni"><div class="ct">She wrote this rule down herself — for trendlines</div>' +
+      '<blockquote class="uni-quote" style="margin:8px 0">"In an uptrend, we want price to slowly pullback and bounce off of trendline. If we get a lower high and the pull back is aggressive to the trendline, expect a break."<cite>Uni — Advanced Technical Analysis Bootcamp, her trendline nuances</cite></blockquote>' +
+      '<p>Slow, reluctant approach → expect the bounce. Aggressive approach after a lower high → expect the level to break. That is this whole chapter, in her own handwriting. The VSA school\'s name for the perfect quiet approach is worth knowing too: the <b>no-supply bar</b> — a down bar, narrow range, volume lower than each of the previous two bars. Sellers were invited back to the low and did not show up. (The full six-rung version of these tells is Chapter 14.)</p></div>',
+
       '<h2>Momentum divergence — useful, but do not oversell it</h2>',
       '<p>The same idea shows up on an oscillator. If price makes an equal-or-lower second low while RSI or MACD makes a <b>higher</b> low, that is saying the second push down was weaker than the first. It is the deceleration tell, drawn as a line.</p>',
       '<p>Uni uses this and puts it well:</p>',
@@ -55,7 +59,10 @@
 
       '<div class="callout warn"><div class="ct">What "absorption" actually looks like</div>' +
       '<p>The professional way to describe a good second low is that selling is being <b>absorbed</b>. In plain English: sellers keep hitting the bid, and <b>the bid does not crack</b>. Somebody large is quietly buying everything they throw at it.</p>' +
-      '<p>You see it on the chart as bars that go down a tick or two, stall, and refuse to make progress despite obvious selling. When the sellers finally run out, the person who absorbed all of it is holding a big long position — and price snaps up. That snap is your entry trigger.</p></div>'
+      '<p>You see it on the chart as bars that go down a tick or two, stall, and refuse to make progress despite obvious selling. When the sellers finally run out, the person who absorbed all of it is holding a big long position — and price snaps up. That snap is your entry trigger.</p></div>',
+
+      '<div class="callout good"><div class="ct">Read the FIRST low too — it predicts the second</div>' +
+      '<p>Two additions from the deeper research. First, Uni\'s capitulation page: the panic low itself should show <i>"a candlestick with extremely large lower shadow"</i> — her words: <i>"react to it as an incredible buying opportunity."</i> Second, market-profile\'s sharpest idea: a first low with a long tail (an <b>excess</b> low — price rejected hard and fast) tends to <b>hold</b> when retested, while a flat, tail-less first low (a <b>poor</b> low — the auction just stopped) tends to get revisited and <b>broken</b>. So before you grade the second low\'s approach, look back at the first one: <b>a tail under L1 is a W worth watching; a flat L1 is a shelf waiting to break.</b></p></div>'
     ]; }
   });
 
@@ -66,7 +73,7 @@
     id: "checklist", part: "The moment", n: 9,
     title: "The second-low checklist",
     render: function () { return [
-      '<div class="eyebrow">Chapter 9 · The moment</div>',
+      '<div class="eyebrow">Chapter 12 · The moment</div>',
       '<h1>The second-low checklist</h1>',
       '<p class="lead">You have said "it looks like a bottom is forming." Now price is at the shelf and you have about four minutes to decide. This is the list — seven items, ten seconds each.</p>',
 
@@ -99,10 +106,14 @@
       '<ul class="clean check">' +
       '<li><b>A hammer / long lower tail</b> — price went down, got rejected, closed near the top of its range.</li>' +
       '<li><b>A bullish engulfing bar</b> — a green bar whose body swallows the previous red one.</li>' +
-      '<li><b>An undercut and reclaim</b> — it poked below the shelf and closed back above it. This is the best one, and it is Chapter 10.</li>' +
+      '<li><b>An undercut and reclaim</b> — it poked below the shelf and closed back above it. This is the best one, and it is Chapter 13.</li>' +
       '<li><b>A stall</b> — two or three tiny bars in a row that simply refuse to go lower. That is absorption.</li>' +
       '</ul>',
-      '<p class="srcs">On the confirmation question generally, the measured evidence is consistent: a hammer taken <i>with</i> confirmation (waiting for a break of its high) tests around 60% versus roughly 41–52% for the raw unconfirmed candle; bullish engulfing tests around 63% confirmed versus 47% unconfirmed. Waiting for one bar of proof is worth real money — which is exactly what the entry in the next chapter is.</p>'
+      '<p class="srcs">On the confirmation question generally, the measured evidence is consistent: a hammer taken <i>with</i> confirmation (waiting for a break of its high) tests around 60% versus roughly 41–52% for the raw unconfirmed candle; bullish engulfing tests around 63% confirmed versus 47% unconfirmed. Waiting for one bar of proof is worth real money — which is exactly what the entry in the next chapter is.</p>',
+
+      '<div class="callout uni"><div class="ct">The eighth voice — her divergence alert, honestly labeled</div>' +
+      '<p>Uni\'s own best-odds signal lives at exactly this spot on the chart. Her deep-MACD alert: <i>"Whenever there is an Extremely Deep MACD (Red Bars) I begin looking for a bullish Divergence and/or Reversal Pattern."</i> And her strongest claim: <i>"My Best odds are in taking a MACD Bullish Divergence trade and then taking the first and every flag thereafter."</i> A second low with the MACD making a higher low is her favourite chart in the world.</p>' +
+      '<p><b>The honest label stays:</b> no tested study ties divergence to double-bottom outcomes — every published attempt to verify it came back empty. So it is a <i>voice</i>, never a verdict: let it raise your attention, and let the bars and the volume make the decision. It does not add an item to the seven — it leans on item 6.</p></div>'
     ]; }
   });
 
@@ -113,7 +124,7 @@
     id: "undercut", part: "The moment", n: 10,
     title: "The undercut and reclaim",
     render: function () { return [
-      '<div class="eyebrow">Chapter 10 · The moment</div>',
+      '<div class="eyebrow">Chapter 13 · The moment</div>',
       '<h1>The undercut and reclaim</h1>',
       '<p class="lead">Here is the version that makes you the most money and feels the worst while it happens. Price breaks the first low — the thing you were told invalidates the pattern — and then immediately takes it back. Learn to want this instead of fearing it.</p>',
 
@@ -140,6 +151,13 @@
       '</tbody></table>',
       '<p>Notice how close Turtle Soup is to what Uni does. Raschke\'s rule is an order resting just above the old low, so the trade only triggers on the failure. Uni\'s rule is an order two ticks above the high of the low candle. Same idea, same reason: <b>never buy the falling price — buy the proof that it stopped falling.</b></p>',
 
+      '<div class="callout good"><div class="ct">Round two of the research found this trade has even more company</div>' +
+      '<ul class="clean" style="margin:8px 0 0">' +
+      '<li><b>IBD / William O\'Neil make the undercut DOCTRINE.</b> In their double-bottom base the second leg <i>should</i> undercut the first low — "acting as a shakeout of weaker investors" — with the second leg on <b>lighter volume</b> than the first, and the buy point at the middle peak. The undercut is not tolerated; it is required.</li>' +
+      '<li><b>Wyckoff\'s validity checklist for the spring:</b> a shallow poke, on <b>light</b> volume, reclaimed within 1–3 bars, followed by a quieter secondary test that holds. Heavy volume on the poke that keeps extending is not a spring — it is real supply.</li>' +
+      '<li><b>A real prop desk put a stopwatch on it.</b> SMB Capital\'s Mike Bellafiore, in his own words: the flush has to "drop and re-bid within like a two-three minute period… it drops and re-bids instantly, otherwise you could just get stuck." Hard stop at the swing low. On your chart that is roughly one to two 2-minute candles — <b>the reclaim being FAST is part of the pattern.</b></li>' +
+      '</ul></div>',
+
       '<h2>Telling a real reclaim from a real breakdown</h2>',
       '<p>This is the part that decides whether you are early or wrong. Three things:</p>',
       '<table class="tbl"><thead><tr><th></th><th>Real spring <span class="pill g">buy it</span></th><th>Real breakdown <span class="pill r">get out of the way</span></th></tr></thead><tbody>' +
@@ -160,7 +178,7 @@
     id: "doora", part: "The two doors", n: 11,
     title: "Door A — Uni's entry, at the low",
     render: function () { return [
-      '<div class="eyebrow">Chapter 11 · The two doors</div>',
+      '<div class="eyebrow">Chapter 15 · The two doors</div>',
       '<h1>Door A — Uni\'s entry, at the low</h1>',
       '<p class="lead">This is the entry you watched her take. Here it is as a mechanical rule you can place in NinjaTrader, in her own words, translated onto your 2-minute chart.</p>',
 
@@ -181,7 +199,7 @@
 
       '<div class="callout uni"><div class="ct">Why "2 ticks above the high" and not "buy the low"</div>' +
       '<p>Because a buy-stop above the bar makes the market prove something before it takes your money. If price never trades above that candle\'s high, the low was not in and you were never involved.</p>' +
-      '<p>Uni never buys a falling price. Neither does Raschke. Neither should you. The whole art is in choosing <b>which bar</b> to put the order above — and that is what Chapters 8 and 9 were for.</p></div>',
+      '<p>Uni never buys a falling price. Neither does Raschke. Neither should you. The whole art is in choosing <b>which bar</b> to put the order above — and that is what Chapters 11, 12 and 14 were for.</p></div>',
 
       '<h2>The one thing that makes this work</h2>',
       '<p>Say it again because it is the thesis of the whole course: <b>you are entering before the pattern is confirmed, so roughly half of these will not work.</b> You are not avoiding that. You are surviving it, by being wrong for twelve ticks and right for forty-eight.</p>',
@@ -210,11 +228,15 @@
     id: "doorb", part: "The two doors", n: 12,
     title: "Door B — the close above the middle of the W",
     render: function () { return [
-      '<div class="eyebrow">Chapter 12 · The two doors</div>',
+      '<div class="eyebrow">Chapter 16 · The two doors</div>',
       '<h1>Door B — the close above the middle of the W</h1>',
       '<p class="lead">You said you are willing to try this one again. Good — but not the way it is usually taught, because the standard version has arithmetic that cannot work. Here is what is wrong with it and the two ways to fix it.</p>',
 
       '<p>The rule itself is the single best-supported thing in all of chart-pattern research. Bulkowski states it identically on every page: <b>a double bottom confirms once price closes above the peak between the two valleys.</b> Wait for that close and you skip the entire 44–50% of patterns that never confirm.</p>',
+
+      '<div class="callout uni"><div class="ct">Upgraded: how many closes make a confirmation? Two.</div>' +
+      '<p>Two authorities who never met wrote the same rule. John Murphy\'s published confirmation filter for a neckline break: <i>"a 1–3% close beyond the neckline, or two consecutive closes beyond it."</i> Uni\'s own breakout rule in her bootcamp deck: <i>"1 – 3% daily · 2 candles intraday."</i> Identical — and her volume rider still applies: the break should come with real participation (her number: 150% of average).</p>' +
+      '<p><b>So the upgraded doctrine for your 2-minute chart:</b> ONE close above the middle peak makes the pattern <i>provisional</i> — the clock starts, the trap is still possible. <b>TWO consecutive closes beyond it (or one decisive close well beyond, on strong volume) make it confirmed.</b> Remember the failure gallery\'s bull trap: a single quiet close over an obvious line is exactly what a stop-hunt looks like. The second candle is cheap insurance against the most common fake there is.</p></div>',
 
       { chart: EX.necklineEntry() },
 
@@ -273,13 +295,13 @@
     id: "calc", part: "The two doors", n: 13,
     title: "The calculator — your real M2K numbers",
     render: function () { return [
-      '<div class="eyebrow">Chapter 13 · The two doors</div>',
+      '<div class="eyebrow">Chapter 17 · The two doors</div>',
       '<h1>The calculator — your real M2K numbers</h1>',
       '<p class="lead">Stop taking my word for it. Move the sliders and watch the two doors trade places. Everything here is real M2K arithmetic: 0.10-point ticks, $0.50 a tick, $5.00 a point, and commissions that actually get charged.</p>',
       { calc: true },
       '<div class="callout"><div class="ct">Three things to go and try right now</div>' +
       '<ul class="clean" style="margin:8px 0 0">' +
-      '<li><b>Drag the pattern height down to 3 points.</b> Watch both doors collapse. That is why Chapter 9 has a minimum size rule.</li>' +
+      '<li><b>Drag the pattern height down to 3 points.</b> Watch both doors collapse. That is why Chapter 12 has a minimum size rule.</li>' +
       '<li><b>Drag Door A\'s stop from 28 ticks down to 8.</b> Watch the contracts pile up — and then watch the commission line eat the whole trade. That is the floor.</li>' +
       '<li><b>Set Door B\'s stop to "under the second low."</b> Watch the break-even win rate go over 50%. That is the trade that disappointed you, shown as arithmetic.</li>' +
       '</ul></div>',
