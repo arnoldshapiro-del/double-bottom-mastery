@@ -196,11 +196,15 @@
       '<tr><td><b>Target 1</b></td><td><b>The middle peak.</b> Peel a piece. Never the whole thing.</td></tr>' +
       '<tr><td><b>Target 2</b></td><td>Measured move = neckline + pattern height.</td></tr>' +
       '</tbody></table>' +
+      '<ul class="clean" style="margin-top:6px;font-size:.85rem;color:var(--mut)">' +
+      '<li>Uni\'s own W and M rule: if you did not take the first higher low, use her breakout rules — enter as price trades through the neckline, or on the test of it (her Playbook course, Part 9 · 23:34; her Bootcamp p75).</li>' +
+      '<li>Uni\'s stop note: V bottoms are rare, so set the stop far enough below to handle a second test that may make a lower low (her rulebook p31; for tops, p33).</li>' +
+      '</ul>' +
 
       '<h2>④ AFTER — the ladder</h2>' +
       '<ul class="clean">' +
       '<li>A blue ring alone is not an entry — the 2-minute must still confirm.</li>' +
-      '<li>Door B: one close over the neckline = <b>provisional</b> · two consecutive closes = <b>confirmed</b> (her rule, and Murphy\'s).</li>' +
+      '<li>Door B: one close over the neckline = <b>provisional</b> · two consecutive closes = <b>confirmed</b> (Murphy\'s rule and Arnie\'s — not Uni\'s: her breakout entry is price trading through the level).</li>' +
       '<li>Before target 1: <b>the stop does not move.</b></li>' +
       '<li>Target 1 pays → one move up under the previous completed 2-min swing. <b>Not a trail.</b></li>' +
       '<li>Target 2 pays → runners past entry, and <b>now</b> the trail is on.</li>' +
@@ -280,7 +284,7 @@
 
       '<h2>The last thing</h2>',
       '<p>You gave this up after twenty or thirty tries, and that was a reasonable thing to do with the information you had. The information you had was wrong in one specific, fixable way: you were told to enter at the low <i>and</i> told to stop below the pattern, and nobody mentioned that those two instructions cancel each other out.</p>',
-      '<p>Uni is not seeing something you cannot see. She waits for three things you now know how to check, enters two ticks above one specific candle, risks twelve ticks, and takes her first money at the middle peak. That is the whole method, and none of it is hidden.</p>',
+      '<p>There is no secret Uni is seeing that you cannot see. The method waits for three things you now know how to check, enters two ticks above one specific candle, risks twelve ticks, and takes the first money at the middle peak. That is the whole method, and none of it is hidden.</p>',
       '<p style="font-size:1.06rem;color:var(--gold)"><b>Go do fifteen calls in the drill. Then take it to Sim.</b></p>'
     ]; }
   });

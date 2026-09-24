@@ -225,7 +225,7 @@
   };
 
   /* ============================================================
-     6. UNI'S ENTRY — 2 ticks above the high of the low candle
+     6. THE COURSE'S ENTRY — 2 ticks above the high of the low candle
      ============================================================ */
   EX.uniEntry = function () {
     var bars = B({
@@ -242,7 +242,7 @@
     });
     var iL2 = 25;
     return {
-      title: "Door A — Uni's entry: 2 ticks above the high of the low candle",
+      title: "Door A — the course's entry: 2 ticks above the high of the low candle",
       verdict: "good",
       bars: bars, startAt: 1, speed: 330,
       stepIntro: "<b>Press Play.</b> Watch for the candle that makes the second low — everything hangs off that one bar.",
@@ -264,7 +264,7 @@
         /* the bracket's own rulers now show the risk and the reward in ticks and dollars */
         { type: "trade", entry: 2341.2, stop: 2340.0, target: 2346.0, targetLabel: "TARGET 1", fromI: 26, showAt: 28 }
       ],
-      caption: "<b>This is Uni's own rule, moved onto a 2-minute chart.</b> Her Bull Flag rule set says <i>\"trade 20 cents above the high of the low day\"</i> — on a daily chart. On the 2-minute, the low <i>day</i> becomes the low <i>candle</i>, and 20 cents becomes 2 ticks. Her rule #15 says the first profit target is <i>\"the initial previous high\"</i> — on a W, that is the middle peak. Linda Raschke published the identical logic in 1995 as <b>Turtle Soup</b>: a buy-stop just above the old low, so the trade only triggers if the new low is already failing."
+      caption: "<b>This is the course's translation of her rule, moved onto a 2-minute chart.</b> Her Bull Flag rule set says <i>\"trade 20 cents above the high of the low day\"</i> — on a daily chart. Uni gives no tick number for futures; the course reads the low <i>day</i> as the low <i>candle</i>, and 20 cents as 2 ticks. Her rule #15 says the first profit target is <i>\"the initial previous high\"</i> — on a W, that is the middle peak. Linda Raschke published the identical logic in 1995 as <b>Turtle Soup</b>: a buy-stop just above the old low, so the trade only triggers if the new low is already failing."
     };
   };
 
@@ -530,7 +530,7 @@
         { at: 21, text: "<b>Price comes back toward 2344 — and here is the moment.</b> The level is <i>right there</i>. It held last time. Every instinct says buy it." },
         { at: 22, text: "<b>⚠ But nothing has turned yet.</b> There is no low candle, no higher low, no reclaim. You would be buying a <b>falling</b> price on the theory that it is about to stop falling." },
         { at: 30, text: "<b>It did not stop.</b> The second low never formed at all — price went straight through on climax volume and kept going." },
-        { at: 36, text: "<b>You cannot know a low is the second low until price turns away from it.</b> Uni does not buy at the low. She buys 2 ticks above the high of a candle that has <i>already stopped going down</i>." }
+        { at: 36, text: "<b>You cannot know a low is the second low until price turns away from it.</b> The course's entry does not buy at the low. It triggers 2 ticks above the high of a candle that has <i>already stopped going down</i>." }
       ],
       annotations: [
         { type: "level", price: 2344.1, label: "the level that 'should' hold", color: CYAN, showAt: 8 },
@@ -627,7 +627,7 @@
         { type: "note", i: 44, price: 2345.4, text: "the 70% retest", color: VIOLET, showAt: 44 },
         { type: "measured", lowPrice: 2341.9, neckPrice: 2348.4, fromI: 40, label: "measured move 2354.8", color: VIOLET, showAt: 51 }
       ],
-      caption: "<b>In this example: risk 12 ticks, first target 58, measured move 122.</b> Your own bars run smaller &mdash; median 28 risk against a 38-tick first target. On M2K that is $6 of risk a contract to make $29 at target one and $61 if the runners reach the measured move. This is the trade you watched Uni take — and the reason it looked easy is that she never had much at stake."
+      caption: "<b>In this example: risk 12 ticks, first target 58, measured move 122.</b> Your own bars run smaller &mdash; median 28 risk against a 38-tick first target. On M2K that is $6 of risk a contract to make $29 at target one and $61 if the runners reach the measured move. This is the course's version of that trade — and the reason it looked easy is that the risk was never large to begin with."
     };
   };
 
@@ -672,7 +672,7 @@
 
   /* ============================================================
      17. TWO STOPS — the diagnosis, animated (Chapter 1)
-     Same entry, Uni's stop and the platform's stop on one chart,
+     Same entry, the course's stop and the platform's stop on one chart,
      on one of the ~half of Ws that never confirm. Indices were
      computed from the seeded bars: L1 = 12, MP = 19, the low
      candle = 30 (h 2339.0 / l 2338.2), fill at bar 32, the candle
@@ -702,8 +702,8 @@
       steps: [
         { at: 13, text: "<b>The first low.</b> Climax volume, a long tail. Same as every W you have ever seen." },
         { at: 20, text: "<b>The middle peak — the neckline.</b> Seven points above the shelf. A real pattern with a real target." },
-        { at: 31, text: "<b>The second low — and it looks right.</b> Smaller bars, drying volume, a quiet close. This is a legitimate Door A candidate. Uni would put a buy-stop 2 ticks above this candle's high, at 2339.2. So did you." },
-        { at: 33, text: "<b>Filled.</b> Now the only question that matters: where is the stop? Uni's is 2 ticks under the low candle — 2338.0, <b>12 ticks</b>, $6.00 a contract. The platform's default sat <b>50 ticks</b> down at 2334.2 — $25.00 a contract. Same entry. Same chart." },
+        { at: 31, text: "<b>The second low — and it looks right.</b> Smaller bars, drying volume, a quiet close. This is a legitimate Door A candidate. The course's entry puts a buy-stop 2 ticks above this candle's high, at 2339.2. So did you." },
+        { at: 33, text: "<b>Filled.</b> Now the only question that matters: where is the stop? The course's is 2 ticks under the low candle — 2338.0, <b>12 ticks</b>, $6.00 a contract. The platform's default sat <b>50 ticks</b> down at 2334.2 — $25.00 a contract. Same entry. Same chart." },
         { at: 36, text: "<b>Bar 35: the candle stop is hit.</b> −12 ticks, −$6.00. Annoying. Survivable. About half of all Ws never confirm, and this is one of them. You are out, flat, and able to think." },
         { at: 41, text: "<b>Five bars later the platform's stop is hit.</b> −50 ticks, −$25.00. Same entry, same chart, same call — four times the loss, and you sat through every bar of it hoping." },
         { at: 49, text: "<b>That is the 80%.</b> Not the chart-reading. The stop. Fix the stop and this exact trade becomes a small, boring loss you can take twenty times and shrug at." }
@@ -758,7 +758,7 @@
         { at: 24, text: "<b>The secondary test (ST) — quiet.</b> Price revisits the climax area on visibly less volume and smaller bars. That diminishment is the requirement. And look at the shape so far: climax, rally, test — <b>a W. This is the FIRST W, and it is not a buy.</b> It only draws the box." },
         { at: 33, text: "<b>Phase B — the boring middle.</b> Chop, chop, chop inside the box while big money absorbs supply. Most fake double bottoms get bought right here and die of boredom or breakdown." },
         { at: 38, text: "<b>THE SPRING.</b> Price undercuts the box floor — the thing that 'invalidates the pattern' — takes out every stop under the lows, and comes straight back. This is the shakeout. It is not the pattern failing; it is the pattern finishing." },
-        { at: 42, text: "<b>The quiet test.</b> One more small dip on almost no volume that holds above the spring low. Sellers were invited back and did not show up. <b>Spring + test = the SECOND W — the one worth money.</b> This is what Uni's entry, IBD's shakeout and your sweep-at-a-real-level are all catching." },
+        { at: 42, text: "<b>The quiet test.</b> One more small dip on almost no volume that holds above the spring low. Sellers were invited back and did not show up. <b>Spring + test = the SECOND W — the one worth money.</b> This is what the course's entry, IBD's shakeout and your sweep-at-a-real-level are all catching." },
         { at: 49, text: "<b>The sign of strength.</b> Wide bars, rising volume, and the ceiling of the box breaks. Demand is now running the tape." },
         { at: 54, text: "<b>The pullback that holds higher.</b> The retest of the broken ceiling — arriving on schedule, exactly your 70% retest — and it holds above the box." },
         { at: 58, text: "<b>Markup.</b> The part everyone else screenshots. You now know the eight scenes that came before it — which means next time you can recognise the play by scene three." }

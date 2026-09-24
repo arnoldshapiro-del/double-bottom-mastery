@@ -19,8 +19,8 @@
       '<p class="lead">You tried this twenty or thirty times and lost most of them, and then you watched Uni do it and it looked easy. Both of those things can be true at once, and there is a specific reason they are. Let me give you the answer first and spend the rest of the course earning it.</p>',
 
       '<div class="callout bad"><div class="ct">The short answer</div>' +
-      '<p>You almost certainly took <b>Uni\'s entry</b> — in at the low, before anything was confirmed — and paired it with <b>a textbook\'s stop</b>, somewhere well below the pattern.</p>' +
-      '<p>That combination is the worst of both worlds, and it loses money even when your pattern-reading is fine. Uni is not making a different <i>call</i> than you. She is making the same call with <b>roughly half the risk distance</b> — her stop comes off the candle, yours came off the platform\'s default — and that single difference is what flips the arithmetic.</p></div>',
+      '<p>You almost certainly took <b>the course\'s entry</b> — in at the low, before anything was confirmed — and paired it with <b>a textbook\'s stop</b>, somewhere well below the pattern.</p>' +
+      '<p>That combination is the worst of both worlds, and it loses money even when your pattern-reading is fine. It is not a different <i>call</i> than the one you made. It is the same call with <b>roughly half the risk distance</b> — the course\'s stop comes off the candle, yours came off the platform\'s default — and that single difference is what flips the arithmetic.</p></div>',
 
       '<div class="callout good"><div class="ct">And this is not me guessing — your own records already said so</div>' +
       '<p>The research done on <b>your 116 recorded M2K trades</b> on 2026-08-18 measured your actual stop distance. Across <b>111 of them, your initial risk sat between 49 and 51 ticks.</b> That is the platform\'s default stop, not a stop chosen from the chart.</p>' +
@@ -63,10 +63,11 @@
       '<p>The right-hand column cannot win. Not because you read the chart badly, but because the arithmetic was impossible before you clicked the mouse.</p></div>',
 
       '<h2>Watch it happen</h2>',
-      '<p>Here is that exact trade, drawn bar by bar: the entry you took, with Uni\'s stop and the platform\'s stop on the same chart — on one of the roughly half of all Ws that never confirm. Press Play and watch what each stop costs. Hover over any bar for its prices; press and drag to measure anything in ticks.</p>',
+      '<p>Here is that exact trade, drawn bar by bar: the entry you took, with the course\'s stop and the platform\'s stop on the same chart — on one of the roughly half of all Ws that never confirm. Press Play and watch what each stop costs. Hover over any bar for its prices; press and drag to measure anything in ticks.</p>',
       { chart: EX.twoStops() },
 
       '<h2>The tiny stop is not a bonus. It is the whole point.</h2>',
+      '<p class="srcs">Uni\'s own note points the other way: V bottoms are rare, so she leaves the stop room for a second test (her rulebook p31).</p>',
       '<p>Here is the part that took me a while to see, and it reframes everything:</p>',
       '<p>Entering at the low means you accept the ~50% of patterns that never confirm. You cannot avoid them — by definition you got in before the proof existed. So the only way that entry survives is if being wrong is <b>cheap relative to the move you are chasing</b> — which is not the same as cheap in ticks. On your morning chart that means about 28 ticks of risk against a 38-tick first target, not some fixed small number.</p>',
       '<p>Get that ratio right and half your trades stopping out is survivable. Get it wrong — by letting the platform pick your stop — and no amount of chart-reading rescues it. That is the machine. <b>The small stop is not a perk of entering early — it is the thing that makes entering early legal at all.</b></p>',

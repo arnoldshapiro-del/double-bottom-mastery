@@ -78,7 +78,7 @@
       '</tbody></table>',
 
       '<div class="callout"><div class="ct">Why this matters to YOUR chart</div>' +
-      '<p>Uni\'s entry, IBD\'s shakeout, SMB\'s failed breakdown, Raschke\'s Turtle Soup and your own sweep-at-a-real-level are all, in Wyckoff\'s language, <b>the spring and its test</b>. Different schools, one event. When your second low undercuts the first at a real level and comes back quietly — that is not a broken pattern. That is the pattern, reaching its best chapter.</p>' +
+      '<p>The course\'s entry, IBD\'s shakeout, SMB\'s failed breakdown, Raschke\'s Turtle Soup and your own sweep-at-a-real-level are all, in Wyckoff\'s language, <b>the spring and its test</b>. Different schools, one event. When your second low undercuts the first at a real level and comes back quietly — that is not a broken pattern. That is the pattern, reaching its best chapter.</p>' +
       '<p>And the first W\'s job is to teach you patience: when you see climax → rally → quiet retest, the right response is not "buy the double bottom." It is <b>"the box is drawn — now watch its edges."</b></p></div>',
 
       '<h2>Effort versus result — the law that reads a second low</h2>',
@@ -104,7 +104,7 @@
       '<p>Read the conditions: <b>after a longer-term uptrend</b>, at the end of <b>a pullback</b>. Her best bottoms are not the end of a crash — they are the moment a rising market finishes catching its breath. And notice her target logic: "the return to the previous high is the most probable next price action." Her first profit target — your middle peak — is not a hope. It is the statistically favourite next move.</p>',
       '<p>Al Brooks teaches the identical split from the futures side: a double bottom forming <i>inside</i> an up-move is a bull flag — a continuation trade with decent odds. A double bottom trying to <i>reverse</i> a bear trend is a major-trend-reversal bet he prices around 40%. <b>Same shape. Two different animals. The trend context is the only thing that separates them.</b></p>',
 
-      '<h2>The rule she gave you — and you proved — in your own chat</h2>',
+      '<h2>Gate 1 — Arnie\'s rule (Uni answered yes to it in a chat)</h2>',
       '<blockquote class="uni-quote">"yes the tl crosses the 20 and price is above the TL and the 20"<cite>Uni — your saved conversation, Desktop\\Day Trading</cite></blockquote>',
       '<p>The tradeline crosses above the 20-period average, and price is above both — before any long. In that same conversation you backtested a $730 losing day and found <b>every single losing trade</b> had been entered while the 20 was still below the tradeline. Your own words that day: <i>"I would have lost $0."</i> You discovered this gate yourself, years ago, celebrated it — and it never got built into anything. Now it is Gate 1.</p>',
 

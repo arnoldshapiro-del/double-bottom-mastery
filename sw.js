@@ -1,5 +1,5 @@
 /* The W and the M — offline shell */
-const CACHE = "dbm-v9";
+const CACHE = "dbm-v10";
 const ASSETS = [
   "./", "./index.html", "./manifest.json", "./narrator.js",
   "./js/bars.js", "./js/chart.js", "./js/examples.js",

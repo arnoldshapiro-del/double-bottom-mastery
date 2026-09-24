@@ -285,7 +285,7 @@
       if (rec.stops.length) {
         var sum = 0;
         for (var i = 0; i < rec.stops.length; i++) sum += (+rec.stops[i] || 0);
-        txt += " · your stops average " + (sum / rec.stops.length).toFixed(1) + " ticks off the candle (Uni: 2)";
+        txt += " · your stops average " + (sum / rec.stops.length).toFixed(1) + " ticks off the candle (course: 2)";
       }
       line.textContent = txt;
     }
@@ -414,7 +414,7 @@
       try { root.scrollTo({ top: fig.getBoundingClientRect().top + root.scrollY - 64, behavior: "smooth" }); } catch (e) {}
 
       fig._api.pick({ label: "YOUR STOP", hint: "click to place it", color: RED }, function (price) {
-        if (titleEl) titleEl.textContent = "Your stop against Uni's";
+        if (titleEl) titleEl.textContent = "Your stop against the course's";
         var beyond = isTop ? Math.round((price - candle.h) * 10) : Math.round((candle.l - price) * 10);
         var side = isTop ? "above the high" : "under the low";
         var cls = "no", msg;
@@ -426,10 +426,10 @@
         } else if (beyond <= 4) {
           cls = "ok";
           msg = "<b>✓ Off the candle.</b> " + M.tickWord(beyond) + " " + side +
-            " (Uni's is 2). This is the stop that makes entering early legal.";
+            " (the course's is 2). This is the stop that makes entering early legal.";
         } else if (beyond <= 15) {
           msg = '<b style="color:var(--orange)">Loose.</b> ' + M.tickWord(beyond) + " " + side +
-            " candle — Uni's is 2. Every extra tick is money you pay to be wrong, and half of these never confirm.";
+            " candle — the course's is 2. Every extra tick is money you pay to be wrong, and half of these never confirm.";
         } else {
           msg = "<b>✗ That is the platform's stop, not the chart's.</b> " + M.tickWord(beyond) + " " + side +
             " — the ~50-tick default is what lost you 80%.";
@@ -453,7 +453,7 @@
         p2.querySelector("#dr-scmp").innerHTML =
           '<div class="calc-out">' +
             doorHTML("Your stop", "WHERE YOU CLICKED · " + M.fmt(price), risk, reward, target, false, beyond <= 0) +
-            doorHTML("Uni's stop", "2 TICKS " + (isTop ? "ABOVE" : "UNDER") + " THE CANDLE · " + M.fmt(uniStop),
+            doorHTML("The course's stop", "2 TICKS " + (isTop ? "ABOVE" : "UNDER") + " THE CANDLE · " + M.fmt(uniStop),
                      uniRisk, reward, target, true) +
           "</div>";
 
@@ -461,7 +461,7 @@
         fig._api.addAnnotations([
           { type: "level", price: entry, label: "ENTRY", color: GOLD, style: "dash", fromI: cut.length - 7, showAt: 0 },
           { type: "level", price: price, label: "YOUR STOP", color: RED, style: "dash", fromI: cut.length - 7, showAt: 0 },
-          { type: "level", price: uniStop, label: "UNI'S STOP", color: LIME, style: "dash", fromI: cut.length - 7, showAt: 0 },
+          { type: "level", price: uniStop, label: "THE COURSE'S STOP", color: LIME, style: "dash", fromI: cut.length - 7, showAt: 0 },
           { type: "ruler", i: cut.length - 3, p1: entry, p2: price, color: RED, side: "left", showAt: 0 },
           { type: "ruler", i: cut.length - 5, p1: entry, p2: uniStop, color: LIME, side: "left", showAt: 0 }
         ]);
@@ -486,7 +486,7 @@
       if (stop) {
         annos.push({ type: "level", price: stop.entry, label: "ENTRY", color: GOLD, style: "dash", fromI: r.freeze - 7, showAt: 0 });
         annos.push({ type: "level", price: stop.price, label: "YOUR STOP", color: RED, style: "dash", fromI: r.freeze - 7, showAt: 0 });
-        annos.push({ type: "level", price: stop.uniStop, label: "UNI'S STOP", color: LIME, style: "dash", fromI: r.freeze - 7, showAt: 0 });
+        annos.push({ type: "level", price: stop.uniStop, label: "THE COURSE'S STOP", color: LIME, style: "dash", fromI: r.freeze - 7, showAt: 0 });
       }
 
       /* reveal the rest of the chart */

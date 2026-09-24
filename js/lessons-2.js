@@ -149,7 +149,7 @@
       '<tr><td><b>Turtle Soup</b></td><td>Linda Raschke &amp; Larry Connors, <i>Street Smarts</i>, 1995</td><td>Price makes a new 20-bar low; place a <b>buy-stop 5–10 ticks above the previous 20-bar low</b> so you only get in if the new low is already failing.</td></tr>' +
       '<tr><td><b>Swing failure / liquidity sweep</b></td><td>Modern order-flow trading</td><td>The <b>wick</b> goes beyond the level but the <b>close</b> comes back inside.</td></tr>' +
       '</tbody></table>',
-      '<p>Notice how close Turtle Soup is to what Uni does. Raschke\'s rule is an order resting just above the old low, so the trade only triggers on the failure. Uni\'s rule is an order two ticks above the high of the low candle. Same idea, same reason: <b>never buy the falling price — buy the proof that it stopped falling.</b></p>',
+      '<p>Notice how close Turtle Soup is to the course\'s entry. Raschke\'s rule is an order resting just above the old low, so the trade only triggers on the failure. The course\'s rule is an order two ticks above the high of the low candle. Same idea, same reason: <b>never buy the falling price — buy the proof that it stopped falling.</b></p>',
 
       '<div class="callout good"><div class="ct">Round two of the research found this trade has even more company</div>' +
       '<ul class="clean" style="margin:8px 0 0">' +
@@ -172,18 +172,19 @@
   });
 
   /* ==========================================================
-     CH 10 — DOOR A: UNI'S ENTRY
+     CH 10 — DOOR A: THE COURSE'S ENTRY
      ========================================================== */
   L.push({
     id: "doora", part: "The two doors", n: 11,
-    title: "Door A — Uni's entry, at the low",
+    title: "Door A — the course's entry, at the low",
     render: function () { return [
       '<div class="eyebrow">Chapter 15 · The two doors</div>',
-      '<h1>Door A — Uni\'s entry, at the low</h1>',
-      '<p class="lead">This is the entry you watched her take. Here it is as a mechanical rule you can place in NinjaTrader, in her own words, translated onto your 2-minute chart.</p>',
+      '<h1>Door A — the course\'s entry, at the low</h1>',
+      '<p class="lead">This is the course\'s entry (Arnie\'s translation: 20 cents on a stock became 2 ticks here). Here it is as a mechanical rule you can place in NinjaTrader, translated from her own words onto your 2-minute chart.</p>',
 
       '<blockquote class="uni-quote">"Trade 20 cents above the high of the low day."<cite>Uni — Bull Flag Swing Trade Rule Set, rule 3</cite></blockquote>',
       '<p>That is written for a daily chart, where each candle is a day. On your 2-minute chart the <b>low day</b> becomes the <b>low candle</b>, and 20 cents becomes <b>2 ticks</b>. That is the entire translation.</p>',
+      '<p class="srcs">Uni gives no tick number for futures; her intraday entry is a trade above the signal candle after it closes.</p>',
 
       '<div class="card" style="border-color:rgba(167,139,250,.45)">' +
       '<h3 style="color:var(--violet)">The rule, mechanically</h3>' +
@@ -200,6 +201,10 @@
       '<div class="callout uni"><div class="ct">Why "2 ticks above the high" and not "buy the low"</div>' +
       '<p>Because a buy-stop above the bar makes the market prove something before it takes your money. If price never trades above that candle\'s high, the low was not in and you were never involved.</p>' +
       '<p>Uni never buys a falling price. Neither does Raschke. Neither should you. The whole art is in choosing <b>which bar</b> to put the order above — and that is what Chapters 11, 12 and 14 were for.</p></div>',
+
+      '<div class="callout uni"><div class="ct">What Uni actually says about trading a W or M</div>' +
+      '<p>Uni\'s own W and M rule: if you did not take the first higher low, use her breakout rules — enter as price trades through the neckline, or on the test of it (her Playbook course, Part 9 · 23:34; her Bootcamp p75).</p>' +
+      '<p>Uni\'s stop note: V bottoms are rare, so set the stop far enough below to handle a second test that may make a lower low (her rulebook p31; for tops, p33).</p></div>',
 
       '<h2>The one thing that makes this work</h2>',
       '<p>Say it again because it is the thesis of the whole course: <b>you are entering before the pattern is confirmed, so roughly half of these will not work.</b> You are not avoiding that. You are surviving it, by being wrong for twelve ticks and right for forty-eight.</p>',
@@ -284,7 +289,7 @@
       '<li>You want fewer, better trades and can accept smaller size</li>' +
       '<li>You take the <b>retest</b>, not the break itself</li>' +
       '</ul></div></div>',
-      '<p style="margin-top:14px"><b>And here is the elegant part.</b> Door A\'s first profit target is the neckline — which is the exact price where Door B is only just getting in. When you take Uni\'s entry, you are taking money off the table at the moment the other kind of trader is first putting money at risk.</p>'
+      '<p style="margin-top:14px"><b>And here is the elegant part.</b> Door A\'s first profit target is the neckline — which is the exact price where Door B is only just getting in. When you take the course\'s entry, you are taking money off the table at the moment the other kind of trader is first putting money at risk.</p>'
     ]; }
   });
 
@@ -366,7 +371,7 @@
       var tgtB = Math.max(1, hTicks - 4);                     // to the measured move
 
       $("c-out").innerHTML =
-        door("a", "Door A — Uni's entry", "in 2 ticks above the low candle", stopA, tgtA, "middle peak", mmA) +
+        door("a", "Door A — the course's entry", "in 2 ticks above the low candle", stopA, tgtA, "middle peak", mmA) +
         door("b", "Door B — the neckline", "in 4 ticks above the middle peak", stopB, tgtB, "measured move", null);
 
       function door(cls, name, sub, stopT, tgtT, tgtName, farT) {
