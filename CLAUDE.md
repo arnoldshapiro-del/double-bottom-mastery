@@ -62,6 +62,7 @@ server needed** — open `index.html`. Deploy = GitHub → Netlify auto-build (g
 
 ## Content rules specific to this app
 
+- **Only-Uni labels (2026-09-23):** the course's 2-tick entry and stop, the two-close confirmation and Gate 1 are the COURSE'S / Arnie's, never "Uni's"; her own W/M rules (her breakout rules; V bottoms are rare) are credited to her. Detail: SESSION_NOTES 2026-09-23.
 - **Every Bulkowski statistic must be labelled "daily stock charts."** No one has published
   the equivalent study for 2-minute index futures, and pretending otherwise would be
   fabrication (global rule 3). The app says this explicitly in several places — keep it.

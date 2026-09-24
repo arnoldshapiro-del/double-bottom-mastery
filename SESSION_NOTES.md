@@ -328,3 +328,9 @@ written: "THE FIVE GATES — What Changed & What You Do Now (2026-09-01).html". 
 findings were transferred into the NT8 suite (SWEEPS v3.20.0→v3.22.1 — see the indicator
 repo's SESSION_NOTES). Gallery card: exists from 08-22; visual change is modest (same theme,
 sidebar gained chapters) — re-shot offered at wrap-up, his call.
+
+## 2026-09-23 (night) — four false "Uni's" labels corrected, her two W/M rules added (e582da4, 34a244a)
+**What we did:** From the UNI Evidence program's six-source study (Arnie's order: credit Uni only with what her own material says). Door A's 2-tick entry and the 2-tick stop are now "the course's" (his translation; she gives no futures tick number; her intraday entry is a trade above the signal candle after it closes); the two-close confirmation is credited to Murphy and Arnie, not Uni (her breakout entry is price trading through the level); Gate 1 is "Arnie's rule (Uni answered yes to it in a chat)"; her own W/M rules added (Ch15 callout + Ch23 card): trade them with her breakout rules (Part 9 23:34; Bootcamp p75) and her stop note that V bottoms are rare (rulebook p31; tops p33); Ch1's "tiny stop is the whole point" now notes her stop note points the other way; the "no secret" line names the course's numbers, not hers. ?v= stamps and sw.js CACHE bumped (dbm-v9 → dbm-v10); Revised 2026-09-23.
+**What's working:** node --check on every changed file; production verified (new text in js/lessons-3.js, dbm-v10 in sw.js).
+**What's next:** nothing owed.
+**Important decisions:** never label the course's entry, stop, two-close rule or Gate 1 as Uni's again. Evidence: Documents/UNI - Evidence Trading Program/docs/study/apps-2026-09-23/WM-double-bottom-mastery.md.
