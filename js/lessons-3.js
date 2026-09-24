@@ -284,7 +284,7 @@
 
       '<h2>The last thing</h2>',
       '<p>You gave this up after twenty or thirty tries, and that was a reasonable thing to do with the information you had. The information you had was wrong in one specific, fixable way: you were told to enter at the low <i>and</i> told to stop below the pattern, and nobody mentioned that those two instructions cancel each other out.</p>',
-      '<p>There is no secret Uni is seeing that you cannot see. The method waits for three things you now know how to check, enters two ticks above one specific candle, risks twelve ticks, and takes the first money at the middle peak. That is the whole method, and none of it is hidden.</p>',
+      '<p>There is no secret here. The course\'s method waits for three things you now know how to check, enters two ticks above one specific candle, risks twelve ticks, and takes the first money at the middle peak. Those are the course\'s numbers, not Uni\'s: her own W and M rule is her breakout rules. That is the whole method, and none of it is hidden.</p>',
       '<p style="font-size:1.06rem;color:var(--gold)"><b>Go do fifteen calls in the drill. Then take it to Sim.</b></p>'
     ]; }
   });
